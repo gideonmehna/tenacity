@@ -59,6 +59,60 @@ public class BoggleGame {
         System.out.println("I will find all the remaining words.");
         System.out.println("\nHit return when you're ready...");
     }
+    /*
+     * Gets information from the user to initialize a new Boggle game.
+     * It will loop until the user indicates they are done playing.
+     */
+    public void playGame(int size){
+//        while (true) {
+            playRound(size, randomizeLetters(size));
+
+//            this.gameStats.summarizeRound();
+//            this.gameStats.endRound();
+
+            System.out.println("Play again? Type 'Y' or 'N'");
+            String choiceRepeat = scanner.nextLine().toUpperCase();
+
+//            if(choiceRepeat == "") break; //end game if user inputs nothing
+            while(!choiceRepeat.equals("Y") && !choiceRepeat.equals("N")){
+                System.out.println("Please try again.");
+                System.out.println("Play again? Type 'Y' or 'N'");
+                choiceRepeat = scanner.nextLine().toUpperCase();
+            }
+
+//            if(choiceRepeat == "" || choiceRepeat.equals("N")) break; //end game if user inputs nothing
+//        }
+//        this.gameStats.summarizeGame();
+        System.out.println("Thanks for playing!");
+    }
+    /*
+     * Gets information from the user to initialize a new Boggle game.
+     * It will loop until the user indicates they are done playing.
+     */
+    public void playGame(String s, int size){
+//        while (true) {
+
+            playRound(size, s.toUpperCase());
+
+            this.gameStats.summarizeRound();
+            this.gameStats.endRound();
+
+            System.out.println("Play again? Type 'Y' or 'N'");
+            String choiceRepeat = scanner.nextLine().toUpperCase();
+
+//            if(choiceRepeat == "") break; //end game if user inputs nothing
+            while(!choiceRepeat.equals("Y") && !choiceRepeat.equals("N")){
+                System.out.println("Please try again.");
+                System.out.println("Play again? Type 'Y' or 'N'");
+                choiceRepeat = scanner.nextLine().toUpperCase();
+            }
+
+//            if(choiceRepeat == "" || choiceRepeat.equals("N")) break; //end game if user inputs nothing
+
+//        }
+        this.gameStats.summarizeGame();
+        System.out.println("Thanks for playing!");
+    }
 
 
     /* 
@@ -148,9 +202,9 @@ public class BoggleGame {
         Map<String, ArrayList<Position>> allWords = new HashMap<String, ArrayList<Position>>();
         findAllWords(allWords, boggleDict, grid);
         //step 4. allow the user to try to find some words on the grid
-        humanMove(grid, allWords);
+//        humanMove(grid, allWords);
         //step 5. allow the computer to identify remaining words
-        computerMove(allWords);
+//        computerMove(allWords);
     }
 
     /*
@@ -164,7 +218,7 @@ public class BoggleGame {
      *
      * @return String a String of random letters (length 16 or 25 depending on the size of the grid)
      */
-    private String randomizeLetters(int size){
+    public String randomizeLetters(int size){
         String randomLetters = new String();
         String[][] board = new String[size][size];
         int arrayLength = 0;
@@ -344,6 +398,7 @@ public class BoggleGame {
     private void humanMove(BoggleGrid board, Map<String,ArrayList<Position>> allWords){
         System.out.println("It's your turn to find some words!");
         while(true) {
+
             //You write code here!
             //step 1. Print the board for the user, so they can scan it for words
             System.out.println(board);
@@ -368,6 +423,7 @@ public class BoggleGame {
             else {
                 break;
             }
+            break;
         }
     }
 
