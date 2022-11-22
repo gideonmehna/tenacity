@@ -22,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -39,8 +40,9 @@ public class BoggleView {
     BoggleGrid modelBoggleGrid;
     BorderPane borderPane;
     GridPane grid;
+    Text instructionsText;
 
-
+    HBox instructionsBox;
     Stage stage;
     Button startButton,endButton, enterButton;
     ArrayList<Button> gridButtons;
@@ -133,6 +135,8 @@ public class BoggleView {
          this.stage.show();
      }
 
+
+
     /**
      * launches the Gridpane with the Boggle Grid once the user has gone through the instructions
      *
@@ -144,6 +148,60 @@ public class BoggleView {
         Node boggleGrid = grid;
         borderPane.setCenter(boggleGrid);
 //        gridpaneEvent();
+    }
+    /**
+     *  Give the User Instructions
+     *
+     *
+     */
+    private void giveFirstInstructions() {
+
+        String instructions = "The Boggle board contains a grid of letters that are randomly placed. \n";
+        instructions += "We're both going to try to find words in this grid by joining the letters. \n";
+        instructions += "You can form a word by connecting adjoining letters on the grid. \n";
+        instructions += "Two letters adjoin if they are next to each other horizontally, \n";
+        instructions += "vertically, or diagonally. The words you find must be at least 4 letters long, \n";
+        instructions += "and you can't use a letter twice in any single word. Your points \n";
+        instructions += "will be based on word length: a 4-letter word is worth 1 point, 5-letter \n";
+        instructions += "words earn 2 points, and so on. After you find as many words as you can, \n";
+        instructions += "I will find all the remaining words. \n";
+        instructions += "Hit the Next button below or hit return when you're ready... \n";
+
+        instructionsText = new Text();
+        instructionsText.setText(instructions);
+        instructionsText.setX(50);
+        instructionsText.setY(50);
+        instructionsText.setFont(new Font(12));
+
+        Button next = new Button("Next");
+        next.setId("Next");
+        next.setPrefSize(50, 50);
+        next.setFont(new Font(12));
+        next.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        next.setOnAction(e -> {
+            giveSecondInstructions();
+        });
+
+        HBox instructionsBox = new HBox( instructionsText, next);
+        borderPane.setCenter(instructionsBox);
+
+    }
+
+    private void giveSecondInstructions() {
+        instructionsBox.getChildren().clear();
+
+        String instruction = "Enter 5 to play on a big (5x5) grid; 4 to play on a small (4x4) one:";
+
+        instructionsText.setText(instruction);
+
+        TextField gridSize = new TextField();
+        instructionsBox.getChildren().addAll(instructionsBox, gridSize);
+        // Figure out how to ask the question for string characters or for using random strings.
+
+        // call the launch grid funciton. 
+
+
     }
 
     /**
@@ -172,46 +230,14 @@ public class BoggleView {
                      System.out.println(inputWord[0]);
                  });
                  grid.add(newButton, row, col);
-//                 gridButtons.add(newButton);
-    //
              }
          }
-    //     grid.add(new Button(), 1, 0); // column=1 row=0
-    //     grid.add(new Label(), 2, 0);  // column=2 row=0
+
          return grid;
 
      }
 
-    /**
-     * Gridpane Event Listener.
-     *
-     * Listens for the user input
-     */
-//    private void gridpaneEvent(){
-//        final String[] inputWord = {new String()};
-//        final String[] letter = {new String()};
-//        grid.getChildren().forEach(item -> {
-//
-//            item.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//                @Override
-//                public void handle(MouseEvent event) {
-////                    letter = event.getButton().name();
-//                    inputWord[0] += event.getEventType().getName();
-//                    System.out.println(inputWord[0]);
-//                }
-//
-//            });
-//            if(item.getClass()==Button){
-//            item.addEventHandler(new EventHandler<ActionEvent>(){
-//                @Override
-//                public void handle(ActionEvent actionEvent) {
-//                    if (actionEvent.isConsumed()) {
-//                        inputWord[0] = inputWord[0] + item.getId();
-//                    }
-//                }
-//            });}
-//        });
-//    });
+
 
 
 }
