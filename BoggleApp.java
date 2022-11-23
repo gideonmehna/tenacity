@@ -25,8 +25,6 @@ public class BoggleApp extends Application {
     public void start(Stage stage) throws Exception {
         BoggleGame b = new BoggleGame();
         BoggleView v = new BoggleView(b, stage);
-//        b.giveInstructions();
-//        b.playGame();
     }
 }
 /*

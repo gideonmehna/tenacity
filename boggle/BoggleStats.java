@@ -140,22 +140,7 @@ public class BoggleStats {
         if (!pWordsFound.isEmpty()) pWordsFound = pWordsFound.substring(2);
         else pWordsFound ="THE PLAYERS WORDS ARE EMPTPY, SOEMTHING IS WRONG"; // This is not supposed to be the case.
 
-        System.out.println("ROUND "+this.round+" SUMMARY");
 
-        System.out.println("The Computer Players Score: " + this.cScore
-        );
-        System.out.println( "The Computer player found: " + cNumWordsFound + " words."
-        );
-        System.out.println( "The following are the words found by the computer player: " + cWordsFound
-        );
-
-        System.out.println("The Human Players Score: " + this.pScore
-        );
-        System.out.println("The Human player found: " + pNumWordsFound + " words."
-
-        );
-        System.out.println( "The following are the words found by the human player: " + pWordsFound
-        );
         String gameSummary = "ROUND "+this.round+" SUMMARY \n";
         gameSummary += "The Computer Players Score: " + this.cScore +" \n";
         gameSummary += "The Computer player found: " + cNumWordsFound + " words. \n";
