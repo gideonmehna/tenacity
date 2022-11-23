@@ -256,24 +256,7 @@ public class BoggleView {
 
 
     }
-//    /**
-//     * launches the Gridpane with the Boggle Grid once the user has gone through the instructions
-//     *
-//     * This displays and handles the events of the whole Boggle Game
-//     */
-//    private void launchBoard(){
-//        // strip the scene off the hbox wiht he start and add the grid paen instead.
-//        grid = populateGridPane(size);
-//        grid.setAlignment(Pos.CENTER);
-//        Node boggleGrid = grid;
-//
-//        instructionsBox.getChildren().clear();
-//        // remove instruction box from border pane
-//        instructionsBox.getChildren().addAll(boggleGrid);
-//        instructionsBox.setAlignment(Pos.CENTER);
-////        borderPane.setCenter(boggleGrid);
-//        launchTextInputField();
-//    }
+
     /**
      * launches the Gridpane with the Boggle Grid once the user has gone through the instructions
      *
@@ -286,8 +269,6 @@ public class BoggleView {
         wordInput = new Text();
         wordInput.setText(inputWord[0]);
 
-
-
          // Get the grid , add the string
         grid = populateGridPane(size, s);
         grid.setAlignment(Pos.CENTER);
@@ -297,7 +278,6 @@ public class BoggleView {
         instructionsBox.getChildren().addAll(boggleGrid);
         launchControls();
         instructionsBox.setAlignment(Pos.CENTER);
-//        launchTextInputField();
 
     }
     /**
@@ -360,24 +340,7 @@ public class BoggleView {
 
 
     }
-//    /**
-//     * launches the Text Input Field when the user starts playing the game.
-//     *
-//     * this enables a user to type in their word choices.
-//     */
-//    private void launchTextInputField(){
-//        TextField textInputField = new TextField();
-//        textInputField.setAlignment(Pos.CENTER);
-//        textInputField.setId("boggleWordInput");
-//        textInputField.setLayoutY(30);
-//        textInputField.setLayoutX(100);
-//
-//        Label enterText = new Label("Enter a word from the grid:");
-//
-//        HBox textInput = new HBox(enterText, textInputField);
-//        borderPane.setBottom(textInput);
-//
-//    }
+
 
     /**
      * Generates the gridpane depending on the user input.
@@ -417,54 +380,6 @@ public class BoggleView {
         return grid;
 
     }
-
-//    /**
-//     * Generates the gridpane depending on the user input.
-//     *
-//     * This displays and handles the events of the whole Boggle Game
-//     */
-//     private GridPane populateGridPane(int rSize ){
-//         final String[] inputWord = {new String()};
-//        modelBoggleGrid = new BoggleGrid(rSize);
-//        String randomlyGeneratedString = this.model.randomizeLetters(rSize);
-//        modelBoggleGrid.initalizeBoard(randomlyGeneratedString);
-//         char[][] board = modelBoggleGrid.getBoard();
-//         int size = modelBoggleGrid.numRows();
-//         System.out.println(board);
-//
-//         GridPane grid = new GridPane();
-//         for (int row = 0; row < size; row++) {
-//             for (int col = 0; col < size; col++) {
-//                String s = String.valueOf(board[row][col]);
-//                 Button newButton = new Button(s);
-//                 newButton.setId(s);
-//                 newButton.setPrefSize(50, 50);
-//                 newButton.setFont(new Font(12));
-//                 newButton.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
-//
-//                 newButton.setOnAction(e -> {
-//                     inputWord[0] += newButton.getId();
-//                     wordInput.setText(inputWord[0]);
-//                     System.out.println(inputWord[0]);
-//
-////                     newButton.setOnMouseClicked();
-//                 });
-//                 grid.add(newButton, row, col);
-//             }
-//         }
-//
-//         return grid;
-//
-//     }
-
-//    /**
-//     * Verifies the words chosen by the game player.
-//     *
-//     *
-//     */
-//    private void evaluatePlayerWord(){
-//        //
-//    }
 
     /**
      * Generates last instructions
