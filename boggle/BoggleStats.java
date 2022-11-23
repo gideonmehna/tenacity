@@ -115,13 +115,14 @@ public class BoggleStats {
 //        this.pAverageWords = 0;
     }
 
+
     /* 
      * Summarize one round of boggle.  Print out:
      * The words each player found this round.
      * Each number of words each player found this round.
      * Each player's score this round.
      */
-    public void summarizeRound() {
+    public String summarizeRound() {
         String cWordsFound = new String();
         int cNumWordsFound = 0;
         String pWordsFound = new String();
@@ -130,12 +131,15 @@ public class BoggleStats {
             cWordsFound = cWordsFound + ", " + s;
             cNumWordsFound += 1;
         }
-        cWordsFound = cWordsFound.substring(2);
+        if (!cWordsFound.isEmpty()) cWordsFound = cWordsFound.substring(2);
+        else cWordsFound ="THE COMPUTER WORDS ARE EMPTY, SOMETHING IS WRONG"; // This is not supposed to be the case.
         for(String d: this.playerWords) {
             pWordsFound = pWordsFound + ", " + d;
             pNumWordsFound += 1;
         }
-        pWordsFound = pWordsFound.substring(2);
+        if (!pWordsFound.isEmpty()) pWordsFound = pWordsFound.substring(2);
+        else pWordsFound ="THE PLAYERS WORDS ARE EMPTPY, SOEMTHING IS WRONG"; // This is not supposed to be the case.
+
         System.out.println("ROUND "+this.round+" SUMMARY");
 
         System.out.println("The Computer Players Score: " + this.cScore
@@ -152,6 +156,14 @@ public class BoggleStats {
         );
         System.out.println( "The following are the words found by the human player: " + pWordsFound
         );
+        String gameSummary = "ROUND "+this.round+" SUMMARY \n";
+        gameSummary += "The Computer Players Score: " + this.cScore +" \n";
+        gameSummary += "The Computer player found: " + cNumWordsFound + " words. \n";
+        gameSummary += "The following are the words found by the computer player: " + cWordsFound +" \n";
+        gameSummary += "The Human Players Score: " + this.pScore + " \n";
+        gameSummary += "The Human player found: " + pNumWordsFound + " words. \n";
+        gameSummary += "The following are the words found by the human player: " + pWordsFound +" \n";
+        return gameSummary;
     }
 
     /* 
