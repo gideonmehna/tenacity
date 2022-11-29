@@ -188,7 +188,7 @@ public class BoggleGame {
             // add that position to a list, if it is not a repetition of what is in the list.
             boolean added = positionList.add(currPosition);
 
-            if (currWord.length() >= 4 && boggleDict.containsWord(currWord)) {
+            if (currWord.length() >= 3 && boggleDict.containsWord(currWord)) {
                 allWords.put(currWord, positionList);
 
             }
