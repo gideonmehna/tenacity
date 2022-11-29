@@ -331,11 +331,20 @@ public class BoggleView {
         enterButton.setOnAction(e -> {
             if (inputWord[0].isEmpty()) inputWord[0] = textInputField.getText();
             wordInput.setText(inputWord[0]);
-            this.model.evaluateWord(inputWord[0]);
+            Label wordCheck = new Label();
+            if (this.model.evaluateWord(inputWord[0])){
+                wordCheck.setText("Correct! " + inputWord[0] + "✅");
+                wordCheck.setStyle("bg-4");
+            }else{
+                wordCheck.setText("Incorrect :( ❌");
+                wordCheck.setStyle("bg-2");
+            }
+            borderPane.setRight(wordCheck);
             clear.fire();
         });
         endButton.setOnAction(e -> {
             giveEndRoundInstructions();
+            borderPane.setRight(null);
         });
 
 
