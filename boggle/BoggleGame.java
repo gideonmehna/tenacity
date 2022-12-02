@@ -1,6 +1,7 @@
 package boggle;
 
 import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,12 +11,13 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * The BoggleGame class for the first Assignment in CSC207, Fall 2022
  */
-public class BoggleGame {
+public class BoggleGame implements Serializable  {
 
     /**
      * scanner used to interact with the user via console
      */ 
-    public Scanner scanner; 
+    public Scanner scanner;
+
     /**
      * stores game statistics
      */ 
@@ -136,6 +138,7 @@ public class BoggleGame {
                 // There might be an error here using 6 as the bound,
             }
         }
+
         return randomLetters;
     }
 
@@ -299,4 +302,17 @@ public class BoggleGame {
     }
     }
 
+    public BoggleStats getGameStats() {
+        return gameStats;
+    }
+
+    public void saveGame(File file) {
+        try {
+            FileOutputStream fout = new FileOutputStream(file);
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

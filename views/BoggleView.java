@@ -21,14 +21,23 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import static javafx.scene.media.MediaPlayer.INDEFINITE;
 
 
 /**
@@ -36,7 +45,7 @@ import java.util.ArrayList;
  *
  * This is The class that displays boggle.
  */
-public class BoggleView {
+public class BoggleView implements Serializable {
     BoggleGame model;
     BoggleGrid modelBoggleGrid;
     BorderPane borderPane;
@@ -44,12 +53,18 @@ public class BoggleView {
     Text instructionsText;
     int size;
     VBox instructionsBox; // this holds the instructions and the game
+
+    VBox loadBox;
     Stage stage;
-    Button startButton,endButton, enterButton, newGame;
+    Button startButton,endButton, enterButton, newGame, saveButton, loadButton, stopmusic;
     ArrayList<Button> gridButtons;
     BoggleStats gameStats;
     final String[] inputWord = {new String()}; // The word the user is typing
     Text wordInput ; // display the word the user is typing
+    MediaPlayer mediaPlayer;
+
+
+    private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
 
     /**
      * BoggleView Class constructor
@@ -73,14 +88,20 @@ public class BoggleView {
      public void initUI() {
          // set the stage
          this.stage.setTitle("TenaCity Boggle");
-
          borderPane = new BorderPane();
          borderPane.setStyle("-fx-background-image: url(\"images/Bubbles.png\");");
-         giveFirstInstructions();
+
 
          var scene = new Scene(borderPane, 1200, 600);
          this.stage.setScene(scene);
          this.stage.show();
+         Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
+
+         // Create the player and set to play automatically.
+         MediaPlayer mediaPlayer = new MediaPlayer(media);
+         this.mediaPlayer = mediaPlayer;
+         this.mediaPlayer.setAutoPlay(true);
+         giveFirstInstructions();
      }
 
 
@@ -109,12 +130,19 @@ public class BoggleView {
 
         next.setOnAction(e -> {
             giveSecondInstructions();
+
         });
 
         instructionsBox = new VBox( instructionsText, next);
         instructionsBox.setPadding(new Insets(20, 20, 20, 20));
         instructionsBox.setAlignment(Pos.CENTER);
+
+        loadBox = new VBox();
+        loadBox.setPadding(new Insets(10, 10, 10, 10));
+        loadBox.setAlignment(Pos.TOP_LEFT);
+
         borderPane.setCenter(instructionsBox);
+        borderPane.setTop(loadBox);
 
     }
 
@@ -203,6 +231,7 @@ public class BoggleView {
         HBox buttonBox = new HBox();
         buttonBox.setAlignment(Pos.CENTER);
 
+
         if (size == 4 || size == 5){
             instruction = "Click one of the buttons below to either randomly assign letters or to provide your own";
             buttonBox.getChildren().addAll(random, usersLetters);
@@ -252,6 +281,7 @@ public class BoggleView {
             }
             launchBoard(s[0]);
             borderPane.requestFocus();
+
         });
 
 
@@ -279,6 +309,8 @@ public class BoggleView {
         launchControls();
         instructionsBox.setAlignment(Pos.CENTER);
 
+
+
     }
     /**
      * launches the Buttons that go with the Boggle Grid.
@@ -303,6 +335,13 @@ public class BoggleView {
         clear.setFont(new Font(12));
         clear.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
+        stopmusic = new Button( "Stop Music");
+        stopmusic.setId("Play");
+        stopmusic.setPrefSize(150, 50);
+        stopmusic.setFont(new Font(12));
+        stopmusic.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+
         endButton = new Button("End Round");
         endButton.setId("end");
         endButton.setPrefSize(150, 50);
@@ -315,10 +354,26 @@ public class BoggleView {
         enterButton.setFont(new Font(12));
         enterButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
+        saveButton = new Button("Save");
+        saveButton.setId("save");
+        saveButton.setPrefSize(150, 50);
+        saveButton.setFont(new Font(12));
+        saveButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+
+        loadButton = new Button("Load");
+        loadButton.setId("load");
+        loadButton.setPrefSize(150, 50);
+        loadButton.setFont(new Font(12));
+        loadButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
 //        wordInput.setText(inputWord[0]);
 
         HBox controls = new HBox(clear, wordInput, enterButton);
         VBox vControls = new VBox(controls, textInput);
+        VBox hcontrols = new VBox(saveButton, loadButton, stopmusic);
+        loadBox.getChildren().addAll(hcontrols);
+
         instructionsBox.getChildren().addAll(vControls, endButton);
 
         clear.setOnAction(e -> {
@@ -337,6 +392,21 @@ public class BoggleView {
         endButton.setOnAction(e -> {
             giveEndRoundInstructions();
         });
+        saveButton.setOnAction(e -> {
+            createSaveView();
+        });
+        loadButton.setOnAction(e -> {
+
+            createLoadView();
+
+
+
+        });
+        stopmusic.setOnAction(e -> {
+            mediaPlayer.setMute(true);
+
+        });
+
 
 
     }
@@ -438,6 +508,22 @@ public class BoggleView {
     }
 
 
+    public void changeboradandstats(BoggleGame g){
+        model = g;
+        gameStats = g.getGameStats();
+    }
+
+    private void createSaveView(){
+        BoggleSave saveView = new BoggleSave(this);
+    }
+
+    private void createLoadView(){
+        BoogleLoad loadView = new BoogleLoad(this);
+    }
+
+    public BoggleGame getModel() {
+        return model;
+    }
 
 
 }

@@ -1,8 +1,16 @@
 import boggle.BoggleGame;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import views.BoggleView;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+
+import java.io.File;
+
 /**
  * The Main class for the first Assignment in CSC207, Fall 2022
  */
@@ -11,8 +19,12 @@ public class BoggleApp extends Application {
     * Main method. 
     * @param args command line arguments.
     **/
+
     public static void main(String[] args) {
         launch(args);
+
+
+
 
 
     }
@@ -25,6 +37,12 @@ public class BoggleApp extends Application {
     public void start(Stage stage) throws Exception {
         BoggleGame b = new BoggleGame();
         BoggleView v = new BoggleView(b, stage);
+
+
+
+
+
+
     }
 }
 /*
