@@ -80,7 +80,14 @@ public class BoggleView {
          this.stage.setTitle("TenaCity Boggle");
 
          borderPane = new BorderPane();
-         borderPane.setStyle("-fx-background-image: url(\"images/Bubbles.png\");");
+//         borderPane.setStyle("-fx-background-image: url(\"https://www.10wallpaper.com/wallpaper/1366x768/1612/Red_forest_waterfall_turquoise_lake-Nature_High_Quality_HD_Wallpaper_1366x768.jpg\");");
+//         borderPane.setStyle("-fx-background-image: url(\"https://wallpaperaccess.com/full/2774333.jpg\");");
+//         borderPane.setStyle("-fx-background-image: url(\"images/Bubbles.png\");");
+
+         borderPane.setStyle("-fx-background-image: url(\"https://wallpaperset.com/w/full/4/9/8/141069.jpg\");");
+
+
+
 //         borderPane.setStyle("-fx-background-color: darkblue;-fx-text-fill: white;");
          giveFirstInstructions();
 
@@ -124,7 +131,10 @@ public class BoggleView {
         instructionsBox.setPadding(new Insets(20, 20, 20, 20));
         instructionsBox.setSpacing(10);
         instructionsBox.setAlignment(Pos.CENTER);
+        instructionsBox.setStyle("-fx-background-color: #D4F1F4;");
+        instructionsBox.setMaxSize(500, 500);
         borderPane.setCenter(instructionsBox);
+
        
 
     }
@@ -251,7 +261,10 @@ public class BoggleView {
         randomLetters.setOnAction(e-> {
             s[0] = randomLetters.getText();
             s[0] = s[0].toUpperCase().strip();// mke sure there are no numbers
-            if (s[0].length() < size * size) message.setText("You have entered few letters, please enter "+ size * size +" letters");
+            if (s[0].length() < size * size) {
+                message.setText("You have entered few letters, please enter "+ size * size +" letters");
+                instructionsBox.getChildren().addAll(message);
+            }
             else if (s[0].length() > size * size) {
                 s[0] = s[0].substring(0, size * size);
             }
@@ -442,6 +455,8 @@ public class BoggleView {
         summary.setY(50);
         summary.setFont(new Font(12));
         summary.setTextAlignment(TextAlignment.CENTER);
+        summary.setWrappingWidth(500);
+
 
         // ask if they want to play agian
         Label anotherRound = new Label("Do you want to play another round?");
