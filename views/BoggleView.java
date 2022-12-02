@@ -22,6 +22,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.SVGPath;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -331,15 +332,50 @@ public class BoggleView {
         enterButton.setOnAction(e -> {
             if (inputWord[0].isEmpty()) inputWord[0] = textInputField.getText();
             wordInput.setText(inputWord[0]);
+            HBox hbox = new HBox(10);
             Label wordCheck = new Label();
-            if (this.model.evaluateWord(inputWord[0])){
-                wordCheck.setText("Correct! " + inputWord[0] + "✅");
-                wordCheck.setStyle("bg-4");
-            }else{
-                wordCheck.setText("Incorrect :( ❌");
-                wordCheck.setStyle("bg-2");
+            if (this.model.evaluateWord(inputWord[0]) == 2){
+                wordCheck.getStyleClass().add("bg-4");
+                wordCheck.setText("Correct! " + inputWord[0]);
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("m265.69 544.94c0.02 11.27 2.9 22.23 5.29 33.17 8.17 34.88 20.68 68.41 34.09 " +
+                        "101.56 12.73 30.26 25.52 60.58 46.5 85.84 31.23-44.4-199.26 147.06-144.56 68.28 11.93-20.73 " +
+                        "25.1-40.69 37.88-60.89 38.51-62.08 78.47-123.23 117.94-184.7 61.13-93.89 121.79-188.23 " +
+                        "170.95-289.05 4.56-10.66 9.13-21.31 13.69-31.97l141.9-64.11c-6.82 11.82-13.64 23.65-20.46 " +
+                        "35.48-57.62 97.4-117.91 193.2-174.39 291.28-31.32 56.62-62.01 113.61-90.06 171.94-9.87 " +
+                        "19.45-20.6 38.36-31.07 57.47-27.23 62.99-141.39 169.08-179.22 97.63-10.72-32.02-21.55-64." +
+                        "09-36.06-94.65-14.74-32.38-30.38-64.33-45.42-96.57-5.01-10.73-8.52-21.88-11." +
+                        "98-33.19l164.98-87.52z");
+                githubIcon.setFill(Color.web("#81c483"));
+                githubIcon.autosize();
+                githubIcon.setScaleX(0.05);
+                githubIcon.setScaleY(0.05);
+                hbox.getChildren().addAll(wordCheck, githubIcon);
+            }else if (this.model.evaluateWord(inputWord[0]) == 1){
+                wordCheck.getStyleClass().add("bg-3");
+                wordCheck.setText("This word has already been inputted");
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
+                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
+                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
+                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
+                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
+                githubIcon.setFill(Color.web("#a8142e"));
+                hbox.getChildren().addAll(wordCheck, githubIcon);
+            }else if (this.model.evaluateWord(inputWord[0]) == 0){
+                wordCheck.getStyleClass().add("bg-2");
+                wordCheck.setText("Incorrect word :(");
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
+                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
+                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
+                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
+                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
+                githubIcon.setFill(Color.web("#a8142e"));
+                hbox.getChildren().addAll(wordCheck, githubIcon);
             }
-            borderPane.setRight(wordCheck);
+            hbox.setAlignment(Pos.CENTER);
+            borderPane.setRight(hbox);
             clear.fire();
         });
         endButton.setOnAction(e -> {
