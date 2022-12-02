@@ -131,7 +131,8 @@ public class BoggleView {
         instructionsBox.setPadding(new Insets(20, 20, 20, 20));
         instructionsBox.setSpacing(10);
         instructionsBox.setAlignment(Pos.CENTER);
-        instructionsBox.setStyle("-fx-background-color: #D4F1F4;");
+//        instructionsBox.setStyle("-fx-background-color: #D4F1F4;");
+        instructionsBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
         instructionsBox.setMaxSize(500, 500);
         borderPane.setCenter(instructionsBox);
 
@@ -235,9 +236,11 @@ public class BoggleView {
 
 
         }
-        else if( (6 < size) && (size <= 9)  ) {
+        else if( (6 <= size) && (size <= 9)  ) {
             instruction = "Randomly assign Letters for your board.";
-            buttonBox.getChildren().addAll(randomLetters);
+            VBox messageRandomLetters = new VBox(message, randomLetters);
+            messageRandomLetters.setAlignment(Pos.CENTER);
+            buttonBox.getChildren().addAll(messageRandomLetters);
 
         }
 
@@ -261,24 +264,36 @@ public class BoggleView {
         randomLetters.setOnAction(e-> {
             s[0] = randomLetters.getText();
             s[0] = s[0].toUpperCase().strip();// mke sure there are no numbers
-            if (s[0].length() < size * size) {
-                message.setText("You have entered few letters, please enter "+ size * size +" letters");
-                instructionsBox.getChildren().addAll(message);
+            message.setStyle("-fx-background-color: rgb(0,0,0,0.5); -fx-text-fill: red;");
+            if (!s[0].matches("^[A-Z]*$")) {
+                message.setText("Please only enter alphabet charaters from A - Z");
+                randomLetters.setText("");
             }
+            else if (s[0].length() < size * size) {
+                message.setText("You have entered few letters, please enter "+ size * size +" letters");
+            }
+
             else if (s[0].length() > size * size) {
                 s[0] = s[0].substring(0, size * size);
             }
             if (s[0].length() == size * size) {
                 message.setText("Ready to Start");
+                message.setStyle("-fx-background-color: rgb(255,255,255,0); -fx-text-fill: black;");
                 instructionsBox.getChildren().clear();
                 instructionsBox.getChildren().addAll(message, startButton);
             }
         });
         startButton.setOnAction(e -> {
+            instructionsBox.getChildren().clear();
+            message.setText("Loading Game ...");
+            instructionsBox.getChildren().addAll(message);
+
             if(s[0].isEmpty()){
                 String randomlyGeneratedString = this.model.randomizeLetters(size);
                 s[0] = randomlyGeneratedString;
             }
+
+
             launchBoard(s[0]);
             borderPane.requestFocus();
         });
