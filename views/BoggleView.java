@@ -414,6 +414,7 @@ public class BoggleView {
                         "62-43.523-55.2z");
                 githubIcon.setFill(Color.web("#81c483"));
                 box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
             }else if (this.model.evaluateWord(inputWord[0]) == 1){
                 wordCheck.getStyleClass().add("bg-3");
                 wordCheck.setText("This word has already been inputted");
@@ -426,6 +427,7 @@ public class BoggleView {
                 githubIcon.setFill(Color.web("#a8142e"));
                 githubIcon.autosize();
                 box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
             }else if (this.model.evaluateWord(inputWord[0]) == 0){
                 wordCheck.getStyleClass().add("bg-2");
                 wordCheck.setText("Incorrect word :(");
@@ -438,19 +440,23 @@ public class BoggleView {
                 githubIcon.setFill(Color.web("#a8142e"));
                 githubIcon.autosize();
                 box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
             }
             Label wordCount = new Label("Words left: " +
                     (this.model.getAllWords().length - this.model.getGameStats().getScore()));
             box1.getChildren().add(wordCount);
+            box1.setAlignment(Pos.TOP_CENTER);
             String wordFound = "Words Found: ";
             for (String word: this.model.getGameStats().getPlayerWords()){
                 wordFound +=  "\n" + word ;
             }
             Label wordsFound = new Label(wordFound);
             box3.getChildren().add(wordsFound);
+            box3.setAlignment(Pos.BOTTOM_CENTER);
             VBox finalBox = new VBox(20, box1, box2, box3);
             borderPane.setRight(finalBox);
             finalBox.setAlignment(Pos.CENTER);
+            finalBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
             clear.fire();
         });
         endButton.setOnAction(e -> {
