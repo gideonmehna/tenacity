@@ -427,7 +427,7 @@ public class BoggleView {
         fontDown.setFont(new Font(this.font));
         fontDown.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
 
-        borderPane.setRight(fontDown);
+        //borderPane.setRight(fontDown);
 
         fontDown.setOnAction(e -> {
            updateFont("decrease");
@@ -442,7 +442,6 @@ public class BoggleView {
         blackOnWhite.setFont(new Font(this.font));
         blackOnWhite.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #112e51;");
 
-        // borderPane.setTop(blackOnWhite);
 
         blackOnWhite.setOnAction(e -> {
             updateColours("BOW");
@@ -455,8 +454,6 @@ public class BoggleView {
         whiteOnBlack.setFont(new Font(this.font));
         whiteOnBlack.setStyle("-fx-background-color: #212121; -fx-text-fill: #ffffff;");
 
-        // borderPane.setTop(whiteOnBlack);
-
         whiteOnBlack.setOnAction(e -> {
             updateColours("WOB");
         });
@@ -467,8 +464,6 @@ public class BoggleView {
         blueOnWhite.setPrefSize(100, 50);
         blueOnWhite.setFont(new Font(this.font));
         blueOnWhite.setStyle("-fx-background-colour: #ffffff; -fx-text-fill: #0071bc;");
-
-        // borderPane.setCenter(blueOnWhite);
 
         blueOnWhite.setOnAction(e -> {
             updateColours("BLOW");
@@ -482,17 +477,22 @@ public class BoggleView {
         whiteOnGreen.setFont(new Font(this.font));
         whiteOnGreen.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
 
-        // borderPane.setBottom(whiteOnGreen);
-
         whiteOnGreen.setOnAction(e -> {
             updateColours("WOG");
         });
 
-        //make gridpane of buttons and position it at the top
+        //make gridpane of buttons and position it at the bottom
         FlowPane colorSettings = new FlowPane();
         colorSettings.getChildren().addAll(whiteOnGreen, blackOnWhite, whiteOnBlack, blueOnWhite);
         colorSettings.setAlignment(Pos.BOTTOM_CENTER);
-        borderPane.setBottom(colorSettings);
+
+        FlowPane fontSettings  = new FlowPane();
+        fontSettings.getChildren().addAll(fontUp, fontDown);
+        fontSettings.setAlignment(Pos.BOTTOM_CENTER);
+
+        VBox box = new VBox(fontSettings, colorSettings);
+        box.setAlignment(Pos.BOTTOM_CENTER);
+        borderPane.setBottom(box);
     }
 
 
