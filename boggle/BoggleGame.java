@@ -215,6 +215,12 @@ public class BoggleGame {
         }
 
     }
+
+    /* Public function that returns all legal words on the grid*/
+    public String[] getAllWords(){
+        return this.allWords.keySet().toArray(new String[0]);
+    }
+
     /*
      * CHecks if ArrayList<Position> contains a Position
      *
@@ -257,7 +263,7 @@ public class BoggleGame {
      *
      * @param String s, this is a string that the user has typed in the game.
      */
-    public boolean evaluateWord(String s){
+    public int evaluateWord(String s){
         String inputWord = s;
         inputWord = inputWord.strip().toUpperCase();
         if(!inputWord.isEmpty()) {
@@ -266,16 +272,19 @@ public class BoggleGame {
 
                     System.out.println(entry.getKey() +"=="+ inputWord );
                     System.out.println(entry.getKey().equals(inputWord));
-                if (entry.getKey().equals(inputWord) && !this.gameStats.getPlayerWords().contains(inputWord) ){
+                if (entry.getKey().equals(inputWord)){
                     this.gameStats.addWord(inputWord, BoggleStats.Player.Human);
                     System.out.println("I added the word to stats");
-                    return true;
+                    return 2;
 
+                } else if (this.gameStats.getPlayerWords().contains(inputWord)){
+                    System.out.println("This word has already been inputted");
+                    return 1;
                 }
             }
 //
         }
-        return false;
+        return 0;
     }
 
 
@@ -297,6 +306,11 @@ public class BoggleGame {
         // check if the word is in the players list
         // add the word and incremement the scoure., check why or how the total score ischanges.
     }
+    }
+
+    /*Allows access to gamestat from BoggleView*/
+    public BoggleStats getGameStats(){
+        return this.gameStats;
     }
 
 }
