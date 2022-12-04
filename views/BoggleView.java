@@ -10,10 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.text.Font;
@@ -48,10 +45,12 @@ public class BoggleView {
     GridPane grid;
     Text instructionsText;
     int size, gridButtonSize = 50, font = 12;
+    private String buttonBackgroundColor, buttonTextColor;
     VBox instructionsBox; // this holds the instructions and the game
     Stage stage;
     Button startButton,endButton, enterButton, newGame;
     ArrayList<Node> mainButtons = new ArrayList<>();
+    ArrayList<Button> gridButtons;
     BoggleStats gameStats;
     final String[] inputWord = {new String()}; // The word the user is typing
     Text wordInput ; // display the word the user is typing
@@ -71,6 +70,8 @@ public class BoggleView {
     public BoggleView(BoggleGame game, Stage stage) throws Exception {
         this.stage = stage;
         this.model = game;
+        this.buttonBackgroundColor = "#10871b";
+        this.buttonTextColor = "white";
         initUI();
     }
     /**
@@ -469,6 +470,7 @@ public class BoggleView {
     private GridPane populateGridPane(int rSize, String userString ){
 
         modelBoggleGrid = new BoggleGrid(rSize);
+
 //        modelBoggleGrid.initalizeBoard(userString);
         // launching a round
         this.model.playRound(size, userString, modelBoggleGrid);
@@ -484,12 +486,12 @@ public class BoggleView {
                 newButton.setId(s);
                 newButton.setPrefSize(this.gridButtonSize, this.gridButtonSize);
                 newButton.setFont(new Font(this.font));
-                newButton.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+                newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
                 newButton.setOnMouseEntered(e->{
                     newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
                 });
                 newButton.setOnMouseExited(e->{
-                    if (!gridButtons.contains(newButton)) newButton.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+                    if (!gridButtons.contains(newButton)) newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
                 });
 
 
@@ -620,6 +622,8 @@ public class BoggleView {
     private void updateColours(String colour){
         if (Objects.equals(colour, "BOW")){
             // change the buttons on the grid to white and the text to black
+            this.buttonTextColor = "#112e51";
+            this.buttonBackgroundColor = "#ffffff";
             for (Node node: mainButtons) {
                 if (node instanceof Button button) {
                     button.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #112e51;");
@@ -627,6 +631,8 @@ public class BoggleView {
             }
         } else if (colour == "WOB") {
             // change the buttons on the grid to black and the text to white
+            this.buttonTextColor = "#ffffff";
+            this.buttonBackgroundColor = "#212121";
             for (Node node: mainButtons) {
                 if (node instanceof Button button){
                     button.setStyle("-fx-background-color: #212121; -fx-text-fill: #ffffff;");
@@ -634,6 +640,8 @@ public class BoggleView {
             }
         } else if (colour == "BLOW") {
             // change the buttons on the grid to white and the text to blue
+            this.buttonTextColor = "#0071bc";
+            this.buttonBackgroundColor = "#ffffff";
             for (Node node: mainButtons){
                 if (node instanceof Button button) {
                     button.setStyle("-fx-background-colour: #ffffff; -fx-text-fill: #0071bc;");
@@ -641,6 +649,8 @@ public class BoggleView {
             }
         } else {
             // change the buttons on the grid to green and the text to white
+            this.buttonTextColor = "white";
+            this.buttonBackgroundColor = "#10871b";
             for (Node node : mainButtons) {
                 if (node instanceof Button button) {
                     button.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
@@ -755,7 +765,7 @@ public class BoggleView {
     private void clearButtons(ArrayList<Button> buttons){
         //clear grid buttons
         for (Button button: buttons) {
-            button.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+            button.setStyle("-fx-background-color: " + this.buttonBackgroundColor  + "; -fx-text-fill: "+ this.buttonTextColor + ";");
         }
         buttons.clear();
     }
