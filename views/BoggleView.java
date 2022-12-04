@@ -28,7 +28,17 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
+
+/*
+
+ A list of elements (nodes /objects )
+Every time a function loads in Boggle View, collect the elements into this array, and create another function
+that updates the font for all the elements in this array. THis function runs whenever you click fontUp or fontdown buttons.
+Remember to clear the list at the end of the function
+2. wherever there is font size, change it to this.font
+* */
 
 
 /**
@@ -42,11 +52,11 @@ public class BoggleView {
     BorderPane borderPane;
     GridPane grid;
     Text instructionsText;
-    int size;
+    int size, gridButtonSize = 50, font = 12;
     VBox instructionsBox; // this holds the instructions and the game
     Stage stage;
     Button startButton,endButton, enterButton, newGame;
-    ArrayList<Button> gridButtons;
+    ArrayList<Node> mainButtons = new ArrayList<>();
     BoggleStats gameStats;
     final String[] inputWord = {new String()}; // The word the user is typing
     Text wordInput ; // display the word the user is typing
@@ -97,9 +107,11 @@ public class BoggleView {
 
         instructionsText = new Text();
         instructionsText.setText(instructions);
-        instructionsText.setX(50);
-        instructionsText.setY(50);
-        instructionsText.setFont(new Font(12));
+        instructionsText.setX(100); //changing the size of the instructions box
+        instructionsText.setY(100); //changing the size of the instructions box
+        instructionsText.setFont(new Font(this.font));
+
+
 
         Button next = new Button("Next");
         next.setId("Next");
@@ -135,13 +147,13 @@ public class BoggleView {
         gridSize.setMaxSize(100, 100);
 
         Label message = new Label();
-        message.setFont(new Font(12));
+        message.setFont(new Font(this.font));
         message.setStyle("-fx-background-color: #10871b; -fx-text-fill: red;");
 
         Button next = new Button("Next");
         next.setId("Next");
         next.setPrefSize(50, 50);
-        next.setFont(new Font(12));
+        next.setFont(new Font(this.font));
         next.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
 
         gridSize.setOnAction(e -> {
@@ -185,19 +197,19 @@ public class BoggleView {
         Button random = new Button("Randomly Assign Letters");
         random.setId("random");
         random.setPrefSize(200, 50);
-        random.setFont(new Font(12));
+        random.setFont(new Font(this.font));
         random.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
 
         Button usersLetters = new Button("Provide Your Own");
         usersLetters.setId("usersLetters");
         usersLetters.setPrefSize(200, 50);
-        usersLetters.setFont(new Font(12));
+        usersLetters.setFont(new Font(this.font));
         usersLetters.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
 
         startButton = new Button("Start");
         startButton.setId("Start");
         startButton.setPrefSize(150, 50);
-        startButton.setFont(new Font(12));
+        startButton.setFont(new Font(this.font));
         startButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 
         HBox buttonBox = new HBox();
@@ -263,7 +275,7 @@ public class BoggleView {
      * This displays and handles the events of the whole Boggle Game
      */
     private void launchBoard(String s){
-        // Clear all the instrucitons in the box
+        // Clear all the instructions in the box
         instructionsBox.getChildren().clear();
         // prepare the variables to be used
         wordInput = new Text();
@@ -300,20 +312,23 @@ public class BoggleView {
         Button clear = new Button("Clear Text");
         clear.setId("Start");
         clear.setPrefSize(150, 50);
-        clear.setFont(new Font(12));
+        clear.setFont(new Font(this.font));
         clear.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        mainButtons.add(clear);
 
         endButton = new Button("End Round");
         endButton.setId("end");
         endButton.setPrefSize(150, 50);
-        endButton.setFont(new Font(12));
+        endButton.setFont(new Font(this.font));
         endButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        mainButtons.add(endButton);
 
         enterButton = new Button("Enter");
         enterButton.setId("enter");
         enterButton.setPrefSize(150, 50);
-        enterButton.setFont(new Font(12));
+        enterButton.setFont(new Font(this.font));
         enterButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        mainButtons.add(enterButton);
 
 //        wordInput.setText(inputWord[0]);
 
@@ -363,8 +378,8 @@ public class BoggleView {
                 String s = String.valueOf(board[row][col]);
                 Button newButton = new Button(s);
                 newButton.setId(s);
-                newButton.setPrefSize(50, 50);
-                newButton.setFont(new Font(12));
+                newButton.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                newButton.setFont(new Font(this.font));
                 newButton.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
 
                 newButton.setOnAction(e -> {
@@ -373,13 +388,186 @@ public class BoggleView {
                     wordInput.setText(inputWord[0]);
                     System.out.println(inputWord[0]);
                 });
+                mainButtons.add(newButton);
                 grid.add(newButton, row, col);
             }
         }
 
+        makeSpecialButtons();
         return grid;
-
     }
+
+
+
+    /*
+        Creates special buttons on the grid view for accessibility purposes.
+     */
+
+    private void makeSpecialButtons() {
+
+        // increase font button
+        Button fontUp = new Button("Increase Font");
+        fontUp.setId("Increase Font");
+        fontUp.setPrefSize(100,50);
+        fontUp.setFont(new Font(this.font));
+        fontUp.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        borderPane.setLeft(fontUp);
+
+        fontUp.setOnAction(e -> {
+            updateFont("increase");
+        });
+
+        mainButtons.add(fontUp);
+
+        // decrease font button
+        Button fontDown = new Button("Decrease Font");
+        fontDown.setId("Decrease Font");
+        fontDown.setPrefSize(100,50);
+        fontDown.setFont(new Font(this.font));
+        fontDown.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        borderPane.setRight(fontDown);
+
+        fontDown.setOnAction(e -> {
+           updateFont("decrease");
+        });
+
+        mainButtons.add(fontDown);
+
+        // black on white setting
+        Button blackOnWhite = new Button("Black & White");
+        blackOnWhite.setId("Black & White");
+        blackOnWhite.setPrefSize(100, 50);
+        blackOnWhite.setFont(new Font(this.font));
+        blackOnWhite.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #112e51;");
+
+        // borderPane.setTop(blackOnWhite);
+
+        blackOnWhite.setOnAction(e -> {
+            updateColours("BOW");
+        });
+
+        //white on black setting
+        Button whiteOnBlack = new Button("White & Black");
+        whiteOnBlack.setId("White & Black");
+        whiteOnBlack.setPrefSize(100, 50);
+        whiteOnBlack.setFont(new Font(this.font));
+        whiteOnBlack.setStyle("-fx-background-color: #212121; -fx-text-fill: #ffffff;");
+
+        // borderPane.setTop(whiteOnBlack);
+
+        whiteOnBlack.setOnAction(e -> {
+            updateColours("WOB");
+        });
+
+        //blue on white
+        Button blueOnWhite = new Button("Blue & White");
+        blueOnWhite.setId("Blue & White");
+        blueOnWhite.setPrefSize(100, 50);
+        blueOnWhite.setFont(new Font(this.font));
+        blueOnWhite.setStyle("-fx-background-colour: #ffffff; -fx-text-fill: #0071bc;");
+
+        // borderPane.setCenter(blueOnWhite);
+
+        blueOnWhite.setOnAction(e -> {
+            updateColours("BLOW");
+        });
+
+        //green on white - default
+        Button whiteOnGreen = new Button("Green & White");
+        whiteOnGreen.setId("Green & White");
+        whiteOnGreen.setId("Green & White");
+        whiteOnGreen.setPrefSize(100, 50);
+        whiteOnGreen.setFont(new Font(this.font));
+        whiteOnGreen.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        // borderPane.setBottom(whiteOnGreen);
+
+        whiteOnGreen.setOnAction(e -> {
+            updateColours("WOG");
+        });
+
+        //make gridpane of buttons and position it at the top
+        FlowPane colorSettings = new FlowPane();
+        colorSettings.getChildren().addAll(whiteOnGreen, blackOnWhite, whiteOnBlack, blueOnWhite);
+        colorSettings.setAlignment(Pos.BOTTOM_CENTER);
+        borderPane.setBottom(colorSettings);
+    }
+
+
+    /*
+     * Updates the colour scheme of the grid.
+     */
+
+    private void updateColours(String colour){
+        if (Objects.equals(colour, "BOW")){
+            // change the buttons on the grid to white and the text to black
+            for (Node node: mainButtons) {
+                if (node instanceof Button button) {
+                    button.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #112e51;");
+                }
+            }
+        } else if (colour == "WOB") {
+            // change the buttons on the grid to black and the text to white
+            for (Node node: mainButtons) {
+                if (node instanceof Button button){
+                    button.setStyle("-fx-background-color: #212121; -fx-text-fill: #ffffff;");
+                }
+            }
+        } else if (colour == "BLOW") {
+            // change the buttons on the grid to white and the text to blue
+            for (Node node: mainButtons){
+                if (node instanceof Button button) {
+                    button.setStyle("-fx-background-colour: #ffffff; -fx-text-fill: #0071bc;");
+                }
+            }
+        } else {
+            // change the buttons on the grid to green and the text to white
+            for (Node node : mainButtons) {
+                if (node instanceof Button button) {
+                    button.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+                }
+            }
+        }
+    }
+
+    /*
+      * Updates the font of the letters on the grid.
+     */
+
+    private void updateFont(String action){
+        if (Objects.equals(action, "increase")){
+            if(!(this.font >= 24)) {
+                this.font++;
+            }
+            if(!(this.gridButtonSize >= 85)){
+                this.gridButtonSize += 5;
+            }
+            for (Node node: grid.getChildren()) {
+                if (node instanceof Button nb){
+                    nb.setFont(new Font(this.font));
+                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                }
+            }
+        }
+        else {
+            if(!(this.font <= 8)) {
+                this.font--;
+            }
+            if(!(this.gridButtonSize <= 35)){
+                this.gridButtonSize -= 5;
+            }
+
+            for (Node node: grid.getChildren()) {
+                if (node instanceof Button nb){
+                    nb.setFont(new Font(this.font));
+                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                }
+            }
+        }
+    }
+
 
     /**
      * Generates last instructions
@@ -417,6 +605,7 @@ public class BoggleView {
         playAgain.setOnAction(e -> {
             giveSecondInstructions();
         });
+
         newGame = new Button("New Game");
         newGame.setId("new");
         newGame.setPrefSize(150, 50);
@@ -436,8 +625,6 @@ public class BoggleView {
         });
 
     }
-
-
 
 
 }
