@@ -216,7 +216,9 @@ public class BoggleGame {
 
     }
 
-    /* Public function that returns all legal words on the grid*/
+    /* Public function that returns all legal words on the grid
+    * @return String array of all the legal words available to be found on the grid
+    */
     public String[] getAllWords(){
         return this.allWords.keySet().toArray(new String[0]);
     }
@@ -262,6 +264,8 @@ public class BoggleGame {
      * This is a function that evaluates the word input of the boggle game while the human is playing.
      *
      * @param String s, this is a string that the user has typed in the game.
+     * @return Integer values which states: 0 for invalid word,
+     *  1 for word which had already been inputted, 2 for valid word
      */
     public int evaluateWord(String s){
         String inputWord = s;
@@ -282,7 +286,6 @@ public class BoggleGame {
                     return 1;
                 }
             }
-//
         }
         return 0;
     }
