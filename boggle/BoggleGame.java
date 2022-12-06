@@ -1,10 +1,7 @@
 package boggle;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -88,7 +85,7 @@ public class BoggleGame {
     }
 
     /*
-     * This method should return a String of letters (length 16 or 25 depending on the size of the grid).
+     * This method should return a String of letters (length size * size depending on the size of the grid).
      * There will be one letter per grid position, and they will be organized left to right,
      * top to bottom. A strategy to make this string of letters is as follows:
      * -- Assign a one of the dice to each grid position (i.e. dice_big_grid or dice_small_grid)
@@ -96,7 +93,7 @@ public class BoggleGame {
      * -- Randomly select one of the letters on the given die at each grid position to determine
      *    the letter at the given position
      *
-     * @return String a String of random letters (length 16 or 25 depending on the size of the grid)
+     * @return String a String of random letters (length size * size depending on the size of the grid)
      */
     public String randomizeLetters(int size){
         String randomLetters = new String();
@@ -120,16 +117,34 @@ public class BoggleGame {
 
                 }
             }
-        }
+        } else {
+            for (int row = 0; row < size; row++) {
+                for (int col = 0; col < size; col++) {
+                    Random r = new Random();
+                    board[row][col] = String.valueOf((char)(r.nextInt(26) + 'A'));
+                    randomLetters += board[row][col];
 
-
-
-        for (int row = 0; row < size; row++) {
-            for (int col = 0; col < size; col++) {
-                randomLetters += board[row][col].charAt(ThreadLocalRandom.current().nextInt(0, 5  + 1));
-                // There might be an error here using 6 as the bound,
+                }
             }
         }
+
+
+        if ((size == 4) || (size == 5)) {
+            for (int row = 0; row < size; row++) {
+                for (int col = 0; col < size; col++) {
+                    randomLetters += board[row][col].charAt(ThreadLocalRandom.current().nextInt(0, 5  + 1));
+                    // There might be an error here using 6 as the bound,
+                }
+            }
+        }
+//        else {
+//            for (int row = 0; row < size; row++) {
+//                for (int col = 0; col < size; col++) {
+//                    randomLetters += board[row][col];
+//                    // There might be an error here using 6 as the bound,
+//                }
+//            }
+//        }
         return randomLetters;
     }
 
