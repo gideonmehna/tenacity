@@ -1,0 +1,99 @@
+Index: .idea/workspace.xml
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,20 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+-    </list>
++    <list default="true" id="767b0fc1-a857-4576-bdab-c30ac691f7cb" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Class" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+@@ -24,59 +15,24 @@
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+-  </component>
+-  <component name="ProjectId" id="2IWA6QrmhhzOVNwFa12S9DZ1Px6" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+-    "Downloaded.Files.Path.Enabled": "false",
+-    "Repository.Attach.Annotations": "false",
+-    "Repository.Attach.JavaDocs": "false",
+-    "Repository.Attach.Sources": "false",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "jdk.selected.JAVA_MODULE": "18",
+-    "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
+     "project.structure.last.edited": "Global Libraries",
+     "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "advanced.settings"
++    "settings.editor.selected.configurable": "preferences.lookFeel"
+   }
+ }]]></component>
+   <component name="RunManager">
+     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+-      <module name="tenacity" />
+-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\ugstu\Desktop\UTM 2nd Year Fall\Class\CSC207 H5\CSC207\Lecture code\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
++      <option name="MAIN_CLASS_NAME" value="Boggleapp" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+   </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="" />
+-      <created>1670286796215</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1670286796215</updated>
+-    </task>
+-    <task id="LOCAL-00001" summary="[DEV-1.1] BASE GUI DONE">
+-      <created>1670289102898</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670289102898</updated>
+-    </task>
+-    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -90,8 +46,4 @@
+       </map>
+     </option>
+   </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
+-    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
+-  </component>
+ </project>
+\ No newline at end of file
