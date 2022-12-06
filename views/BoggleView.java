@@ -89,6 +89,8 @@ public class BoggleView {
 
     private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
 
+    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
+
 
     /**
      * BoggleView Class constructor
@@ -122,11 +124,10 @@ public class BoggleView {
         var scene = new Scene(borderPane, 1200, 600);
         this.stage.setScene(scene);
         this.stage.show();
-        Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
+
 
         // Create the player and set to play automatically.
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        this.mediaPlayer = mediaPlayer;
+        this.mediaPlayer = new MediaPlayer(media);
         this.mediaPlayer.setAutoPlay(true);
         giveFirstInstructions();
     }
