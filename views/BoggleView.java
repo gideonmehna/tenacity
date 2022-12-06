@@ -67,6 +67,10 @@ public class BoggleView {
      */
     Button startButton,endButton, enterButton, newGame;
     /**
+     * This array holds the buttons that have been selected by the game player
+     */
+    ArrayList<Button> gridButtons;
+    /**
      * Grid size (4 -9). The grid is always a square therefore the size is only an integer.
      * GridButtonSize is the size of the grid buttons
      * Font is the font for the buttons
@@ -321,7 +325,7 @@ public class BoggleView {
         // Clear all the instructions in the box
         instructionsBox.getChildren().clear();
         // Prepare the gridButtons array
-//        gridButtons = new ArrayList<>();
+        gridButtons = new ArrayList<>();
         // prepare the variables to be used
         wordInput = new Text();
         wordInput.setText(inputWord[0]);
@@ -480,7 +484,7 @@ public class BoggleView {
 
         modelBoggleGrid = new BoggleGrid(rSize);
 
-//        modelBoggleGrid.initalizeBoard(userString);
+        modelBoggleGrid.initalizeBoard(userString);
         // launching a round
         this.model.playRound(size, userString, modelBoggleGrid);
         char[][] board = modelBoggleGrid.getBoard();
@@ -503,21 +507,19 @@ public class BoggleView {
                 });
                 newButton.setOnMouseExited(e->{
 //                    if (!gridButtons.contains(newButton)) newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
-//               
+
                 });
 
 
                 newButton.setOnAction(e -> {
-//                    if (!gridButtons.contains(newButton)) {
-//                        gridButtons.add(newButton);
-//                        newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
-//                        inputWord[0] += newButton.getId();
-//                        wordInput.setText(inputWord[0]);
-//                        System.out.println(inputWord[0]);
-//                    }
-                    // colors
-                    // see if i can limit people from clicing buttons that are not adjancet
-                    // if i click a button that is already inside the grid buttons, remove it and also remove the string.
+                    if (!gridButtons.contains(newButton)) {
+                        gridButtons.add(newButton);
+                        newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
+                        inputWord[0] += newButton.getId();
+                        wordInput.setText(inputWord[0]);
+                        System.out.println(inputWord[0]);
+                    }
+
                 });
                 mainButtons.add(newButton);
                 grid.add(newButton, row, col);
