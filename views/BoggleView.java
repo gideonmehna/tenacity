@@ -529,6 +529,10 @@ public class BoggleView {
         return grid;
     }
 
+    /*
+    This function creates the buttons that will allow the player to increase or decrease
+    the font of the boggle game.
+     */
     private void makeFontButtons() {
 
         // increase font button
