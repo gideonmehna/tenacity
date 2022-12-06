@@ -405,9 +405,9 @@ public class BoggleView {
         enterButton.setOnAction(e -> {
             if (inputWord[0].isEmpty()) inputWord[0] = textInputField.getText();
             wordInput.setText(inputWord[0]);
-//            HBox box1 = new HBox(5);
-//            VBox box2 = new VBox(5);
-//            HBox box3 = new HBox(10);
+            HBox box1 = new HBox(5);
+            VBox box2 = new VBox(5);
+            HBox box3 = new HBox(10);
 //            Label wordCheck = new Label();
 //            if (this.model.evaluateWord(inputWord[0]) == 2){
 //                wordCheck.getStyleClass().add("bg-4");
@@ -450,17 +450,17 @@ public class BoggleView {
 //                    (this.model.getAllWords().length - this.model.getGameStats().getScore()));
 //            box1.getChildren().add(wordCount);
 //            box1.setAlignment(Pos.TOP_CENTER);
-//            String wordFound = "Words Found: ";
-//            for (String word: this.model.getGameStats().getPlayerWords()){
-//                wordFound +=  "\n" + word ;
-//            }
-//            Label wordsFound = new Label(wordFound);
-//            box3.getChildren().add(wordsFound);
-//            box3.setAlignment(Pos.BOTTOM_CENTER);
-//            VBox finalBox = new VBox(20, box1, box2, box3);
-//            borderPane.setRight(finalBox);
-//            finalBox.setAlignment(Pos.CENTER);
-//            finalBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
+            String wordFound = "Words Found: ";
+            for (String word: this.model.getGameStats().getPlayerWords()){
+                wordFound +=  "\n" + word ;
+            }
+            Label wordsFound = new Label(wordFound);
+            box3.getChildren().add(wordsFound);
+            box3.setAlignment(Pos.BOTTOM_CENTER);
+            VBox finalBox = new VBox(20, box1, box2, box3);
+            borderPane.setRight(finalBox);
+            finalBox.setAlignment(Pos.CENTER);
+            finalBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
             clear.fire();
         });
         endButton.setOnAction(e -> {

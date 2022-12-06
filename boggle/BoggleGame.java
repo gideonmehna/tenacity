@@ -316,5 +316,10 @@ public class BoggleGame {
         // add the word and incremement the scoure., check why or how the total score ischanges. 
     }
     }
-
+    /* Public function that returns the BoggleStats object being used in the game
+     * @return BoggleStats object which contains the players scores, words, e.t.c.
+     */
+    public BoggleStats getGameStats() {
+        return this.gameStats;
+    }
 }
