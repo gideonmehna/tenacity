@@ -33,11 +33,11 @@ public class BoogleLoad {
         this.jl = view.getModel();
 
         selectBoardLabel = new Label(String.format("Currently playing: Default Board"));
-        boardsList = new ListView<>(); //list of tetris.boards
+        boardsList = new ListView<>(); //list of bogglegame.boards
 
         final Stage dialog = new Stage(); //dialogue box
         dialog.initModality(Modality.APPLICATION_MODAL);
-        //dialog.initOwner(tetrisView.stage);
+
         VBox dialogVbox = new VBox(20);
         dialogVbox.setPadding(new Insets(20, 20, 20, 20));
         dialogVbox.setStyle("-fx-background-color: #121212;");
@@ -80,9 +80,7 @@ public class BoogleLoad {
         Scene dialogScene = new Scene(dialogVbox, 400, 400);
         dialog.setScene(dialogScene);
         dialog.show();
-//        dialog.setOnCloseRequest(event -> {
-//            tetrisView.paused = false;
-//        });
+
     }
 
     /**
@@ -112,7 +110,7 @@ public class BoogleLoad {
      * Select and load the board file selected in the boardsList and update selectBoardLabel with the name of the new Board file
      *
      * @param selectBoardLabel a message Label to update which board is currently selected
-     * @param boardsList a ListView populated with tetris.boards to load
+     * @param boardsList a ListView populated with bogglegame.boards to load
      */
     void selectBoard(Label selectBoardLabel, ListView<String> boardsList) throws IOException {
 
@@ -128,7 +126,7 @@ public class BoogleLoad {
      * Load the board from a file
      *
      * @param boardFile file to load
-     * @return loaded Tetris Model
+     * @return loaded Boggle Game
      */
     public BoggleGame loadBoard(String boardFile) throws IOException {
         System.out.println("boardFile: " + boardFile);
