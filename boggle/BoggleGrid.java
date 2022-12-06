@@ -82,5 +82,11 @@ public class BoggleGrid {
     public char getCharAt(int row, int col) {
         return this.board[row][col];
     }
+    /*
+     * @return the board of the grid
+     */
+    public char[][] getBoard() {
+        return board;
+    }
 
 }
