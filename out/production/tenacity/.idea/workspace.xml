@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="664b2595-79b4-4bac-a1c0-4ebc945f0988" name="Changes" comment="Online Dictionary Under C">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tenacity.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoggleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/BoggleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/tenacity.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/BoggleTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/BoggleTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="MVC" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/BoggleTests.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/boggle/Dictionary.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/views/BoggleView.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HpKQwQQ1rNXodcFapaoIw6ECIs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="boggle" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BoggleApp">
+    <configuration name="BoggleApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+      <module name="tenacity" />
+      <option name="VM_PARAMETERS" value="-p $ClipboardContent$ --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web --add-opens=javafx.graphics/javafx.scene=ALL-UNNAMED --add-exports javafx.base/com.sun.javafx.event=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoggleTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tenacity" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BoggleTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BoggleApp" />
+        <item itemvalue="JUnit.BoggleTests" />
+        <item itemvalue="JUnit.BoggleTests" />
+        <item itemvalue="Application.BoggleApp" />
+        <item itemvalue="Application.BoggleApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="664b2595-79b4-4bac-a1c0-4ebc945f0988" name="Changes" comment="" />
+      <created>1668976572888</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668976572888</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Adding the basic boggle files">
+      <created>1668976926699</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668976926700</updated>
+    </task>
+    <task id="LOCAL-00002" summary="display the grid">
+      <created>1669075766757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669075766757</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Event Listeners easily added">
+      <created>1669078136589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669078136589</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Boggle Grid displays">
+      <created>1669147391897</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669147391897</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Boggle Now Done">
+      <created>1669230435620</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669230435620</updated>
+    </task>
+    <task id="LOCAL-00006" summary="WE should start">
+      <created>1669235285533</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669235285533</updated>
+    </task>
+    <task id="LOCAL-00007" summary="User Stories Completed&#10;1.1, part of 2.2, part of 3.2, part of 3.5">
+      <created>1669751327149</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669751327149</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Background Image added">
+      <created>1669940352066</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669940352066</updated>
+    </task>
+    <task id="LOCAL-00009" summary="String regex added">
+      <created>1669998848015</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669998848015</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Online Dictionary Under Construction">
+      <created>1670181715244</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670181715244</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Online Dictionary Under C">
+      <created>1670184440092</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670184440092</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/origin/Evan" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding the basic boggle files" />
+    <MESSAGE value="display the grid" />
+    <MESSAGE value="Event Listeners easily added" />
+    <MESSAGE value="Boggle Grid displays" />
+    <MESSAGE value="Boggle Now Done" />
+    <MESSAGE value="WE should start" />
+    <MESSAGE value="User Stories Completed&#10;1.1, part of 2.2, part of 3.2, part of 3.5" />
+    <MESSAGE value="Background Image added" />
+    <MESSAGE value="faint background added" />
+    <MESSAGE value="String regex added" />
+    <MESSAGE value="Online Dictionary Under Construction" />
+    <MESSAGE value="Online Dictionary Under C" />
+    <option name="LAST_COMMIT_MESSAGE" value="Online Dictionary Under C" />
+  </component>
+</project>
