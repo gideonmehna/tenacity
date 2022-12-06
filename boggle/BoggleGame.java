@@ -266,6 +266,14 @@ public class BoggleGame {
         return false;
     }
 
+
+    /* Public function that returns all legal words on the grid
+     * @return String array of all the legal words available to be found on the grid
+     */
+    public String[] getAllWords(){
+        return this.allWords.keySet().toArray(new String[0]);
+    }
+
     /*
      * This is a function that evaluates the word input of the boggle game while the human is playing.
      *
@@ -317,4 +325,10 @@ public class BoggleGame {
     }
     }
 
+    /* Public function that returns the BoggleStats object being used in the game
+     * @return BoggleStats object which contains the players scores, words, e.t.c.
+     */
+    public BoggleStats getGameStats() {
+        return this.gameStats;
+    }
 }
