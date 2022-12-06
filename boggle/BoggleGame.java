@@ -1,13 +1,25 @@
 package boggle;
 
 import java.awt.*;
+<<<<<<< HEAD
+<<<<<<< HEAD
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+=======
 import java.util.*;
+>>>>>>> develop
+=======
+import java.util.*;
+>>>>>>> develop
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * The BoggleGame class for the first Assignment in CSC207, Fall 2022
  */
-public class BoggleGame {
+public class BoggleGame implements Serializable {
 
     /**
      * stores game statistics
@@ -331,5 +343,31 @@ public class BoggleGame {
         // add the word and incremement the scoure., check why or how the total score ischanges. 
     }
     }
+    /*
+<<<<<<< Updated upstream
+     * Saves the Boggle games as a file
+     * @param filename A file contains a BoggleGame
+=======
+     * Gets words from the computer.  The computer should find words that are
+     * both valid and not in the player's word list.  For each word that the computer
+     * finds, update the computer's word list and increment the
+     * computer's score (stored in boggleStats).
+     *
+     * @param file A mutable list of all legal words that can be found, given the boggleGrid grid letters
+>>>>>>> Stashed changes
+     */
 
+    public void saveGame(File fileName) {
+        try {
+            FileOutputStream fout = new FileOutputStream(fileName);
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public BoggleStats getGameStats() {
+        return gameStats;
+    }
 }

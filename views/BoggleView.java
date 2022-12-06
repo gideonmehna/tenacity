@@ -1,8 +1,6 @@
 package views;
 
-import boggle.BoggleGame;
-import boggle.BoggleGrid;
-import boggle.BoggleStats;
+import boggle.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -21,7 +19,11 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 
+<<<<<<< HEAD
+import java.io.Serializable;
+=======
 import java.nio.file.Paths;
+>>>>>>> develop
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -32,7 +34,7 @@ import java.util.Objects;
  *
  * This is The class that displays boggle.
  */
-public class BoggleView {
+public class BoggleView implements Serializable {
     /**
      * Boggle Model class
      */
@@ -68,7 +70,11 @@ public class BoggleView {
     /**
      * Buttons to start, end, enter and create a new game
      */
+<<<<<<< HEAD
+    Button startButton,endButton, enterButton, newGame, saveButton, loadButton;
+=======
     Button startButton,endButton, enterButton, newGame, stopmusic, playmusic;
+>>>>>>> develop
     /**
      * This array holds the buttons that have been selected by the game player
      */
@@ -89,12 +95,15 @@ public class BoggleView {
      */
     Text wordInput ; // display the word the user is typing
     ArrayList<Node> mainButtons = new ArrayList<>();
+<<<<<<< HEAD
+=======
 
     MediaPlayer mediaPlayer;
 
     private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
 
     Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
+>>>>>>> develop
 
 
     /**
@@ -171,7 +180,12 @@ public class BoggleView {
         loadBox = new VBox();
         loadBox.setPadding(new Insets(10, 10, 10, 10));
         loadBox.setAlignment(Pos.TOP_LEFT);
+<<<<<<< HEAD
+        
+        
+=======
 
+>>>>>>> develop
         borderPane.setCenter(instructionsBox);
         borderPane.setTop(loadBox);
 
@@ -411,6 +425,19 @@ public class BoggleView {
         enterButton.setPrefSize(150, 50);
         enterButton.setFont(new Font(this.font));
         enterButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        saveButton = new Button("Save");
+        saveButton.setId("save");
+        saveButton.setPrefSize(150, 50);
+        saveButton.setFont(new Font(12));
+        saveButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+
+        loadButton = new Button("Load");
+        loadButton.setId("load");
+        loadButton.setPrefSize(150, 50);
+        loadButton.setFont(new Font(12));
+        loadButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 //        mainButtons.add(enterButton);
 
 //        wordInput.setText(inputWord[0]);
@@ -421,7 +448,11 @@ public class BoggleView {
         VBox vControls = new VBox(controls, textInput);
         vControls.setAlignment(Pos.CENTER);
         vControls.setSpacing(5);
+<<<<<<< HEAD
+        VBox hcontrols = new VBox(saveButton, loadButton);
+=======
         VBox hcontrols = new VBox(playmusic, stopmusic);
+>>>>>>> develop
         loadBox.getChildren().addAll(hcontrols);
         instructionsBox.getChildren().addAll(vControls, endButton);
 
@@ -510,6 +541,14 @@ public class BoggleView {
 
 
         });
+        saveButton.setOnAction(e -> {
+            createSaveView();
+        });
+        loadButton.setOnAction(e -> {
+            createLoadView();
+
+        });
+
 
 
     }
@@ -703,7 +742,37 @@ public class BoggleView {
             instructionsBox.getChildren().clear();
             giveFirstInstructions();
         });
+        
 
     }
+    /*
+     * Returns the BoggleGame
+     */
 
+    public BoggleGame getModel() {
+        return model;
+    }
+    /*
+     * Changes the BoggleGame and gameStats using another Boggle Game
+     * @param BoggleGame
+     */
+
+    public void changeboradandstats(BoggleGame jl) {
+        model = jl;
+        gameStats = jl.getGameStats();
+
+    }
+    /*
+     * Creates the Save View inside of the BoggleView
+     */
+    private void createSaveView(){
+        BoggleSave saveView = new BoggleSave(this);
+    }
+    /*
+     * Creates the Load View inside of the BoggleView
+     */
+
+    private void createLoadView(){
+        BoogleLoad loadView = new BoogleLoad(this);
+    }
 }
