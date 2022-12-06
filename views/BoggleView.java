@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.text.Font;
@@ -19,6 +21,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -57,7 +60,7 @@ public class BoggleView {
     /**
      * The Instructions and Boggle Game are displayed in this Box
      */
-    VBox instructionsBox; // this holds the instructions and the game
+    VBox instructionsBox, loadBox; // this holds the instructions and the game
     /**
      * The main stage of the game. JavaFX stage or window
      */
@@ -65,7 +68,7 @@ public class BoggleView {
     /**
      * Buttons to start, end, enter and create a new game
      */
-    Button startButton,endButton, enterButton, newGame;
+    Button startButton,endButton, enterButton, newGame, stopmusic, playmusic;
     /**
      * This array holds the buttons that have been selected by the game player
      */
@@ -86,6 +89,12 @@ public class BoggleView {
      */
     Text wordInput ; // display the word the user is typing
     ArrayList<Node> mainButtons = new ArrayList<>();
+
+    MediaPlayer mediaPlayer;
+
+    private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
+
+    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
 
 
     /**
@@ -115,12 +124,17 @@ public class BoggleView {
         borderPane = new BorderPane();
         borderPane.setStyle("-fx-background-image: url(\"https://wallpaperset.com/w/full/4/9/8/141069.jpg\");");
 
-        giveFirstInstructions();
+
 
         var scene = new Scene(borderPane, 1200, 600);
-
         this.stage.setScene(scene);
         this.stage.show();
+
+
+        // Create the player and set to play automatically.
+        this.mediaPlayer = new MediaPlayer(media);
+        this.mediaPlayer.setAutoPlay(true);
+        giveFirstInstructions();
     }
     /**
      *  Gives the first User Instructions. Talks about the main game functions.
@@ -153,7 +167,13 @@ public class BoggleView {
         instructionsBox.setAlignment(Pos.CENTER);
         instructionsBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
         instructionsBox.setMaxSize(500, 500);
+
+        loadBox = new VBox();
+        loadBox.setPadding(new Insets(10, 10, 10, 10));
+        loadBox.setAlignment(Pos.TOP_LEFT);
+
         borderPane.setCenter(instructionsBox);
+        borderPane.setTop(loadBox);
 
     }
     /**
@@ -367,6 +387,18 @@ public class BoggleView {
         clear.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 //        mainButtons.add(clear);
 
+        stopmusic = new Button( "Stop Music");
+        stopmusic.setId("Stop");
+        stopmusic.setPrefSize(150, 50);
+        stopmusic.setFont(new Font(this.font));
+        stopmusic.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        playmusic = new Button( "Play Music");
+        playmusic.setId("Play");
+        playmusic.setPrefSize(150, 50);
+        playmusic.setFont(new Font(this.font));
+        playmusic.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
         endButton = new Button("End Round");
         endButton.setId("end");
         endButton.setPrefSize(150, 50);
@@ -389,6 +421,8 @@ public class BoggleView {
         VBox vControls = new VBox(controls, textInput);
         vControls.setAlignment(Pos.CENTER);
         vControls.setSpacing(5);
+        VBox hcontrols = new VBox(playmusic, stopmusic);
+        loadBox.getChildren().addAll(hcontrols);
         instructionsBox.getChildren().addAll(vControls, endButton);
 
 
@@ -465,7 +499,16 @@ public class BoggleView {
         });
         endButton.setOnAction(e -> {
             giveEndRoundInstructions();
-            borderPane.setRight(null);
+            //borderPane.setRight(null);
+        });
+        stopmusic.setOnAction(e -> {
+            mediaPlayer.setMute(true);
+
+        });
+        playmusic.setOnAction(e -> {
+            mediaPlayer.setMute(false);
+
+
         });
 
 
