@@ -70,6 +70,10 @@ public class BoggleView {
      */
     Button startButton,endButton, enterButton, newGame, stopmusic, playmusic;
     /**
+     * This array holds the buttons that have been selected by the game player
+     */
+    ArrayList<Button> gridButtons;
+    /**
      * Grid size (4 -9). The grid is always a square therefore the size is only an integer.
      * GridButtonSize is the size of the grid buttons
      * Font is the font for the buttons
@@ -84,6 +88,7 @@ public class BoggleView {
      * JavaFX Text to display the word the user is typing
      */
     Text wordInput ; // display the word the user is typing
+    ArrayList<Node> mainButtons = new ArrayList<>();
 
     MediaPlayer mediaPlayer;
 
@@ -179,7 +184,7 @@ public class BoggleView {
     private void giveSecondInstructions() {
         instructionsBox.getChildren().clear();
 
-        String instruction = "Enter a number between 4 - 9 inclusive. \ne.g enter 5 to play on a (5x5) grid;";
+        String instruction = "Enter a number between 4 - 12 inclusive. \ne.g enter 5 to play on a (5x5) grid;";
 
         instructionsText.setText(instruction);
 
@@ -190,7 +195,7 @@ public class BoggleView {
 
         Label message = new Label();
         message.setFont(new Font(this.font));
-        message.setStyle("-fx-background-color: #10871b; -fx-text-fill: red;");
+        message.setStyle("-fx-background-color: #981b1e; -fx-text-fill: #ffffff;");
 
         Button next = new Button("Next");
         next.setId("Next");
@@ -206,15 +211,15 @@ public class BoggleView {
 
         next.setOnAction(e -> {
             String text = gridSize.getText();
-            if(text.matches("[4-9]")){
+            if(text.matches("[4-9]|[1][0-2]")){
                 System.out.println(text + " passes the regex");
                 size = Integer.parseInt( text);
                 message.setText("Great choice!");
                 giveThirdInstructions();
             }
             else
-            {System.out.println("No, this is not regex");
-                message.setText("Please type either 5 or 4.");
+            {
+                message.setText("Please type a number between 4 and 12 inclusive");
             }
         });
         instructionsBox.getChildren().addAll(instructionsText, message, gridSize, next);
@@ -260,18 +265,10 @@ public class BoggleView {
         HBox buttonBox = new HBox();
         buttonBox.setAlignment(Pos.CENTER);
         buttonBox.setSpacing(5);
-
-        if (size == 4 || size == 5){
+        if ((4 <= size) && (size <= 12)){
             instruction = "Click one of the buttons below to either randomly assign letters or to provide your own";
             buttonBox.getChildren().addAll(random, usersLetters);
 
-
-        }
-        else if( (6 <= size) && (size <= 9)  ) {
-            instruction = "Randomly assign Letters for your board.";
-            VBox messageRandomLetters = new VBox(message, randomLetters);
-            messageRandomLetters.setAlignment(Pos.CENTER);
-            buttonBox.getChildren().addAll(messageRandomLetters);
 
         }
 
@@ -281,8 +278,10 @@ public class BoggleView {
 
         usersLetters.setOnAction(e -> {
             buttonBox.getChildren().clear();
-            instructionsBox.getChildren().remove(buttonBox);
-            instructionsBox.getChildren().addAll(randomLetters);
+            instructionsText.setText("Randomly assign Letters for your board.");
+            VBox messageRandomLetters = new VBox(message, randomLetters);
+            messageRandomLetters.setAlignment(Pos.CENTER);
+            buttonBox.getChildren().addAll(messageRandomLetters);
         });
 
 
@@ -295,7 +294,8 @@ public class BoggleView {
         randomLetters.setOnAction(e-> {
             s[0] = randomLetters.getText();
             s[0] = s[0].toUpperCase().strip();// mke sure there are no numbers
-            message.setStyle("-fx-background-color: rgb(0,0,0,0.5); -fx-text-fill: red;");
+            message.setStyle("-fx-background-color: #981b1e; -fx-text-fill: #ffffff;");
+
             if (!s[0].matches("^[A-Z]*$")) {
                 message.setText("Please only enter alphabet charaters from A - Z");
                 randomLetters.setText("");
@@ -340,7 +340,7 @@ public class BoggleView {
         // Clear all the instructions in the box
         instructionsBox.getChildren().clear();
         // Prepare the gridButtons array
-//        gridButtons = new ArrayList<>();
+        gridButtons = new ArrayList<>();
         // prepare the variables to be used
         wordInput = new Text();
         wordInput.setText(inputWord[0]);
@@ -522,7 +522,7 @@ public class BoggleView {
 
         modelBoggleGrid = new BoggleGrid(rSize);
 
-//        modelBoggleGrid.initalizeBoard(userString);
+        modelBoggleGrid.initalizeBoard(userString);
         // launching a round
         this.model.playRound(size, userString, modelBoggleGrid);
         char[][] board = modelBoggleGrid.getBoard();
@@ -545,30 +545,105 @@ public class BoggleView {
                 });
                 newButton.setOnMouseExited(e->{
 //                    if (!gridButtons.contains(newButton)) newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
-//               
+
                 });
 
 
                 newButton.setOnAction(e -> {
-//                    if (!gridButtons.contains(newButton)) {
-//                        gridButtons.add(newButton);
-//                        newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
-//                        inputWord[0] += newButton.getId();
-//                        wordInput.setText(inputWord[0]);
-//                        System.out.println(inputWord[0]);
-//                    }
-                    // colors
-                    // see if i can limit people from clicing buttons that are not adjancet
-                    // if i click a button that is already inside the grid buttons, remove it and also remove the string.
+                    if (!gridButtons.contains(newButton)) {
+                        gridButtons.add(newButton);
+                        newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
+                        inputWord[0] += newButton.getId();
+                        wordInput.setText(inputWord[0]);
+                        System.out.println(inputWord[0]);
+                    }
+
                 });
-//                mainButtons.add(newButton);
+                mainButtons.add(newButton);
                 grid.add(newButton, row, col);
+
             }
         }
 
-//        makeSpecialButtons();
+        makeFontButtons();
         return grid;
     }
+
+    /*
+    This function creates the buttons that will allow the player to increase or decrease
+    the font of the boggle game.
+     */
+    private void makeFontButtons() {
+
+        // increase font button
+        Button fontUp = new Button("Increase Font");
+        fontUp.setId("Increase Font");
+        fontUp.setPrefSize(100, 50);
+        fontUp.setFont(new Font(this.font));
+        fontUp.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        fontUp.setOnAction(e -> {
+            updateFont("increase");
+        });
+
+        mainButtons.add(fontUp);
+
+        // decrease font button
+        Button fontDown = new Button("Decrease Font");
+        fontDown.setId("Decrease Font");
+        fontDown.setPrefSize(100, 50);
+        fontDown.setFont(new Font(this.font));
+        fontDown.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        fontDown.setOnAction(e -> {
+            updateFont("decrease");
+        });
+
+        mainButtons.add(fontDown);
+
+        FlowPane fontSettings = new FlowPane();
+        fontSettings.getChildren().addAll(fontUp, fontDown);
+        fontSettings.setAlignment(Pos.BOTTOM_CENTER);
+        borderPane.setBottom(fontSettings);
+
+    }
+
+    /*
+     * Updates the font of the letters on the grid.
+     */
+
+    private void updateFont(String action){
+        if (Objects.equals(action, "increase")){
+            if(!(this.font >= 24)) {
+                this.font++;
+            }
+            if(!(this.gridButtonSize >= 85)){
+                this.gridButtonSize += 5;
+            }
+            for (Node node: grid.getChildren()) {
+                if (node instanceof Button nb){
+                    nb.setFont(new Font(this.font));
+                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                }
+            }
+        }
+        else {
+            if(!(this.font <= 8)) {
+                this.font--;
+            }
+            if(!(this.gridButtonSize <= 35)){
+                this.gridButtonSize -= 5;
+            }
+
+            for (Node node: grid.getChildren()) {
+                if (node instanceof Button nb){
+                    nb.setFont(new Font(this.font));
+                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                }
+            }
+        }
+    }
+
     /**
      * Generates last instructions
      *
