@@ -1,8 +1,6 @@
 package views;
 
-import boggle.BoggleGame;
-import boggle.BoggleGrid;
-import boggle.BoggleStats;
+import boggle.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -19,6 +17,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -29,7 +28,7 @@ import java.util.Objects;
  *
  * This is The class that displays boggle.
  */
-public class BoggleView {
+public class BoggleView implements Serializable {
     /**
      * Boggle Model class
      */
@@ -57,7 +56,7 @@ public class BoggleView {
     /**
      * The Instructions and Boggle Game are displayed in this Box
      */
-    VBox instructionsBox; // this holds the instructions and the game
+    VBox instructionsBox, loadBox; // this holds the instructions and the game
     /**
      * The main stage of the game. JavaFX stage or window
      */
@@ -65,7 +64,7 @@ public class BoggleView {
     /**
      * Buttons to start, end, enter and create a new game
      */
-    Button startButton,endButton, enterButton, newGame;
+    Button startButton,endButton, enterButton, newGame, saveButton, loadButton;
     /**
      * Grid size (4 -9). The grid is always a square therefore the size is only an integer.
      * GridButtonSize is the size of the grid buttons
@@ -148,7 +147,14 @@ public class BoggleView {
         instructionsBox.setAlignment(Pos.CENTER);
         instructionsBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
         instructionsBox.setMaxSize(500, 500);
+
+        loadBox = new VBox();
+        loadBox.setPadding(new Insets(10, 10, 10, 10));
+        loadBox.setAlignment(Pos.TOP_LEFT);
+        
+        
         borderPane.setCenter(instructionsBox);
+        borderPane.setTop(loadBox);
 
     }
     /**
@@ -379,6 +385,19 @@ public class BoggleView {
         enterButton.setPrefSize(150, 50);
         enterButton.setFont(new Font(this.font));
         enterButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        saveButton = new Button("Save");
+        saveButton.setId("save");
+        saveButton.setPrefSize(150, 50);
+        saveButton.setFont(new Font(12));
+        saveButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+
+        loadButton = new Button("Load");
+        loadButton.setId("load");
+        loadButton.setPrefSize(150, 50);
+        loadButton.setFont(new Font(12));
+        loadButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 //        mainButtons.add(enterButton);
 
 //        wordInput.setText(inputWord[0]);
@@ -389,6 +408,8 @@ public class BoggleView {
         VBox vControls = new VBox(controls, textInput);
         vControls.setAlignment(Pos.CENTER);
         vControls.setSpacing(5);
+        VBox hcontrols = new VBox(saveButton, loadButton);
+        loadBox.getChildren().addAll(hcontrols);
         instructionsBox.getChildren().addAll(vControls, endButton);
 
 
@@ -467,6 +488,14 @@ public class BoggleView {
             giveEndRoundInstructions();
             borderPane.setRight(null);
         });
+        saveButton.setOnAction(e -> {
+            createSaveView();
+        });
+        loadButton.setOnAction(e -> {
+            createLoadView();
+
+        });
+
 
 
     }
@@ -585,7 +614,24 @@ public class BoggleView {
             instructionsBox.getChildren().clear();
             giveFirstInstructions();
         });
+        
 
     }
 
+    public BoggleGame getModel() {
+        return model;
+    }
+
+    public void changeboradandstats(BoggleGame jl) {
+        model = jl;
+        gameStats = jl.getGameStats();
+
+    }
+    private void createSaveView(){
+        BoggleSave saveView = new BoggleSave(this);
+    }
+
+    private void createLoadView(){
+        BoogleLoad loadView = new BoogleLoad(this);
+    }
 }
