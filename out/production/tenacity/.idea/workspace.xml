@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
       <change afterPath="$PROJECT_DIR$/boggle/BoggleSave.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
@@ -13,11 +14,16 @@
       <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
 =======
+=======
+>>>>>>> develop
     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+<<<<<<< HEAD
+>>>>>>> develop
+=======
 >>>>>>> develop
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +46,11 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
+=======
+        <entry key="$PROJECT_DIR$" value="feature/2.2-using-the-mouse-to-play" />
+>>>>>>> develop
 =======
         <entry key="$PROJECT_DIR$" value="feature/2.2-using-the-mouse-to-play" />
 >>>>>>> develop
@@ -95,15 +105,26 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
+<<<<<<< HEAD
+>>>>>>> develop
+=======
 >>>>>>> develop
   }
 }</component>
   <component name="RunManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
       <module name="tenacity" />
       <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml" />
+=======
+    <configuration name="tenacity" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+      <module name="tenacity" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Shereece\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+>>>>>>> develop
 =======
     <configuration name="tenacity" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
@@ -126,6 +147,7 @@
       <updated>1669577566073</updated>
     </task>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <task id="LOCAL-00001" summary="[DEV-1.1] BASE GUI DONE">
       <created>1670289102898</created>
       <option name="number" value="00001" />
@@ -135,6 +157,8 @@
     </task>
     <option name="localTasksCounter" value="2" />
 =======
+=======
+>>>>>>> develop
     <task id="LOCAL-00001" summary="This version has the font and colour accessibility user stories added.">
       <created>1670186715478</created>
       <option name="number" value="00001" />
@@ -178,6 +202,9 @@
       <updated>1670296090972</updated>
     </task>
     <option name="localTasksCounter" value="7" />
+<<<<<<< HEAD
+>>>>>>> develop
+=======
 >>>>>>> develop
     <servers />
   </component>
@@ -206,15 +233,21 @@
   </component>
   <component name="VcsManagerConfiguration">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
     <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
 =======
+=======
+>>>>>>> develop
     <MESSAGE value="This version has the font and colour accessibility user stories added." />
     <MESSAGE value="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position." />
     <MESSAGE value="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications." />
     <MESSAGE value="This version has the color changes fixed." />
     <MESSAGE value="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference." />
     <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference." />
+<<<<<<< HEAD
+>>>>>>> develop
+=======
 >>>>>>> develop
   </component>
 </project>
