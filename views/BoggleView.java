@@ -160,7 +160,7 @@ public class BoggleView {
     private void giveSecondInstructions() {
         instructionsBox.getChildren().clear();
 
-        String instruction = "Enter a number between 4 - 9 inclusive. \ne.g enter 5 to play on a (5x5) grid;";
+        String instruction = "Enter a number between 4 - 12 inclusive. \ne.g enter 5 to play on a (5x5) grid;";
 
         instructionsText.setText(instruction);
 
@@ -171,7 +171,7 @@ public class BoggleView {
 
         Label message = new Label();
         message.setFont(new Font(this.font));
-        message.setStyle("-fx-background-color: #10871b; -fx-text-fill: red;");
+        message.setStyle("-fx-background-color: #981b1e; -fx-text-fill: #ffffff;");
 
         Button next = new Button("Next");
         next.setId("Next");
@@ -187,15 +187,15 @@ public class BoggleView {
 
         next.setOnAction(e -> {
             String text = gridSize.getText();
-            if(text.matches("[4-9]")){
+            if(text.matches("[4-9]|[1][0-2]")){
                 System.out.println(text + " passes the regex");
                 size = Integer.parseInt( text);
                 message.setText("Great choice!");
                 giveThirdInstructions();
             }
             else
-            {System.out.println("No, this is not regex");
-                message.setText("Please type either 5 or 4.");
+            {
+                message.setText("Please type a number between 4 and 12 inclusive");
             }
         });
         instructionsBox.getChildren().addAll(instructionsText, message, gridSize, next);
@@ -241,18 +241,10 @@ public class BoggleView {
         HBox buttonBox = new HBox();
         buttonBox.setAlignment(Pos.CENTER);
         buttonBox.setSpacing(5);
-
-        if (size == 4 || size == 5){
+        if ((4 <= size) && (size <= 12)){
             instruction = "Click one of the buttons below to either randomly assign letters or to provide your own";
             buttonBox.getChildren().addAll(random, usersLetters);
 
-
-        }
-        else if( (6 <= size) && (size <= 9)  ) {
-            instruction = "Randomly assign Letters for your board.";
-            VBox messageRandomLetters = new VBox(message, randomLetters);
-            messageRandomLetters.setAlignment(Pos.CENTER);
-            buttonBox.getChildren().addAll(messageRandomLetters);
 
         }
 
@@ -262,8 +254,10 @@ public class BoggleView {
 
         usersLetters.setOnAction(e -> {
             buttonBox.getChildren().clear();
-            instructionsBox.getChildren().remove(buttonBox);
-            instructionsBox.getChildren().addAll(randomLetters);
+            instructionsText.setText("Randomly assign Letters for your board.");
+            VBox messageRandomLetters = new VBox(message, randomLetters);
+            messageRandomLetters.setAlignment(Pos.CENTER);
+            buttonBox.getChildren().addAll(messageRandomLetters);
         });
 
 
@@ -276,7 +270,8 @@ public class BoggleView {
         randomLetters.setOnAction(e-> {
             s[0] = randomLetters.getText();
             s[0] = s[0].toUpperCase().strip();// mke sure there are no numbers
-            message.setStyle("-fx-background-color: rgb(0,0,0,0.5); -fx-text-fill: red;");
+            message.setStyle("-fx-background-color: #981b1e; -fx-text-fill: #ffffff;");
+
             if (!s[0].matches("^[A-Z]*$")) {
                 message.setText("Please only enter alphabet charaters from A - Z");
                 randomLetters.setText("");
