@@ -81,6 +81,7 @@ public class BoggleView {
      * JavaFX Text to display the word the user is typing
      */
     Text wordInput ; // display the word the user is typing
+    ArrayList<Node> mainButtons = new ArrayList<>();
 
 
     /**
@@ -518,14 +519,87 @@ public class BoggleView {
                     // see if i can limit people from clicing buttons that are not adjancet
                     // if i click a button that is already inside the grid buttons, remove it and also remove the string.
                 });
-//                mainButtons.add(newButton);
+                mainButtons.add(newButton);
                 grid.add(newButton, row, col);
+
             }
         }
 
-//        makeSpecialButtons();
+        makeFontButtons();
         return grid;
     }
+
+    private void makeFontButtons() {
+
+        // increase font button
+        Button fontUp = new Button("Increase Font");
+        fontUp.setId("Increase Font");
+        fontUp.setPrefSize(100, 50);
+        fontUp.setFont(new Font(this.font));
+        fontUp.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        fontUp.setOnAction(e -> {
+            updateFont("increase");
+        });
+
+        mainButtons.add(fontUp);
+
+        // decrease font button
+        Button fontDown = new Button("Decrease Font");
+        fontDown.setId("Decrease Font");
+        fontDown.setPrefSize(100, 50);
+        fontDown.setFont(new Font(this.font));
+        fontDown.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        fontDown.setOnAction(e -> {
+            updateFont("decrease");
+        });
+
+        mainButtons.add(fontDown);
+
+        FlowPane fontSettings = new FlowPane();
+        fontSettings.getChildren().addAll(fontUp, fontDown);
+        fontSettings.setAlignment(Pos.BOTTOM_CENTER);
+        borderPane.setBottom(fontSettings);
+
+    }
+
+    /*
+     * Updates the font of the letters on the grid.
+     */
+
+    private void updateFont(String action){
+        if (Objects.equals(action, "increase")){
+            if(!(this.font >= 24)) {
+                this.font++;
+            }
+            if(!(this.gridButtonSize >= 85)){
+                this.gridButtonSize += 5;
+            }
+            for (Node node: grid.getChildren()) {
+                if (node instanceof Button nb){
+                    nb.setFont(new Font(this.font));
+                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                }
+            }
+        }
+        else {
+            if(!(this.font <= 8)) {
+                this.font--;
+            }
+            if(!(this.gridButtonSize <= 35)){
+                this.gridButtonSize -= 5;
+            }
+
+            for (Node node: grid.getChildren()) {
+                if (node instanceof Button nb){
+                    nb.setFont(new Font(this.font));
+                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                }
+            }
+        }
+    }
+
     /**
      * Generates last instructions
      *
