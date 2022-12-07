@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d93b3f9-627a-4a8a-b484-f03b17caee33" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoogleLoad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoogleLoad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+    <list default="true" id="2d93b3f9-627a-4a8a-b484-f03b17caee33" name="Changes" comment="[DEV-2.1] This version now gives the user an opportunity to change the color scheme of the Boggle Game, serving as an accessibility feature.">
       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +16,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
+    "last_opened_file_path": "C:/Users/Shereece/javafx-sdk-19/lib/javafx.web.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -47,13 +28,21 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
       <module name="tenacity" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\ugstu\Desktop\UTM 2nd Year Fall\Class\CSC207 H5\CSC207\Lecture code\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Shereece\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="[DEV-2.1] This version now gives the user an opportunity to change the color scheme of the Boggle Game, serving as an accessibility feature.">
+      <created>1670443719649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670443719649</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -66,5 +55,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[DEV-2.1] This version now gives the user an opportunity to change the color scheme of the Boggle Game, serving as an accessibility feature." />
+    <option name="LAST_COMMIT_MESSAGE" value="[DEV-2.1] This version now gives the user an opportunity to change the color scheme of the Boggle Game, serving as an accessibility feature." />
   </component>
 </project>

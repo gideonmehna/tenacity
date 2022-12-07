@@ -101,6 +101,7 @@ public class BoggleView implements Serializable {
     MediaPlayer mediaPlayer;
 
     private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
+    private String buttonTextColor, buttonBackgroundColor;
 
 
 //    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
@@ -118,7 +119,8 @@ public class BoggleView implements Serializable {
     public BoggleView(BoggleGame game, Stage stage) throws Exception {
         this.stage = stage;
         this.model = game;
-
+        this.buttonBackgroundColor = "green";
+        this.buttonTextColor = "white";
         initUI();
     }
     /**
@@ -582,7 +584,7 @@ public class BoggleView implements Serializable {
                     newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
                 });
                 newButton.setOnMouseExited(e->{
-//                    if (!gridButtons.contains(newButton)) newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
+                if (!gridButtons.contains(newButton)) newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
 
                 });
 
