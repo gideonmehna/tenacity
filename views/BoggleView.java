@@ -470,47 +470,47 @@ public class BoggleView implements Serializable {
         enterButton.setOnAction(e -> {
             if (inputWord[0].isEmpty()) inputWord[0] = textInputField.getText();
             wordInput.setText(inputWord[0]);
-//            HBox box1 = new HBox(5);
-//            VBox box2 = new VBox(5);
-//            HBox box3 = new HBox(10);
-//            Label wordCheck = new Label();
-//            if (this.model.evaluateWord(inputWord[0]) == 2){
-//                wordCheck.getStyleClass().add("bg-4");
-//                wordCheck.setText("Correct! " + inputWord[0]);
-//                SVGPath githubIcon = new SVGPath();
-//                githubIcon.setContent("m36.097 739.31 20-30c16.511 12.907 17.767 19.639 24.949 30.909 36.804-72.31 " +
-//                        "74.954-104.96 128.57-144.29-51.91 53.35-83.23 89.32-130 198.58-16.193-26.29-27.333-53." +
-//                        "62-43.523-55.2z");
-//                githubIcon.setFill(Color.web("#81c483"));
-//                box2.getChildren().addAll(wordCheck, githubIcon);
-//                box2.setAlignment(Pos.CENTER);
-//            }else if (this.model.evaluateWord(inputWord[0]) == 1){
-//                wordCheck.getStyleClass().add("bg-3");
-//                wordCheck.setText("This word has already been inputted");
-//                SVGPath githubIcon = new SVGPath();
-//                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
-//                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
-//                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
-//                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
-//                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
-//                githubIcon.setFill(Color.web("#a8142e"));
-//                githubIcon.autosize();
-//                box2.getChildren().addAll(wordCheck, githubIcon);
-//                box2.setAlignment(Pos.CENTER);
-//            }else if (this.model.evaluateWord(inputWord[0]) == 0){
-//                wordCheck.getStyleClass().add("bg-2");
-//                wordCheck.setText("Incorrect word :(");
-//                SVGPath githubIcon = new SVGPath();
-//                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
-//                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
-//                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
-//                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
-//                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
-//                githubIcon.setFill(Color.web("#a8142e"));
-//                githubIcon.autosize();
-//                box2.getChildren().addAll(wordCheck, githubIcon);
-//                box2.setAlignment(Pos.CENTER);
-//            }
+            HBox box1 = new HBox(5);
+            VBox box2 = new VBox(5);
+            HBox box3 = new HBox(10);
+            Label wordCheck = new Label();
+            if (this.model.evaluateWord(inputWord[0]) == 2){
+                wordCheck.getStyleClass().add("bg-4");
+                wordCheck.setText("Correct! " + inputWord[0]);
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("m36.097 739.31 20-30c16.511 12.907 17.767 19.639 24.949 30.909 36.804-72.31 " +
+                        "74.954-104.96 128.57-144.29-51.91 53.35-83.23 89.32-130 198.58-16.193-26.29-27.333-53." +
+                        "62-43.523-55.2z");
+                githubIcon.setFill(Color.web("#81c483"));
+                box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
+            }else if (this.model.evaluateWord(inputWord[0]) == 1){
+                wordCheck.getStyleClass().add("bg-3");
+                wordCheck.setText("This word has already been inputted");
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
+                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
+                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
+                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
+                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
+                githubIcon.setFill(Color.web("#a8142e"));
+                githubIcon.autosize();
+                box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
+            }else if (this.model.evaluateWord(inputWord[0]) == 0){
+                wordCheck.getStyleClass().add("bg-2");
+                wordCheck.setText("Incorrect word :(");
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
+                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
+                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
+                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
+                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
+                githubIcon.setFill(Color.web("#a8142e"));
+                githubIcon.autosize();
+                box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
+            }
 //            Label wordCount = new Label("Words left: " +
 //                    (this.model.getAllWords().length - this.model.getGameStats().getScore()));
 //            box1.getChildren().add(wordCount);
@@ -522,10 +522,10 @@ public class BoggleView implements Serializable {
 //            Label wordsFound = new Label(wordFound);
 //            box3.getChildren().add(wordsFound);
 //            box3.setAlignment(Pos.BOTTOM_CENTER);
-//            VBox finalBox = new VBox(20, box1, box2, box3);
-//            borderPane.setRight(finalBox);
-//            finalBox.setAlignment(Pos.CENTER);
-//            finalBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
+            VBox finalBox = new VBox(20, box1, box2, box3);
+            borderPane.setRight(finalBox);
+            finalBox.setAlignment(Pos.CENTER);
+            finalBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
             clear.fire();
         });
         endButton.setOnAction(e -> {
