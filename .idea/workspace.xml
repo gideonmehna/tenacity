@@ -4,12 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2d93b3f9-627a-4a8a-b484-f03b17caee33" name="Changes" comment="[DEV-1.1] BASE GUI DONE" />
+=======
+    <list default="true" id="4aff3647-1cbd-4def-88ba-5007f1f0e6ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_2_31_PM_[Changes]/BoggleView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_2_31_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_2_31_PM_[Changes]1/BoggleView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_2_31_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_2_31_PM_[Changes]2/BoggleView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_2_31_PM_[Changes]2/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_2_29_PM_[Changes]/BoggleView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_2_29_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_2_29_PM_[Changes]1/BoggleView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_2_29_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_2_32_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_08_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m__[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2022_1_08_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
+    </list>
+>>>>>>> develop
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -26,10 +58,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+=======
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> develop
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -40,13 +76,19 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+=======
+>>>>>>> develop
   <component name="RunManager">
     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
       <module name="tenacity" />
+<<<<<<< HEAD
       <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+=======
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\eevee\csc207\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+>>>>>>> develop
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -55,6 +97,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="2d93b3f9-627a-4a8a-b484-f03b17caee33" name="Changes" comment="[DEV-1.1] BASE GUI DONE" />
       <created>1670441185118</created>
       <option name="number" value="Default" />
@@ -77,4 +120,14 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
+=======
+      <changelist id="4aff3647-1cbd-4def-88ba-5007f1f0e6ed" name="Changes" comment="" />
+      <created>1670441649648</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670441649648</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> develop
 </project>

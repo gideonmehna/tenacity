@@ -1,0 +1,256 @@
+Index: boggle/BoggleGame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/boggle/BoggleGame.java b/boggle/BoggleGame.java
+--- a/boggle/BoggleGame.java	
++++ b/boggle/BoggleGame.java	
+@@ -293,6 +293,14 @@
+         return false;
+     }
+ 
++
++    /* Public function that returns all legal words on the grid
++     * @return String array of all the legal words available to be found on the grid
++     */
++    public String[] getAllWords(){
++        return this.allWords.keySet().toArray(new String[0]);
++    }
++
+     /*
+      * This is a function that evaluates the word input of the boggle game while the human is playing.
+      *
+@@ -357,6 +365,7 @@
+ >>>>>>> Stashed changes
+      */
+ 
++<<<<<<< HEAD
+     public void saveGame(File fileName) {
+         try {
+             FileOutputStream fout = new FileOutputStream(fileName);
+@@ -369,5 +378,12 @@
+ 
+     public BoggleStats getGameStats() {
+         return gameStats;
++=======
++    /* Public function that returns the BoggleStats object being used in the game
++     * @return BoggleStats object which contains the players scores, words, e.t.c.
++     */
++    public BoggleStats getGameStats() {
++        return this.gameStats;
++>>>>>>> feature/3.3_Word_Count
+     }
+ }
+Index: views/BoggleView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/views/BoggleView.java b/views/BoggleView.java
+--- a/views/BoggleView.java	
++++ b/views/BoggleView.java	
+@@ -473,6 +473,7 @@
+             HBox box1 = new HBox(5);
+             VBox box2 = new VBox(5);
+             HBox box3 = new HBox(10);
++<<<<<<< HEAD
+             Label wordCheck = new Label();
+             if (this.model.evaluateWord(inputWord[0]) == 2){
+                 wordCheck.getStyleClass().add("bg-4");
+@@ -515,6 +516,50 @@
+ //                    (this.model.getAllWords().length - this.model.getGameStats().getScore()));
+ //            box1.getChildren().add(wordCount);
+ //            box1.setAlignment(Pos.TOP_CENTER);
++=======
++//            Label wordCheck = new Label();
++//            if (this.model.evaluateWord(inputWord[0]) == 2){
++//                wordCheck.getStyleClass().add("bg-4");
++//                wordCheck.setText("Correct! " + inputWord[0]);
++//                SVGPath githubIcon = new SVGPath();
++//                githubIcon.setContent("m36.097 739.31 20-30c16.511 12.907 17.767 19.639 24.949 30.909 36.804-72.31 " +
++//                        "74.954-104.96 128.57-144.29-51.91 53.35-83.23 89.32-130 198.58-16.193-26.29-27.333-53." +
++//                        "62-43.523-55.2z");
++//                githubIcon.setFill(Color.web("#81c483"));
++//                box2.getChildren().addAll(wordCheck, githubIcon);
++//                box2.setAlignment(Pos.CENTER);
++//            }else if (this.model.evaluateWord(inputWord[0]) == 1){
++//                wordCheck.getStyleClass().add("bg-3");
++//                wordCheck.setText("This word has already been inputted");
++//                SVGPath githubIcon = new SVGPath();
++//                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
++//                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
++//                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
++//                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
++//                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
++//                githubIcon.setFill(Color.web("#a8142e"));
++//                githubIcon.autosize();
++//                box2.getChildren().addAll(wordCheck, githubIcon);
++//                box2.setAlignment(Pos.CENTER);
++//            }else if (this.model.evaluateWord(inputWord[0]) == 0){
++//                wordCheck.getStyleClass().add("bg-2");
++//                wordCheck.setText("Incorrect word :(");
++//                SVGPath githubIcon = new SVGPath();
++//                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
++//                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
++//                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
++//                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
++//                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
++//                githubIcon.setFill(Color.web("#a8142e"));
++//                githubIcon.autosize();
++//                box2.getChildren().addAll(wordCheck, githubIcon);
++//                box2.setAlignment(Pos.CENTER);
++//            }
++            Label wordCount = new Label("Words left: " +
++                    (this.model.getAllWords().length - this.model.getGameStats().getScore()));
++            box1.getChildren().add(wordCount);
++            box1.setAlignment(Pos.TOP_CENTER);
++>>>>>>> feature/3.3_Word_Count
+ //            String wordFound = "Words Found: ";
+ //            for (String word: this.model.getGameStats().getPlayerWords()){
+ //                wordFound +=  "\n" + word ;
+Index: out/production/tenacity/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/workspace.xml b/out/production/tenacity/.idea/workspace.xml
+--- a/out/production/tenacity/.idea/workspace.xml	
++++ b/out/production/tenacity/.idea/workspace.xml	
+@@ -7,6 +7,7 @@
+ <<<<<<< HEAD
+ <<<<<<< HEAD
+ <<<<<<< HEAD
++<<<<<<< HEAD
+     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+       <change afterPath="$PROJECT_DIR$/boggle/BoggleSave.java" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
+@@ -39,6 +40,21 @@
+       <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
+ >>>>>>> feature/2.3_Verifying_Word
++=======
++    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
++>>>>>>> feature/3.3_Word_Count
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -59,6 +75,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
++<<<<<<< HEAD
+ <<<<<<< HEAD
+ <<<<<<< HEAD
+ <<<<<<< HEAD
+@@ -72,6 +89,9 @@
+ =======
+         <entry key="$PROJECT_DIR$" value="develop" />
+ >>>>>>> feature/2.3_Verifying_Word
++=======
++        <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
++>>>>>>> feature/3.3_Word_Count
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -123,6 +143,7 @@
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++<<<<<<< HEAD
+ <<<<<<< HEAD
+     "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
+     "project.structure.last.edited": "Libraries",
+@@ -133,6 +154,8 @@
+ =======
+ >>>>>>> develop
+ =======
++=======
++>>>>>>> feature/3.3_Word_Count
+     "jdk.selected.JAVA_MODULE": "18",
+     "last_opened_file_path": "C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar",
+     "project.structure.last.edited": "Libraries",
+@@ -143,6 +166,7 @@
+   }
+ }</component>
+   <component name="RunManager">
++<<<<<<< HEAD
+ <<<<<<< HEAD
+ <<<<<<< HEAD
+     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
+@@ -163,6 +187,12 @@
+       <module name="tenacity" />
+       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Shereece\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+ >>>>>>> develop
++=======
++    <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
++      <module name="tenacity" />
++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\eevee\csc207\javafx-sdk-19&quot; --add-modules javafx.controls,javafx.fxml" />
++>>>>>>> feature/3.3_Word_Count
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -177,11 +207,14 @@
+       <option name="presentableId" value="Default" />
+       <updated>1669577566073</updated>
+     </task>
++<<<<<<< HEAD
+ <<<<<<< HEAD
+ <<<<<<< HEAD
+ <<<<<<< HEAD
+ =======
+ >>>>>>> feature/2.3_Verifying_Word
++=======
++>>>>>>> feature/3.3_Word_Count
+     <task id="LOCAL-00001" summary="[DEV-1.1] BASE GUI DONE">
+       <created>1670289102898</created>
+       <option name="number" value="00001" />
+@@ -190,6 +223,7 @@
+       <updated>1670289102898</updated>
+     </task>
+     <option name="localTasksCounter" value="2" />
++<<<<<<< HEAD
+ <<<<<<< HEAD
+ =======
+ =======
+@@ -243,6 +277,8 @@
+ >>>>>>> develop
+ =======
+ >>>>>>> feature/2.3_Verifying_Word
++=======
++>>>>>>> feature/3.3_Word_Count
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -269,6 +305,7 @@
+     </option>
+   </component>
+   <component name="VcsManagerConfiguration">
++<<<<<<< HEAD
+ <<<<<<< HEAD
+ <<<<<<< HEAD
+ <<<<<<< HEAD
+@@ -291,5 +328,9 @@
+     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
+     <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
+ >>>>>>> feature/2.3_Verifying_Word
++=======
++    <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
++    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
++>>>>>>> feature/3.3_Word_Count
+   </component>
+ </project>
+\ No newline at end of file

@@ -24,7 +24,10 @@
         <SOURCES />
       </library>
     </orderEntry>
+<<<<<<< HEAD
     <orderEntry type="library" name="javafx-swt1" level="project" />
+=======
+>>>>>>> develop
     <orderEntry type="library" name="javafx-swt" level="project" />
   </component>
 </module>
