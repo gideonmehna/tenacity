@@ -1,0 +1,88 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -7,6 +7,7 @@
+ <<<<<<< HEAD
+     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+ <<<<<<< HEAD
++<<<<<<< HEAD
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+ <<<<<<< HEAD
+       <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+@@ -50,15 +51,30 @@
+       <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+ >>>>>>> feature/2.3_Verifying_Word
++=======
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/libraries/javafx_swt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/libraries/javafx_swt.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
++>>>>>>> feature/3.3_Word_Count
+       <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
++<<<<<<< HEAD
+ <<<<<<< HEAD
+ >>>>>>> develop
+ >>>>>>> develop
+ =======
+ >>>>>>> feature/2.3_Verifying_Word
++=======
++>>>>>>> feature/3.3_Word_Count
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -148,6 +164,7 @@
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++<<<<<<< HEAD
+ <<<<<<< HEAD
+     "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
+     "project.structure.last.edited": "Libraries",
+@@ -179,6 +196,11 @@
+     "jdk.selected.JAVA_MODULE": "18",
+     "last_opened_file_path": "C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar",
+     "project.structure.last.edited": "Project",
++=======
++    "jdk.selected.JAVA_MODULE": "18",
++    "last_opened_file_path": "C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar",
++    "project.structure.last.edited": "Libraries",
++>>>>>>> feature/3.3_Word_Count
+     "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.2",
+     "settings.editor.selected.configurable": "preferences.pluginManager"
+@@ -188,6 +210,7 @@
+   <component name="RunManager">
+ <<<<<<< HEAD
+ <<<<<<< HEAD
++<<<<<<< HEAD
+     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
+ =======
+     <configuration name="tenacity" type="Application" factoryName="Application">
+@@ -206,6 +229,12 @@
+       <module name="tenacity" />
+       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\eevee\csc207\javafx-sdk-19\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
+ >>>>>>> feature/2.3_Verifying_Word
++=======
++    <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
++      <module name="tenacity" />
++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\eevee\csc207\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
++>>>>>>> feature/3.3_Word_Count
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
