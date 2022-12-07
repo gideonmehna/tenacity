@@ -1,0 +1,66 @@
+Index: out/production/tenacity/.idea/libraries/javafx_swt.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"javafx-swt\">\r\n    <CLASSES>\r\n      <root url=\"jar://$JavaFX$/javafx-swt.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.base.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.controls.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.fxml.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.graphics.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.media.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.swing.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.web.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/libraries/javafx_swt.xml b/out/production/tenacity/.idea/libraries/javafx_swt.xml
+--- a/out/production/tenacity/.idea/libraries/javafx_swt.xml	(revision 41240f322e175e36bf9fd0d9773facebcdc50543)
++++ b/out/production/tenacity/.idea/libraries/javafx_swt.xml	(date 1670188102780)
+@@ -1,14 +1,14 @@
+ <component name="libraryTable">
+   <library name="javafx-swt">
+     <CLASSES>
+-      <root url="jar://$JavaFX$/javafx-swt.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.base.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.controls.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.fxml.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.graphics.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.media.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.swing.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.web.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx-swt.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.base.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.controls.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.fxml.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.graphics.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.media.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.swing.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.web.jar!/" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: .idea/libraries/javafx_swt.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"javafx-swt\">\r\n    <CLASSES>\r\n      <root url=\"jar://$JavaFX$/javafx-swt.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.base.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.controls.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.fxml.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.graphics.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.media.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.swing.jar!/\" />\r\n      <root url=\"jar://$JavaFX$/javafx.web.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/javafx_swt.xml b/.idea/libraries/javafx_swt.xml
+--- a/.idea/libraries/javafx_swt.xml	(revision 41240f322e175e36bf9fd0d9773facebcdc50543)
++++ b/.idea/libraries/javafx_swt.xml	(date 1670188102785)
+@@ -1,14 +1,14 @@
+ <component name="libraryTable">
+   <library name="javafx-swt">
+     <CLASSES>
+-      <root url="jar://$JavaFX$/javafx-swt.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.base.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.controls.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.fxml.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.graphics.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.media.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.swing.jar!/" />
+-      <root url="jar://$JavaFX$/javafx.web.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx-swt.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.base.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.controls.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.fxml.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.graphics.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.media.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.swing.jar!/" />
++      <root url="jar://$PATH_TO_FX$/javafx.web.jar!/" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />

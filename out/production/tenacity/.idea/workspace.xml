@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
       <change afterPath="$PROJECT_DIR$/boggle/BoggleSave.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
@@ -25,6 +26,19 @@
 >>>>>>> develop
 =======
 >>>>>>> develop
+=======
+    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
+>>>>>>> feature/2.3_Verifying_Word
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +61,7 @@
       <map>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
 =======
         <entry key="$PROJECT_DIR$" value="feature/2.2-using-the-mouse-to-play" />
@@ -54,6 +69,9 @@
 =======
         <entry key="$PROJECT_DIR$" value="feature/2.2-using-the-mouse-to-play" />
 >>>>>>> develop
+=======
+        <entry key="$PROJECT_DIR$" value="develop" />
+>>>>>>> feature/2.3_Verifying_Word
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,9 +116,14 @@
 =======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+<<<<<<< HEAD
     "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -109,6 +132,14 @@
 >>>>>>> develop
 =======
 >>>>>>> develop
+=======
+    "jdk.selected.JAVA_MODULE": "18",
+    "last_opened_file_path": "C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+>>>>>>> feature/2.3_Verifying_Word
   }
 }</component>
   <component name="RunManager">
@@ -148,6 +179,9 @@
     </task>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feature/2.3_Verifying_Word
     <task id="LOCAL-00001" summary="[DEV-1.1] BASE GUI DONE">
       <created>1670289102898</created>
       <option name="number" value="00001" />
@@ -156,6 +190,7 @@
       <updated>1670289102898</updated>
     </task>
     <option name="localTasksCounter" value="2" />
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> develop
@@ -206,6 +241,8 @@
 >>>>>>> develop
 =======
 >>>>>>> develop
+=======
+>>>>>>> feature/2.3_Verifying_Word
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +271,7 @@
   <component name="VcsManagerConfiguration">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
     <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
 =======
@@ -249,5 +287,9 @@
 >>>>>>> develop
 =======
 >>>>>>> develop
+=======
+    <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
+>>>>>>> feature/2.3_Verifying_Word
   </component>
 </project>
