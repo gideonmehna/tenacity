@@ -456,10 +456,10 @@ public class BoggleView {
             }
             Label wordsFound = new Label(wordFound);
             box3.getChildren().add(wordsFound);
-            box3.setAlignment(Pos.BOTTOM_CENTER);
+            box3.setAlignment(Pos.BOTTOM_LEFT);
             VBox finalBox = new VBox(20, box1, box2, box3);
             borderPane.setRight(finalBox);
-            finalBox.setAlignment(Pos.CENTER);
+            finalBox.setAlignment(Pos.LEFT);
             finalBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
             clear.fire();
         });
