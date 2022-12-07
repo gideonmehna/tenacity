@@ -1,0 +1,908 @@
+Index: out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM_[Changes]/shelved.patch b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM_[Changes]/shelved.patch	
+@@ -0,0 +1,299 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	
+++++ b/.idea/workspace.xml	
++@@ -1,63 +1,22 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++ <project version="4">
++-  <component name="AutoImportSettings">
++-    <option name="autoReloadType" value="SELECTIVE" />
++-  </component>
++   <component name="ChangeListManager">
++-<<<<<<< HEAD
++     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
++-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-<<<<<<< HEAD
++-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
++-<<<<<<< Updated upstream
++-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGrid.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/boggle/BoggleStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleStats.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/boggle/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/Position.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
++-=======
++-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
++-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
++->>>>>>> develop
++-      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
++-=======
++-      <change beforePath="$PROJECT_DIR$/boggle/BoogleLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
++->>>>>>> Stashed changes
++-=======
++-=======
++-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
+++      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/_template__of_Application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/_template__of_Application.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
++->>>>>>> develop
++->>>>>>> develop
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++     <option name="LAST_RESOLUTION" value="IGNORE" />
++   </component>
++-  <component name="CodeStyleSettingsInfer">
++-    <option name="done" value="true" />
++-  </component>
++   <component name="FileTemplateManagerImpl">
++     <option name="RECENT_TEMPLATES">
++       <list>
++-        <option value="Interface" />
++         <option value="Class" />
++       </list>
++     </option>
++@@ -65,84 +24,22 @@
++   <component name="Git.Settings">
++     <option name="RECENT_BRANCH_BY_REPOSITORY">
++       <map>
++-        <entry key="$PROJECT_DIR$" value="develop" />
+++        <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
++       </map>
++     </option>
++     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++-    <option name="UPDATE_TYPE" value="REBASE" />
++-  </component>
++-  <component name="GithubPullRequestsUISettings">
++-    <option name="recentNewPullRequestHead">
++-      <RepoCoordinatesHolder>
++-        <option name="owner" value="gideonmehna" />
++-        <option name="repository" value="tenacity" />
++-      </RepoCoordinatesHolder>
++-    </option>
++   </component>
++   <component name="MarkdownSettingsMigration">
++     <option name="stateVersion" value="1" />
++   </component>
++-<<<<<<< HEAD
++   <component name="ProjectId" id="2IWA6QrmhhzOVNwFa12S9DZ1Px6" />
++-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++-    <ConfirmationsSetting value="2" id="Add" />
++-  </component>
++-=======
++-  <component name="ProjectCodeStyleSettingsMigration">
++-    <option name="version" value="2" />
++-  </component>
++-  <component name="ProjectId" id="2I8ya6cYDYCiw7biBoMEOdTCYeT" />
++   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++->>>>>>> develop
++   <component name="ProjectViewState">
++     <option name="hideEmptyMiddlePackages" value="true" />
++     <option name="showLibraryContents" value="true" />
++   </component>
++-<<<<<<< HEAD
++-<<<<<<< Updated upstream
++-  <component name="PropertiesComponent"><![CDATA[{
++-  "keyToString": {
++-<<<<<<< HEAD
++-    "ASKED_ADD_EXTERNAL_FILES": "true",
++-    "Downloaded.Files.Path.Enabled": "false",
++-    "Repository.Attach.Annotations": "false",
++-    "Repository.Attach.JavaDocs": "false",
++-    "Repository.Attach.Sources": "false",
++-=======
++->>>>>>> develop
++-=======
++-<<<<<<< HEAD
++-  <component name="PropertiesComponent">{
++-  &quot;keyToString&quot;: {
++-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
++-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
++-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar&quot;,
++-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
++-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
++-=======
++-  <component name="PropertiesComponent"><![CDATA[{
++-  "keyToString": {
++->>>>>>> develop
++-    "RunOnceActivity.OpenProjectViewOnStart": "true",
++-    "RunOnceActivity.ShowReadmeOnStart": "true",
++-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++-    "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
++-    "project.structure.last.edited": "Libraries",
++-    "project.structure.proportion": "0.15",
++-    "project.structure.side.proportion": "0.2"
++-<<<<<<< HEAD
++-=======
++   <component name="PropertiesComponent">{
++   &quot;keyToString&quot;: {
++-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++@@ -156,26 +53,13 @@
++     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++     &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
++->>>>>>> Stashed changes
++-=======
++->>>>>>> develop
++->>>>>>> develop
++   }
++ }</component>
++   <component name="RunManager">
++-<<<<<<< HEAD
++-    <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
++-=======
++-    <configuration name="tenacity" type="Application" factoryName="Application">
++-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
++->>>>>>> develop
+++    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
++       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
++       <module name="tenacity" />
++-<<<<<<< HEAD
++-      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml" />
++-=======
++-      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
++->>>>>>> develop
+++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\ugstu\Desktop\UTM 2nd Year Fall\Class\CSC207 H5\CSC207\Lecture code\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
++       <method v="2">
++         <option name="Make" enabled="true" />
++       </method>
++@@ -184,55 +68,20 @@
++   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++   <component name="TaskManager">
++     <task active="true" id="Default" summary="Default task">
++-      <changelist id="7927fba8-8580-47f8-8615-13f9be6038cf" name="Changes" comment="" />
++-      <created>1669577566073</created>
+++      <changelist id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="" />
+++      <created>1670286796215</created>
++       <option name="number" value="Default" />
++       <option name="presentableId" value="Default" />
++-      <updated>1669577566073</updated>
+++      <updated>1670286796215</updated>
++     </task>
++-    <task id="LOCAL-00001" summary="This version has the font and colour accessibility user stories added.">
++-      <created>1670186715478</created>
+++    <task id="LOCAL-00001" summary="[DEV-1.1] BASE GUI DONE">
+++      <created>1670289102898</created>
++       <option name="number" value="00001" />
++       <option name="presentableId" value="LOCAL-00001" />
++       <option name="project" value="LOCAL" />
++-      <updated>1670186715478</updated>
++-    </task>
++-    <task id="LOCAL-00002" summary="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.">
++-      <created>1670188967673</created>
++-      <option name="number" value="00002" />
++-      <option name="presentableId" value="LOCAL-00002" />
++-      <option name="project" value="LOCAL" />
++-      <updated>1670188967673</updated>
+++      <updated>1670289102898</updated>
++     </task>
++-    <task id="LOCAL-00003" summary="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications.">
++-      <created>1670191792499</created>
++-      <option name="number" value="00003" />
++-      <option name="presentableId" value="LOCAL-00003" />
++-      <option name="project" value="LOCAL" />
++-      <updated>1670191792499</updated>
++-    </task>
++-    <task id="LOCAL-00004" summary="This version has the color changes fixed.">
++-      <created>1670191914073</created>
++-      <option name="number" value="00004" />
++-      <option name="presentableId" value="LOCAL-00004" />
++-      <option name="project" value="LOCAL" />
++-      <updated>1670191914073</updated>
++-    </task>
++-    <task id="LOCAL-00005" summary="This version has the color changes fixed.">
++-      <created>1670290485963</created>
++-      <option name="number" value="00005" />
++-      <option name="presentableId" value="LOCAL-00005" />
++-      <option name="project" value="LOCAL" />
++-      <updated>1670290485963</updated>
++-    </task>
++-    <task id="LOCAL-00006" summary="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
++-      <created>1670296090972</created>
++-      <option name="number" value="00006" />
++-      <option name="presentableId" value="LOCAL-00006" />
++-      <option name="project" value="LOCAL" />
++-      <updated>1670296090972</updated>
++-    </task>
++-    <option name="localTasksCounter" value="7" />
+++    <option name="localTasksCounter" value="2" />
++     <servers />
++   </component>
++   <component name="Vcs.Log.Tabs.Properties">
++@@ -240,42 +89,14 @@
++       <map>
++         <entry key="MAIN">
++           <value>
++-            <State>
++-              <option name="FILTERS">
++-                <map>
++-                  <entry key="branch">
++-                    <value>
++-                      <list>
++-                        <option value="develop" />
++-                      </list>
++-                    </value>
++-                  </entry>
++-                </map>
++-              </option>
++-            </State>
+++            <State />
++           </value>
++         </entry>
++       </map>
++     </option>
++   </component>
++   <component name="VcsManagerConfiguration">
++-<<<<<<< HEAD
++-<<<<<<< HEAD
++-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
++     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
++     <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
++-=======
++-=======
++->>>>>>> develop
++-    <MESSAGE value="This version has the font and colour accessibility user stories added." />
++-    <MESSAGE value="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position." />
++-    <MESSAGE value="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications." />
++-    <MESSAGE value="This version has the color changes fixed." />
++-    <MESSAGE value="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference." />
++-    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference." />
++-<<<<<<< HEAD
++->>>>>>> develop
++-=======
++->>>>>>> develop
++   </component>
++ </project>
++\ No newline at end of file
+Index: out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_08_PM_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_08_PM_[Changes]/shelved.patch b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_08_PM_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_08_PM_[Changes]/shelved.patch	
+@@ -0,0 +1,48 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/libraries/javafx_swt.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/boggle/BoggleGame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/boggle/BoggleGame.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/tenacity.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/tenacity.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/views/BoggleView.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/BoggleView.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"feature/3.3_Word_Count\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IWA6QrmhhzOVNwFa12S9DZ1Px6\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"BoggleApp\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"BoggleApp\" />\r\n      <module name=\"tenacity\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;C:\\Users\\eevee\\csc207\\javafx-sdk-19\\lib&quot; --add-modules javafx.controls,javafx.fxml\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"\" />\r\n      <created>1670286796215</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670286796215</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"[DEV-1.1] BASE GUI DONE\">\r\n      <created>1670289102898</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670289102898</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"[DEV-1.1] BASE GUI DONE\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"[DEV-1.1] BASE GUI DONE\" />\r\n  </component>\r\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision 07c2cd93296181fe105a1a3af820d3e6c25d83cc)
+++++ b/.idea/workspace.xml	(date 1670367784088)
++@@ -2,11 +2,7 @@
++ <project version="4">
++   <component name="ChangeListManager">
++     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="">
++-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -80,7 +76,14 @@
++       <option name="project" value="LOCAL" />
++       <updated>1670289102898</updated>
++     </task>
++-    <option name="localTasksCounter" value="2" />
+++    <task id="LOCAL-00002" summary="[DEV-3.4] Words Found List Added">
+++      <created>1670356831950</created>
+++      <option name="number" value="00002" />
+++      <option name="presentableId" value="LOCAL-00002" />
+++      <option name="project" value="LOCAL" />
+++      <updated>1670356831950</updated>
+++    </task>
+++    <option name="localTasksCounter" value="3" />
++     <servers />
++   </component>
++   <component name="Vcs.Log.Tabs.Properties">
++@@ -96,6 +99,7 @@
++   </component>
++   <component name="VcsManagerConfiguration">
++     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
++-    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
+++    <MESSAGE value="[DEV-3.4] Words Found List Added" />
+++    <option name="LAST_COMMIT_MESSAGE" value="[DEV-3.4] Words Found List Added" />
++   </component>
++ </project>
++\ No newline at end of file
+Index: out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]/shelved.patch b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]/shelved.patch	
+@@ -0,0 +1,256 @@
++Index: boggle/BoggleGame.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/boggle/BoggleGame.java b/boggle/BoggleGame.java
++--- a/boggle/BoggleGame.java	
+++++ b/boggle/BoggleGame.java	
++@@ -293,6 +293,14 @@
++         return false;
++     }
++ 
+++
+++    /* Public function that returns all legal words on the grid
+++     * @return String array of all the legal words available to be found on the grid
+++     */
+++    public String[] getAllWords(){
+++        return this.allWords.keySet().toArray(new String[0]);
+++    }
+++
++     /*
++      * This is a function that evaluates the word input of the boggle game while the human is playing.
++      *
++@@ -357,6 +365,7 @@
++ >>>>>>> Stashed changes
++      */
++ 
+++<<<<<<< HEAD
++     public void saveGame(File fileName) {
++         try {
++             FileOutputStream fout = new FileOutputStream(fileName);
++@@ -369,5 +378,12 @@
++ 
++     public BoggleStats getGameStats() {
++         return gameStats;
+++=======
+++    /* Public function that returns the BoggleStats object being used in the game
+++     * @return BoggleStats object which contains the players scores, words, e.t.c.
+++     */
+++    public BoggleStats getGameStats() {
+++        return this.gameStats;
+++>>>>>>> feature/3.3_Word_Count
++     }
++ }
++Index: views/BoggleView.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/views/BoggleView.java b/views/BoggleView.java
++--- a/views/BoggleView.java	
+++++ b/views/BoggleView.java	
++@@ -473,6 +473,7 @@
++             HBox box1 = new HBox(5);
++             VBox box2 = new VBox(5);
++             HBox box3 = new HBox(10);
+++<<<<<<< HEAD
++             Label wordCheck = new Label();
++             if (this.model.evaluateWord(inputWord[0]) == 2){
++                 wordCheck.getStyleClass().add("bg-4");
++@@ -515,6 +516,50 @@
++ //                    (this.model.getAllWords().length - this.model.getGameStats().getScore()));
++ //            box1.getChildren().add(wordCount);
++ //            box1.setAlignment(Pos.TOP_CENTER);
+++=======
+++//            Label wordCheck = new Label();
+++//            if (this.model.evaluateWord(inputWord[0]) == 2){
+++//                wordCheck.getStyleClass().add("bg-4");
+++//                wordCheck.setText("Correct! " + inputWord[0]);
+++//                SVGPath githubIcon = new SVGPath();
+++//                githubIcon.setContent("m36.097 739.31 20-30c16.511 12.907 17.767 19.639 24.949 30.909 36.804-72.31 " +
+++//                        "74.954-104.96 128.57-144.29-51.91 53.35-83.23 89.32-130 198.58-16.193-26.29-27.333-53." +
+++//                        "62-43.523-55.2z");
+++//                githubIcon.setFill(Color.web("#81c483"));
+++//                box2.getChildren().addAll(wordCheck, githubIcon);
+++//                box2.setAlignment(Pos.CENTER);
+++//            }else if (this.model.evaluateWord(inputWord[0]) == 1){
+++//                wordCheck.getStyleClass().add("bg-3");
+++//                wordCheck.setText("This word has already been inputted");
+++//                SVGPath githubIcon = new SVGPath();
+++//                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
+++//                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
+++//                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
+++//                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
+++//                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
+++//                githubIcon.setFill(Color.web("#a8142e"));
+++//                githubIcon.autosize();
+++//                box2.getChildren().addAll(wordCheck, githubIcon);
+++//                box2.setAlignment(Pos.CENTER);
+++//            }else if (this.model.evaluateWord(inputWord[0]) == 0){
+++//                wordCheck.getStyleClass().add("bg-2");
+++//                wordCheck.setText("Incorrect word :(");
+++//                SVGPath githubIcon = new SVGPath();
+++//                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
+++//                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
+++//                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
+++//                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
+++//                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
+++//                githubIcon.setFill(Color.web("#a8142e"));
+++//                githubIcon.autosize();
+++//                box2.getChildren().addAll(wordCheck, githubIcon);
+++//                box2.setAlignment(Pos.CENTER);
+++//            }
+++            Label wordCount = new Label("Words left: " +
+++                    (this.model.getAllWords().length - this.model.getGameStats().getScore()));
+++            box1.getChildren().add(wordCount);
+++            box1.setAlignment(Pos.TOP_CENTER);
+++>>>>>>> feature/3.3_Word_Count
++ //            String wordFound = "Words Found: ";
++ //            for (String word: this.model.getGameStats().getPlayerWords()){
++ //                wordFound +=  "\n" + word ;
++Index: out/production/tenacity/.idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/out/production/tenacity/.idea/workspace.xml b/out/production/tenacity/.idea/workspace.xml
++--- a/out/production/tenacity/.idea/workspace.xml	
+++++ b/out/production/tenacity/.idea/workspace.xml	
++@@ -7,6 +7,7 @@
++ <<<<<<< HEAD
++ <<<<<<< HEAD
++ <<<<<<< HEAD
+++<<<<<<< HEAD
++     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
++       <change afterPath="$PROJECT_DIR$/boggle/BoggleSave.java" afterDir="false" />
++       <change afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
++@@ -39,6 +40,21 @@
++       <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
++ >>>>>>> feature/2.3_Verifying_Word
+++=======
+++    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+++      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
+++>>>>>>> feature/3.3_Word_Count
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -59,6 +75,7 @@
++   <component name="Git.Settings">
++     <option name="RECENT_BRANCH_BY_REPOSITORY">
++       <map>
+++<<<<<<< HEAD
++ <<<<<<< HEAD
++ <<<<<<< HEAD
++ <<<<<<< HEAD
++@@ -72,6 +89,9 @@
++ =======
++         <entry key="$PROJECT_DIR$" value="develop" />
++ >>>>>>> feature/2.3_Verifying_Word
+++=======
+++        <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
+++>>>>>>> feature/3.3_Word_Count
++       </map>
++     </option>
++     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++@@ -123,6 +143,7 @@
++     "RunOnceActivity.OpenProjectViewOnStart": "true",
++     "RunOnceActivity.ShowReadmeOnStart": "true",
++     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+++<<<<<<< HEAD
++ <<<<<<< HEAD
++     "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
++     "project.structure.last.edited": "Libraries",
++@@ -133,6 +154,8 @@
++ =======
++ >>>>>>> develop
++ =======
+++=======
+++>>>>>>> feature/3.3_Word_Count
++     "jdk.selected.JAVA_MODULE": "18",
++     "last_opened_file_path": "C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar",
++     "project.structure.last.edited": "Libraries",
++@@ -143,6 +166,7 @@
++   }
++ }</component>
++   <component name="RunManager">
+++<<<<<<< HEAD
++ <<<<<<< HEAD
++ <<<<<<< HEAD
++     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
++@@ -163,6 +187,12 @@
++       <module name="tenacity" />
++       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Shereece\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
++ >>>>>>> develop
+++=======
+++    <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
+++      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+++      <module name="tenacity" />
+++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\eevee\csc207\javafx-sdk-19&quot; --add-modules javafx.controls,javafx.fxml" />
+++>>>>>>> feature/3.3_Word_Count
++       <method v="2">
++         <option name="Make" enabled="true" />
++       </method>
++@@ -177,11 +207,14 @@
++       <option name="presentableId" value="Default" />
++       <updated>1669577566073</updated>
++     </task>
+++<<<<<<< HEAD
++ <<<<<<< HEAD
++ <<<<<<< HEAD
++ <<<<<<< HEAD
++ =======
++ >>>>>>> feature/2.3_Verifying_Word
+++=======
+++>>>>>>> feature/3.3_Word_Count
++     <task id="LOCAL-00001" summary="[DEV-1.1] BASE GUI DONE">
++       <created>1670289102898</created>
++       <option name="number" value="00001" />
++@@ -190,6 +223,7 @@
++       <updated>1670289102898</updated>
++     </task>
++     <option name="localTasksCounter" value="2" />
+++<<<<<<< HEAD
++ <<<<<<< HEAD
++ =======
++ =======
++@@ -243,6 +277,8 @@
++ >>>>>>> develop
++ =======
++ >>>>>>> feature/2.3_Verifying_Word
+++=======
+++>>>>>>> feature/3.3_Word_Count
++     <servers />
++   </component>
++   <component name="Vcs.Log.Tabs.Properties">
++@@ -269,6 +305,7 @@
++     </option>
++   </component>
++   <component name="VcsManagerConfiguration">
+++<<<<<<< HEAD
++ <<<<<<< HEAD
++ <<<<<<< HEAD
++ <<<<<<< HEAD
++@@ -291,5 +328,9 @@
++     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
++     <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
++ >>>>>>> feature/2.3_Verifying_Word
+++=======
+++    <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
+++    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
+++>>>>>>> feature/3.3_Word_Count
++   </component>
++ </project>
++\ No newline at end of file
+Index: out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]1/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]1/shelved.patch b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]1/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM_[Changes]1/shelved.patch	
+@@ -0,0 +1,88 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	
+++++ b/.idea/workspace.xml	
++@@ -7,6 +7,7 @@
++ <<<<<<< HEAD
++     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
++ <<<<<<< HEAD
+++<<<<<<< HEAD
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++ <<<<<<< HEAD
++       <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
++@@ -50,15 +51,30 @@
++       <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
++ >>>>>>> feature/2.3_Verifying_Word
+++=======
+++      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/libraries/javafx_swt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/libraries/javafx_swt.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
+++>>>>>>> feature/3.3_Word_Count
++       <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
++       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
+++<<<<<<< HEAD
++ <<<<<<< HEAD
++ >>>>>>> develop
++ >>>>>>> develop
++ =======
++ >>>>>>> feature/2.3_Verifying_Word
+++=======
+++>>>>>>> feature/3.3_Word_Count
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -148,6 +164,7 @@
++     "RunOnceActivity.OpenProjectViewOnStart": "true",
++     "RunOnceActivity.ShowReadmeOnStart": "true",
++     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+++<<<<<<< HEAD
++ <<<<<<< HEAD
++     "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
++     "project.structure.last.edited": "Libraries",
++@@ -179,6 +196,11 @@
++     "jdk.selected.JAVA_MODULE": "18",
++     "last_opened_file_path": "C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar",
++     "project.structure.last.edited": "Project",
+++=======
+++    "jdk.selected.JAVA_MODULE": "18",
+++    "last_opened_file_path": "C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar",
+++    "project.structure.last.edited": "Libraries",
+++>>>>>>> feature/3.3_Word_Count
++     "project.structure.proportion": "0.15",
++     "project.structure.side.proportion": "0.2",
++     "settings.editor.selected.configurable": "preferences.pluginManager"
++@@ -188,6 +210,7 @@
++   <component name="RunManager">
++ <<<<<<< HEAD
++ <<<<<<< HEAD
+++<<<<<<< HEAD
++     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
++ =======
++     <configuration name="tenacity" type="Application" factoryName="Application">
++@@ -206,6 +229,12 @@
++       <module name="tenacity" />
++       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\eevee\csc207\javafx-sdk-19\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
++ >>>>>>> feature/2.3_Verifying_Word
+++=======
+++    <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
+++      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+++      <module name="tenacity" />
+++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\eevee\csc207\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+++>>>>>>> feature/3.3_Word_Count
++       <method v="2">
++         <option name="Make" enabled="true" />
++       </method>
+Index: out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2022_1_08_PM_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2022_1_08_PM_[Changes]/shelved.patch b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2022_1_08_PM_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2022_1_08_PM_[Changes]/shelved.patch	
+@@ -0,0 +1,81 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"[DEV-1.1] BASE GUI DONE\">\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"feature/1.1_Building_the_GUI\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IWA6QrmhhzOVNwFa12S9DZ1Px6\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Downloaded.Files.Path.Enabled\": \"false\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"jdk.selected.JAVA_MODULE\": \"18\",\r\n    \"last_opened_file_path\": \"C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar\",\r\n    \"project.structure.last.edited\": \"Global Libraries\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"advanced.settings\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"BoggleApp\" />\r\n      <module name=\"tenacity\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;C:\\Users\\ugstu\\Desktop\\UTM 2nd Year Fall\\Class\\CSC207 H5\\CSC207\\Lecture code\\javafx-sdk-19\\lib&quot; --add-modules javafx.controls,javafx.fxml\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"\" />\r\n      <created>1670286796215</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670286796215</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"[DEV-1.1] BASE GUI DONE\">\r\n      <created>1670289102898</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670289102898</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"[DEV-1.1] BASE GUI DONE\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"[DEV-1.1] BASE GUI DONE\" />\r\n  </component>\r\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision 24c94901d4c2b0b90372d571a2cc3520eec82b74)
+++++ b/.idea/workspace.xml	(date 1670436526722)
++@@ -1,8 +1,12 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++ <project version="4">
++   <component name="ChangeListManager">
++-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+++    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="">
+++      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -19,7 +23,7 @@
++   <component name="Git.Settings">
++     <option name="RECENT_BRANCH_BY_REPOSITORY">
++       <map>
++-        <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
+++        <entry key="$PROJECT_DIR$" value="feature/3.3_Word_Count" />
++       </map>
++     </option>
++     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++@@ -33,28 +37,28 @@
++     <option name="hideEmptyMiddlePackages" value="true" />
++     <option name="showLibraryContents" value="true" />
++   </component>
++-  <component name="PropertiesComponent"><![CDATA[{
++-  "keyToString": {
++-    "Downloaded.Files.Path.Enabled": "false",
++-    "Repository.Attach.Annotations": "false",
++-    "Repository.Attach.JavaDocs": "false",
++-    "Repository.Attach.Sources": "false",
++-    "RunOnceActivity.OpenProjectViewOnStart": "true",
++-    "RunOnceActivity.ShowReadmeOnStart": "true",
++-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++-    "jdk.selected.JAVA_MODULE": "18",
++-    "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
++-    "project.structure.last.edited": "Global Libraries",
++-    "project.structure.proportion": "0.15",
++-    "project.structure.side.proportion": "0.2",
++-    "settings.editor.selected.configurable": "advanced.settings"
+++  <component name="PropertiesComponent">{
+++  &quot;keyToString&quot;: {
+++    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+++    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+++    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+++    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+++    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+++    &quot;last_opened_file_path&quot;: &quot;C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar&quot;,
+++    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+++    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
++   }
++-}]]></component>
+++}</component>
++   <component name="RunManager">
++-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+++    <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
++       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
++       <module name="tenacity" />
++-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\ugstu\Desktop\UTM 2nd Year Fall\Class\CSC207 H5\CSC207\Lecture code\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\eevee\csc207\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
++       <method v="2">
++         <option name="Make" enabled="true" />
++       </method>
+Index: out/production/tenacity/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.gitignore b/out/production/tenacity/.gitignore
+new file mode 100644
+--- /dev/null	
++++ b/out/production/tenacity/.gitignore	
+@@ -0,0 +1,3 @@
++
++.idea/workspace.xml
++*.xml
+Index: out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m__[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m__[Changes]/shelved.patch b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m__[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m__[Changes]/shelved.patch	
+@@ -0,0 +1,61 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"[DEV-1.1] BASE GUI DONE\">\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"feature/1.1_Building_the_GUI\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IWA6QrmhhzOVNwFa12S9DZ1Px6\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Downloaded.Files.Path.Enabled\": \"false\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"jdk.selected.JAVA_MODULE\": \"18\",\r\n    \"last_opened_file_path\": \"C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar\",\r\n    \"project.structure.last.edited\": \"Global Libraries\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"advanced.settings\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"BoggleApp\" />\r\n      <module name=\"tenacity\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;C:\\Users\\ugstu\\Desktop\\UTM 2nd Year Fall\\Class\\CSC207 H5\\CSC207\\Lecture code\\javafx-sdk-19\\lib&quot; --add-modules javafx.controls,javafx.fxml\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"\" />\r\n      <created>1670286796215</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670286796215</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"[DEV-1.1] BASE GUI DONE\">\r\n      <created>1670289102898</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670289102898</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"[DEV-1.1] BASE GUI DONE\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"[DEV-1.1] BASE GUI DONE\" />\r\n  </component>\r\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision 24c94901d4c2b0b90372d571a2cc3520eec82b74)
+++++ b/.idea/workspace.xml	(date 1670339599139)
++@@ -1,9 +1,7 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++ <project version="4">
++   <component name="ChangeListManager">
++-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
++-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
++-    </list>
+++    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE" />
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++@@ -33,23 +31,23 @@
++     <option name="hideEmptyMiddlePackages" value="true" />
++     <option name="showLibraryContents" value="true" />
++   </component>
++-  <component name="PropertiesComponent"><![CDATA[{
++-  "keyToString": {
++-    "Downloaded.Files.Path.Enabled": "false",
++-    "Repository.Attach.Annotations": "false",
++-    "Repository.Attach.JavaDocs": "false",
++-    "Repository.Attach.Sources": "false",
++-    "RunOnceActivity.OpenProjectViewOnStart": "true",
++-    "RunOnceActivity.ShowReadmeOnStart": "true",
++-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++-    "jdk.selected.JAVA_MODULE": "18",
++-    "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
++-    "project.structure.last.edited": "Global Libraries",
++-    "project.structure.proportion": "0.15",
++-    "project.structure.side.proportion": "0.2",
++-    "settings.editor.selected.configurable": "advanced.settings"
+++  <component name="PropertiesComponent">{
+++  &quot;keyToString&quot;: {
+++    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+++    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+++    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+++    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+++    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+++    &quot;last_opened_file_path&quot;: &quot;C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar&quot;,
+++    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+++    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
++   }
++-}]]></component>
+++}</component>
++   <component name="RunManager">
++     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
++       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+diff --git a/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM_[Changes]1/shelved.patch b/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM_[Changes]1/shelved.patch
+new file mode 100644

@@ -100,7 +100,7 @@ public class BoggleView implements Serializable {
 
     MediaPlayer mediaPlayer;
 
-    private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
+    private static final String MEDIA_URL = "Users/imranmuyingo/Downloads/PP2/tenacity/music/lifelike-126735.mp3";
 
 
 //    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
@@ -140,14 +140,15 @@ public class BoggleView implements Serializable {
         this.stage.show();
 
 
-        // Create the player and set to play automatically.
-//        Path path = Paths.get(MEDIA_URL);
-//        if(!(new Media(path.toUri().toString()) == null)){
-//            Media media = new Media(path.toUri().toString());
-//
-//            this.mediaPlayer = new MediaPlayer(media);
-//            this.mediaPlayer.setAutoPlay(true);
-//        }
+        try{
+            Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
+            this.mediaPlayer = new MediaPlayer(media);
+            this.mediaPlayer.setAutoPlay(true);
+        } catch (RuntimeException e){}
+
+
+
+
 
         giveFirstInstructions();
     }
