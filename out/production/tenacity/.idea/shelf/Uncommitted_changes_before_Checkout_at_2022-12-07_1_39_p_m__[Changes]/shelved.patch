@@ -1,0 +1,14 @@
+Index: .idea/tenacity.iml
+===================================================================
+diff --git a/.idea/tenacity.iml b/.idea/tenacity.iml
+--- a/.idea/tenacity.iml	
++++ b/.idea/tenacity.iml	
+@@ -23,6 +23,6 @@
+         <SOURCES />
+       </library>
+     </orderEntry>
+-    <orderEntry type="library" name="tenacity" level="project" />
++    <orderEntry type="library" name="javafx-swt" level="project" />
+   </component>
+ </module>
+\ No newline at end of file

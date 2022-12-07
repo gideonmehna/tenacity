@@ -1,10 +1,12 @@
 package boggle;
 
+import java.io.Serializable;
+
 /**
  * The BoggleGrid class for the first Assignment in CSC207, Fall 2022
  * The BoggleGrid represents the grid on which we play Boggle 
  */
-public class BoggleGrid {
+public class BoggleGrid implements Serializable {
 
     /**
      * size of grid
@@ -82,8 +84,11 @@ public class BoggleGrid {
     public char getCharAt(int row, int col) {
         return this.board[row][col];
     }
-
+    /*
+     * @return the board of the grid
+     */
     public char[][] getBoard() {
         return board;
     }
+
 }

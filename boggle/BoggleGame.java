@@ -1,21 +1,24 @@
 package boggle;
 
 import java.awt.*;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import java.util.*;
+
+import java.util.*;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * The BoggleGame class for the first Assignment in CSC207, Fall 2022
  */
-public class BoggleGame {
+public class BoggleGame implements Serializable {
 
-    /**
-     * scanner used to interact with the user via console
-     */ 
-    public Scanner scanner; 
     /**
      * stores game statistics
      */ 
@@ -34,18 +37,16 @@ public class BoggleGame {
             {"AAAFRS", "AAEEEE", "AAFIRS", "ADENNN", "AEEEEM", "AEEGMU", "AEGMNN", "AFIRSY",
                     "BJKQXZ", "CCNSTW", "CEIILT", "CEILPT", "CEIPST", "DDLNOR", "DDHNOT", "DHHLOR",
                     "DHLNOR", "EIIITT", "EMOTTT", "ENSSSU", "FIPRSY", "GORRVW", "HIPRRY", "NOOTUW", "OOOTTU"};
-
     private Map<String, ArrayList<Position>> allWords;
 
     /* 
      * BoggleGame constructor
      */
     public BoggleGame() {
-        this.scanner = new Scanner(System.in);
         this.gameStats = new BoggleStats();
     }
 
-        /*
+    /*
      * Provide instructions to the user, so they know how to play the game.
      */
     public String loadInstructions() {
@@ -63,7 +64,7 @@ public class BoggleGame {
     }
 
 
-    /* 
+    /*
      * Play a round of Boggle.
      * This initializes the main objects: the board, the dictionary, the map of all
      * words on the board, and the set of words found by the user. These objects are
@@ -94,7 +95,7 @@ public class BoggleGame {
     }
 
     /*
-     * This method should return a String of letters (length 16 or 25 depending on the size of the grid).
+     * This method should return a String of letters (length size * size depending on the size of the grid).
      * There will be one letter per grid position, and they will be organized left to right,
      * top to bottom. A strategy to make this string of letters is as follows:
      * -- Assign a one of the dice to each grid position (i.e. dice_big_grid or dice_small_grid)
@@ -102,7 +103,7 @@ public class BoggleGame {
      * -- Randomly select one of the letters on the given die at each grid position to determine
      *    the letter at the given position
      *
-     * @return String a String of random letters (length 16 or 25 depending on the size of the grid)
+     * @return String a String of random letters (length size * size depending on the size of the grid)
      */
     public String randomizeLetters(int size){
         String randomLetters = new String();
@@ -126,16 +127,34 @@ public class BoggleGame {
 
                 }
             }
-        }
+        } else {
+            for (int row = 0; row < size; row++) {
+                for (int col = 0; col < size; col++) {
+                    Random r = new Random();
+                    board[row][col] = String.valueOf((char)(r.nextInt(26) + 'A'));
+                    randomLetters += board[row][col];
 
-
-
-        for (int row = 0; row < size; row++) {
-            for (int col = 0; col < size; col++) {
-                randomLetters += board[row][col].charAt(ThreadLocalRandom.current().nextInt(0, 5  + 1));
-                // There might be an error here using 6 as the bound,
+                }
             }
         }
+
+
+        if ((size == 4) || (size == 5)) {
+            for (int row = 0; row < size; row++) {
+                for (int col = 0; col < size; col++) {
+                    randomLetters += board[row][col].charAt(ThreadLocalRandom.current().nextInt(0, 5  + 1));
+                    // There might be an error here using 6 as the bound,
+                }
+            }
+        }
+//        else {
+//            for (int row = 0; row < size; row++) {
+//                for (int col = 0; col < size; col++) {
+//                    randomLetters += board[row][col];
+//                    // There might be an error here using 6 as the bound,
+//                }
+//            }
+//        }
         return randomLetters;
     }
 
@@ -145,6 +164,25 @@ public class BoggleGame {
      * Every word should be valid (i.e. in the boggleDict) and of length 4 or more.
      * Words that are found should be entered into the allWords HashMap.  This HashMap
      * will be consulted as we play the game.
+     *
+     * Note that this function will be a recursive function.  You may want to write
+     * a wrapper for your recursion. Note that every legal word on the Boggle grid will correspond to
+     * a list of grid positions on the board, and that the Position class can be used to represent these
+     * positions. The strategy you will likely want to use when you write your recursion is as follows:
+     * -- At every Position on the grid:
+     * ---- add the Position of that point to a list of stored positions
+     * ---- if your list of stored positions is >= 4, add the corresponding word to the allWords Map
+     * ---- recursively search for valid, adjacent grid Positions to add to your list of stored positions.
+     * ---- Note that a valid Position to add to your list will be one that is either horizontal, diagonal, or
+     *      vertically touching the current Position
+     * ---- Note also that a valid Position to add to your list will be one that, in conjunction with those
+     *      Positions that precede it, form a legal PREFIX to a word in the Dictionary (this is important!)
+     * ---- Use the "isPrefix" method in the Dictionary class to help you out here!!
+     * ---- Positions that already exist in your list of stored positions will also be invalid.
+     * ---- You'll be finished when you have checked EVERY possible list of Positions on the board, to see
+     *      if they can be used to form a valid word in the dictionary.
+     * ---- Food for thought: If there are N Positions on the grid, how many possible lists of positions
+     *      might we need to evaluate?
      *
      * @param allWords A mutable list of all legal words that can be found, given the boggleGrid grid letters
      * @param boggleDict A dictionary of legal words
@@ -165,10 +203,13 @@ public class BoggleGame {
                 ArrayList<Position> positionList = new ArrayList<Position>();
 
                 findWord(row, col, currWord, positionList, allWords, boggleDict, boggleGrid);
+
+//
                 col++;
             }
             row++;
         }
+//
     }
     /*
      * Finds a Word starting from a given position
@@ -215,14 +256,6 @@ public class BoggleGame {
         }
 
     }
-
-    /* Public function that returns all legal words on the grid
-    * @return String array of all the legal words available to be found on the grid
-    */
-    public String[] getAllWords(){
-        return this.allWords.keySet().toArray(new String[0]);
-    }
-
     /*
      * CHecks if ArrayList<Position> contains a Position
      *
@@ -259,6 +292,12 @@ public class BoggleGame {
     }
 
 
+    /* Public function that returns all legal words on the grid
+     * @return String array of all the legal words available to be found on the grid
+     */
+    public String[] getAllWords(){
+        return this.allWords.keySet().toArray(new String[0]);
+    }
 
     /*
      * This is a function that evaluates the word input of the boggle game while the human is playing.
@@ -274,8 +313,8 @@ public class BoggleGame {
             //step 3. Check to see if it is valid (note validity checks should be case-insensitive)
             for ( Map.Entry<String,ArrayList<Position>> entry: allWords.entrySet() ) {
 
-                    System.out.println(entry.getKey() +"=="+ inputWord );
-                    System.out.println(entry.getKey().equals(inputWord));
+                System.out.println(entry.getKey() +"=="+ inputWord );
+                System.out.println(entry.getKey().equals(inputWord));
                 if (entry.getKey().equals(inputWord)){
                     this.gameStats.addWord(inputWord, BoggleStats.Player.Human);
                     System.out.println("I added the word to stats");
@@ -307,13 +346,38 @@ public class BoggleGame {
             }
 
         // check if the word is in the players list
-        // add the word and incremement the scoure., check why or how the total score ischanges.
+        // add the word and incremement the scoure., check why or how the total score ischanges. 
     }
     }
-
-    /*Allows access to gamestat from BoggleView*/
-    public BoggleStats getGameStats(){
+    /*
+<<<<<<< Updated upstream
+     * Saves the Boggle games as a file
+     * @param filename A file contains a BoggleGame
+=======
+     * Gets words from the computer.  The computer should find words that are
+     * both valid and not in the player's word list.  For each word that the computer
+     * finds, update the computer's word list and increment the
+     * computer's score (stored in boggleStats).
+     *
+     * @param file A mutable list of all legal words that can be found, given the boggleGrid grid letters
+>>>>>>> Stashed changes
+     */
+    /* Public function that returns the BoggleStats object being used in the game
+     * @return BoggleStats object which contains the players scores, words, e.t.c.
+     */
+    public void saveGame(File fileName) {
+        try {
+            FileOutputStream fout = new FileOutputStream(fileName);
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    /* Public function that returns the BoggleStats object being used in the game
+     * @return BoggleStats object which contains the players scores, words, e.t.c.
+     */
+    public BoggleStats getGameStats() {
         return this.gameStats;
     }
-
 }

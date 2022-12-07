@@ -1,0 +1,35 @@
+Index: BoggleTests.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import boggle.Dictionary;\r\nimport boggle.*;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport java.lang.reflect.InvocationTargetException;\r\nimport java.lang.reflect.Method;\r\nimport java.util.*;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\npublic class BoggleTests {\r\n\r\n    //BoggleGame  Test\r\n    @Test\r\n    void findAllWords_small() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {\r\n        BoggleGame game = new BoggleGame();\r\n        Method method = game.getClass().getDeclaredMethod(\"findAllWords\", Map.class, Dictionary.class, BoggleGrid.class);\r\n        method.setAccessible(true);\r\n\r\n        Dictionary boggleDict = new Dictionary(\"wordlist.txt\");\r\n        Map<String, ArrayList<Position>> allWords = new HashMap<>();\r\n        BoggleGrid grid = new BoggleGrid(4);\r\n        grid.initalizeBoard(\"RHLDNHTGIPHSNMJO\");\r\n        Object r = method.invoke(game, allWords, boggleDict, grid);\r\n\r\n        Set<String> expected = new HashSet<>(Arrays.asList(\"GHOST\", \"HOST\", \"THIN\"));\r\n        assertEquals(expected, allWords.keySet());\r\n    }\r\n    @Test\r\n    void findAllWords_big() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {\r\n        BoggleGame game = new BoggleGame();\r\n        Method method = game.getClass().getDeclaredMethod(\"findAllWords\", Map.class, Dictionary.class, BoggleGrid.class);\r\n        method.setAccessible(true);\r\n\r\n        Dictionary boggleDict = new Dictionary(\"wordlist.txt\");\r\n        Map<String, ArrayList<Position>> allWords = new HashMap<>();\r\n        BoggleGrid grid = new BoggleGrid(5);\r\n        grid.initalizeBoard(\"PSERPIYIEBRSNATUREMODAECH\");\r\n        Object r = method.invoke(game, allWords, boggleDict, grid);\r\n\r\n        Set<String> expected = new HashSet<>(Arrays.asList( \"RESIN\", \"PREEN\", \"AIRE\", \"BRINY\", \"RISER\", \"NERD\", \"ERRS\", \"RISE\", \"PREYS\", \"PREY\", \"RUSE\", \"REMOTER\", \"RESINY\", \"ISIS\", \"ESPY\", \"BRINE\", \"TEES\", \"TEAM\", \"RIPS\", \"URSINE\", \"MERRY\", \"SIPS\", \"MEAD\", \"REMOTE\"));\r\n        assertEquals(expected, allWords.keySet());\r\n    }\r\n\r\n    //Dictionary Test\r\n    @Test\r\n    void containsWord() {\r\n        Dictionary dict = new Dictionary(\"wordlist.txt\");\r\n        assertTrue(dict.containsWord(\"ENZYME\"));\r\n        assertFalse(dict.containsWord(\"EME\"));\r\n        assertTrue(dict.containsWord(\"ME\"));\r\n        assertFalse(dict.containsWord(\"\"));\r\n        assertTrue(dict.isPrefix(\"pench\"));\r\n        assertFalse(dict.isPrefix(\"klm\"));\r\n        assertTrue(dict.isPrefix(\"\"));\r\n//        assertFalse(dict.isPrefix(\"Q\"));\r\n        assertTrue(dict.isPrefix(\"Q\"));\r\n    }\r\n\r\n    //BoggleGrid Test\r\n    @Test\r\n    void setupBoard() {\r\n        BoggleGrid grid = new BoggleGrid(10);\r\n        String letters = \"\";\r\n        for (int i = 0; i < 10; i++) {\r\n            letters = letters + \"0123456789\";\r\n        }\r\n\r\n        grid.initalizeBoard(letters);\r\n\r\n        for (int i = 0; i < 10; i++) {\r\n            for (int j = 0; j < 10; j++) {\r\n                assertEquals(letters.charAt(i*10+j), grid.getCharAt(i, j));\r\n            }\r\n        }\r\n    }\r\n\r\n    //BoggleStats Test\r\n    @Test\r\n    void endRoundTest() {\r\n        BoggleStats stats = new BoggleStats();\r\n        stats.endRound();\r\n        stats.endRound();\r\n        stats.endRound();\r\n        assertEquals(3, stats.getRound());\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BoggleTests.java b/BoggleTests.java
+--- a/BoggleTests.java	(revision cb9c9ce607fa634baa13ec08a6d88bd12a1b4c0f)
++++ b/BoggleTests.java	(date 1670185716333)
+@@ -45,7 +45,11 @@
+     //Dictionary Test
+     @Test
+     void containsWord() {
++<<<<<<< HEAD
+         Dictionary dict = new Dictionary("wordlist.txt");
++=======
++        Dictionary dict = new Dictionary("mehnagid/Assignment1/wordlist.txt");
++>>>>>>> 35f999d (display the grid)
+         assertTrue(dict.containsWord("ENZYME"));
+         assertFalse(dict.containsWord("EME"));
+         assertTrue(dict.containsWord("ME"));
+@@ -53,8 +57,12 @@
+         assertTrue(dict.isPrefix("pench"));
+         assertFalse(dict.isPrefix("klm"));
+         assertTrue(dict.isPrefix(""));
++<<<<<<< HEAD
+ //        assertFalse(dict.isPrefix("Q"));
+         assertTrue(dict.isPrefix("Q"));
++=======
++        assertFalse(dict.isPrefix("Q"));
++>>>>>>> 35f999d (display the grid)
+     }
+ 
+     //BoggleGrid Test

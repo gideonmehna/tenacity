@@ -1,5 +1,6 @@
 package boggle;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,7 +8,7 @@ import java.util.Set;
  * The BoggleStats class for the first Assignment in CSC207, Fall 2022
  * The BoggleStats will contain statsitics related to game play Boggle 
  */
-public class BoggleStats {
+public class BoggleStats implements Serializable {
 
     /**
      * set of words the player finds in a given round 
@@ -115,8 +116,7 @@ public class BoggleStats {
 //        this.pAverageWords = 0;
     }
 
-
-    /* 
+    /*
      * Summarize one round of boggle.  Print out:
      * The words each player found this round.
      * Each number of words each player found this round.
@@ -132,13 +132,13 @@ public class BoggleStats {
             cNumWordsFound += 1;
         }
         if (!cWordsFound.isEmpty()) cWordsFound = cWordsFound.substring(2);
-        else cWordsFound ="THE COMPUTER WORDS ARE EMPTY, SOMETHING IS WRONG"; // This is not supposed to be the case.
+        else cWordsFound ="THE GRID DID NOT HAVE ANY POSSIBLE WORDS"; // This is not supposed to be the case.
         for(String d: this.playerWords) {
             pWordsFound = pWordsFound + ", " + d;
             pNumWordsFound += 1;
         }
         if (!pWordsFound.isEmpty()) pWordsFound = pWordsFound.substring(2);
-        else pWordsFound ="THE PLAYERS WORDS ARE EMPTPY, SOEMTHING IS WRONG"; // This is not supposed to be the case.
+        else pWordsFound ="EITHER THE PLAYER DID NOT GET ANY CORRECT WORDS OR THE PLAYER DID NOT SELECT ANY WORDS."; // This is not supposed to be the case.
 
 
         String gameSummary = "ROUND "+this.round+" SUMMARY \n";
