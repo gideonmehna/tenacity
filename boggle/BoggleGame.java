@@ -1,16 +1,25 @@
 package boggle;
 
 import java.awt.*;
+<<<<<<< HEAD
+<<<<<<< HEAD
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+=======
+import java.util.*;
+>>>>>>> develop
+=======
+import java.util.*;
+>>>>>>> develop
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * The BoggleGame class for the first Assignment in CSC207, Fall 2022
  */
-public class BoggleGame {
+public class BoggleGame implements Serializable {
 
     /**
      * stores game statistics
@@ -88,7 +97,7 @@ public class BoggleGame {
     }
 
     /*
-     * This method should return a String of letters (length 16 or 25 depending on the size of the grid).
+     * This method should return a String of letters (length size * size depending on the size of the grid).
      * There will be one letter per grid position, and they will be organized left to right,
      * top to bottom. A strategy to make this string of letters is as follows:
      * -- Assign a one of the dice to each grid position (i.e. dice_big_grid or dice_small_grid)
@@ -96,7 +105,7 @@ public class BoggleGame {
      * -- Randomly select one of the letters on the given die at each grid position to determine
      *    the letter at the given position
      *
-     * @return String a String of random letters (length 16 or 25 depending on the size of the grid)
+     * @return String a String of random letters (length size * size depending on the size of the grid)
      */
     public String randomizeLetters(int size){
         String randomLetters = new String();
@@ -120,16 +129,34 @@ public class BoggleGame {
 
                 }
             }
-        }
+        } else {
+            for (int row = 0; row < size; row++) {
+                for (int col = 0; col < size; col++) {
+                    Random r = new Random();
+                    board[row][col] = String.valueOf((char)(r.nextInt(26) + 'A'));
+                    randomLetters += board[row][col];
 
-
-
-        for (int row = 0; row < size; row++) {
-            for (int col = 0; col < size; col++) {
-                randomLetters += board[row][col].charAt(ThreadLocalRandom.current().nextInt(0, 5  + 1));
-                // There might be an error here using 6 as the bound,
+                }
             }
         }
+
+
+        if ((size == 4) || (size == 5)) {
+            for (int row = 0; row < size; row++) {
+                for (int col = 0; col < size; col++) {
+                    randomLetters += board[row][col].charAt(ThreadLocalRandom.current().nextInt(0, 5  + 1));
+                    // There might be an error here using 6 as the bound,
+                }
+            }
+        }
+//        else {
+//            for (int row = 0; row < size; row++) {
+//                for (int col = 0; col < size; col++) {
+//                    randomLetters += board[row][col];
+//                    // There might be an error here using 6 as the bound,
+//                }
+//            }
+//        }
         return randomLetters;
     }
 
@@ -324,11 +351,39 @@ public class BoggleGame {
         // add the word and incremement the scoure., check why or how the total score ischanges. 
     }
     }
+    /*
+<<<<<<< Updated upstream
+     * Saves the Boggle games as a file
+     * @param filename A file contains a BoggleGame
+=======
+     * Gets words from the computer.  The computer should find words that are
+     * both valid and not in the player's word list.  For each word that the computer
+     * finds, update the computer's word list and increment the
+     * computer's score (stored in boggleStats).
+     *
+     * @param file A mutable list of all legal words that can be found, given the boggleGrid grid letters
+>>>>>>> Stashed changes
+     */
 
+<<<<<<< HEAD
     /* Public function that returns the BoggleStats object being used in the game
      * @return BoggleStats object which contains the players scores, words, e.t.c.
      */
     public BoggleStats getGameStats() {
         return this.gameStats;
+=======
+    public void saveGame(File fileName) {
+        try {
+            FileOutputStream fout = new FileOutputStream(fileName);
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public BoggleStats getGameStats() {
+        return gameStats;
+>>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
     }
 }

@@ -1,8 +1,6 @@
 package views;
 
-import boggle.BoggleGame;
-import boggle.BoggleGrid;
-import boggle.BoggleStats;
+import boggle.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -11,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.text.Font;
@@ -19,6 +19,11 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 
+<<<<<<< HEAD
+import java.io.Serializable;
+=======
+import java.nio.file.Paths;
+>>>>>>> develop
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -29,7 +34,7 @@ import java.util.Objects;
  *
  * This is The class that displays boggle.
  */
-public class BoggleView {
+public class BoggleView implements Serializable {
     /**
      * Boggle Model class
      */
@@ -57,7 +62,7 @@ public class BoggleView {
     /**
      * The Instructions and Boggle Game are displayed in this Box
      */
-    VBox instructionsBox; // this holds the instructions and the game
+    VBox instructionsBox, loadBox; // this holds the instructions and the game
     /**
      * The main stage of the game. JavaFX stage or window
      */
@@ -65,7 +70,15 @@ public class BoggleView {
     /**
      * Buttons to start, end, enter and create a new game
      */
-    Button startButton,endButton, enterButton, newGame;
+<<<<<<< HEAD
+    Button startButton,endButton, enterButton, newGame, saveButton, loadButton;
+=======
+    Button startButton,endButton, enterButton, newGame, stopmusic, playmusic;
+>>>>>>> develop
+    /**
+     * This array holds the buttons that have been selected by the game player
+     */
+    ArrayList<Button> gridButtons;
     /**
      * Grid size (4 -9). The grid is always a square therefore the size is only an integer.
      * GridButtonSize is the size of the grid buttons
@@ -81,6 +94,16 @@ public class BoggleView {
      * JavaFX Text to display the word the user is typing
      */
     Text wordInput ; // display the word the user is typing
+    ArrayList<Node> mainButtons = new ArrayList<>();
+<<<<<<< HEAD
+=======
+
+    MediaPlayer mediaPlayer;
+
+    private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
+
+    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
+>>>>>>> develop
 
 
     /**
@@ -110,12 +133,17 @@ public class BoggleView {
         borderPane = new BorderPane();
         borderPane.setStyle("-fx-background-image: url(\"https://wallpaperset.com/w/full/4/9/8/141069.jpg\");");
 
-        giveFirstInstructions();
+
 
         var scene = new Scene(borderPane, 1200, 600);
-
         this.stage.setScene(scene);
         this.stage.show();
+
+
+        // Create the player and set to play automatically.
+        this.mediaPlayer = new MediaPlayer(media);
+        this.mediaPlayer.setAutoPlay(true);
+        giveFirstInstructions();
     }
     /**
      *  Gives the first User Instructions. Talks about the main game functions.
@@ -148,7 +176,18 @@ public class BoggleView {
         instructionsBox.setAlignment(Pos.CENTER);
         instructionsBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
         instructionsBox.setMaxSize(500, 500);
+
+        loadBox = new VBox();
+        loadBox.setPadding(new Insets(10, 10, 10, 10));
+        loadBox.setAlignment(Pos.TOP_LEFT);
+<<<<<<< HEAD
+        
+        
+=======
+
+>>>>>>> develop
         borderPane.setCenter(instructionsBox);
+        borderPane.setTop(loadBox);
 
     }
     /**
@@ -159,7 +198,7 @@ public class BoggleView {
     private void giveSecondInstructions() {
         instructionsBox.getChildren().clear();
 
-        String instruction = "Enter a number between 4 - 9 inclusive. \ne.g enter 5 to play on a (5x5) grid;";
+        String instruction = "Enter a number between 4 - 12 inclusive. \ne.g enter 5 to play on a (5x5) grid;";
 
         instructionsText.setText(instruction);
 
@@ -170,7 +209,7 @@ public class BoggleView {
 
         Label message = new Label();
         message.setFont(new Font(this.font));
-        message.setStyle("-fx-background-color: #10871b; -fx-text-fill: red;");
+        message.setStyle("-fx-background-color: #981b1e; -fx-text-fill: #ffffff;");
 
         Button next = new Button("Next");
         next.setId("Next");
@@ -186,15 +225,15 @@ public class BoggleView {
 
         next.setOnAction(e -> {
             String text = gridSize.getText();
-            if(text.matches("[4-9]")){
+            if(text.matches("[4-9]|[1][0-2]")){
                 System.out.println(text + " passes the regex");
                 size = Integer.parseInt( text);
                 message.setText("Great choice!");
                 giveThirdInstructions();
             }
             else
-            {System.out.println("No, this is not regex");
-                message.setText("Please type either 5 or 4.");
+            {
+                message.setText("Please type a number between 4 and 12 inclusive");
             }
         });
         instructionsBox.getChildren().addAll(instructionsText, message, gridSize, next);
@@ -240,18 +279,10 @@ public class BoggleView {
         HBox buttonBox = new HBox();
         buttonBox.setAlignment(Pos.CENTER);
         buttonBox.setSpacing(5);
-
-        if (size == 4 || size == 5){
+        if ((4 <= size) && (size <= 12)){
             instruction = "Click one of the buttons below to either randomly assign letters or to provide your own";
             buttonBox.getChildren().addAll(random, usersLetters);
 
-
-        }
-        else if( (6 <= size) && (size <= 9)  ) {
-            instruction = "Randomly assign Letters for your board.";
-            VBox messageRandomLetters = new VBox(message, randomLetters);
-            messageRandomLetters.setAlignment(Pos.CENTER);
-            buttonBox.getChildren().addAll(messageRandomLetters);
 
         }
 
@@ -261,8 +292,10 @@ public class BoggleView {
 
         usersLetters.setOnAction(e -> {
             buttonBox.getChildren().clear();
-            instructionsBox.getChildren().remove(buttonBox);
-            instructionsBox.getChildren().addAll(randomLetters);
+            instructionsText.setText("Randomly assign Letters for your board.");
+            VBox messageRandomLetters = new VBox(message, randomLetters);
+            messageRandomLetters.setAlignment(Pos.CENTER);
+            buttonBox.getChildren().addAll(messageRandomLetters);
         });
 
 
@@ -275,7 +308,8 @@ public class BoggleView {
         randomLetters.setOnAction(e-> {
             s[0] = randomLetters.getText();
             s[0] = s[0].toUpperCase().strip();// mke sure there are no numbers
-            message.setStyle("-fx-background-color: rgb(0,0,0,0.5); -fx-text-fill: red;");
+            message.setStyle("-fx-background-color: #981b1e; -fx-text-fill: #ffffff;");
+
             if (!s[0].matches("^[A-Z]*$")) {
                 message.setText("Please only enter alphabet charaters from A - Z");
                 randomLetters.setText("");
@@ -320,7 +354,7 @@ public class BoggleView {
         // Clear all the instructions in the box
         instructionsBox.getChildren().clear();
         // Prepare the gridButtons array
-//        gridButtons = new ArrayList<>();
+        gridButtons = new ArrayList<>();
         // prepare the variables to be used
         wordInput = new Text();
         wordInput.setText(inputWord[0]);
@@ -367,6 +401,18 @@ public class BoggleView {
         clear.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 //        mainButtons.add(clear);
 
+        stopmusic = new Button( "Stop Music");
+        stopmusic.setId("Stop");
+        stopmusic.setPrefSize(150, 50);
+        stopmusic.setFont(new Font(this.font));
+        stopmusic.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        playmusic = new Button( "Play Music");
+        playmusic.setId("Play");
+        playmusic.setPrefSize(150, 50);
+        playmusic.setFont(new Font(this.font));
+        playmusic.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
         endButton = new Button("End Round");
         endButton.setId("end");
         endButton.setPrefSize(150, 50);
@@ -379,6 +425,19 @@ public class BoggleView {
         enterButton.setPrefSize(150, 50);
         enterButton.setFont(new Font(this.font));
         enterButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+        saveButton = new Button("Save");
+        saveButton.setId("save");
+        saveButton.setPrefSize(150, 50);
+        saveButton.setFont(new Font(12));
+        saveButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+
+
+        loadButton = new Button("Load");
+        loadButton.setId("load");
+        loadButton.setPrefSize(150, 50);
+        loadButton.setFont(new Font(12));
+        loadButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
 //        mainButtons.add(enterButton);
 
 //        wordInput.setText(inputWord[0]);
@@ -389,6 +448,12 @@ public class BoggleView {
         VBox vControls = new VBox(controls, textInput);
         vControls.setAlignment(Pos.CENTER);
         vControls.setSpacing(5);
+<<<<<<< HEAD
+        VBox hcontrols = new VBox(saveButton, loadButton);
+=======
+        VBox hcontrols = new VBox(playmusic, stopmusic);
+>>>>>>> develop
+        loadBox.getChildren().addAll(hcontrols);
         instructionsBox.getChildren().addAll(vControls, endButton);
 
 
@@ -408,6 +473,7 @@ public class BoggleView {
             HBox box1 = new HBox(5);
             VBox box2 = new VBox(5);
             HBox box3 = new HBox(10);
+<<<<<<< HEAD
 //            Label wordCheck = new Label();
 //            if (this.model.evaluateWord(inputWord[0]) == 2){
 //                wordCheck.getStyleClass().add("bg-4");
@@ -450,6 +516,50 @@ public class BoggleView {
                     (this.model.getAllWords().length - this.model.getGameStats().getScore()));
             box1.getChildren().add(wordCount);
             box1.setAlignment(Pos.TOP_CENTER);
+=======
+            Label wordCheck = new Label();
+            if (this.model.evaluateWord(inputWord[0]) == 2){
+                wordCheck.getStyleClass().add("bg-4");
+                wordCheck.setText("Correct! " + inputWord[0]);
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("m36.097 739.31 20-30c16.511 12.907 17.767 19.639 24.949 30.909 36.804-72.31 " +
+                        "74.954-104.96 128.57-144.29-51.91 53.35-83.23 89.32-130 198.58-16.193-26.29-27.333-53." +
+                        "62-43.523-55.2z");
+                githubIcon.setFill(Color.web("#81c483"));
+                box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
+            }else if (this.model.evaluateWord(inputWord[0]) == 1){
+                wordCheck.getStyleClass().add("bg-3");
+                wordCheck.setText("This word has already been inputted");
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
+                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
+                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
+                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
+                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
+                githubIcon.setFill(Color.web("#a8142e"));
+                githubIcon.autosize();
+                box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
+            }else if (this.model.evaluateWord(inputWord[0]) == 0){
+                wordCheck.getStyleClass().add("bg-2");
+                wordCheck.setText("Incorrect word :(");
+                SVGPath githubIcon = new SVGPath();
+                githubIcon.setContent("M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-" +
+                        "0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774," +
+                        "0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019," +
+                        "4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774," +
+                        "2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z");
+                githubIcon.setFill(Color.web("#a8142e"));
+                githubIcon.autosize();
+                box2.getChildren().addAll(wordCheck, githubIcon);
+                box2.setAlignment(Pos.CENTER);
+            }
+//            Label wordCount = new Label("Words left: " +
+//                    (this.model.getAllWords().length - this.model.getGameStats().getScore()));
+//            box1.getChildren().add(wordCount);
+//            box1.setAlignment(Pos.TOP_CENTER);
+>>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
 //            String wordFound = "Words Found: ";
 //            for (String word: this.model.getGameStats().getPlayerWords()){
 //                wordFound +=  "\n" + word ;
@@ -465,8 +575,25 @@ public class BoggleView {
         });
         endButton.setOnAction(e -> {
             giveEndRoundInstructions();
-            borderPane.setRight(null);
+            //borderPane.setRight(null);
         });
+        stopmusic.setOnAction(e -> {
+            mediaPlayer.setMute(true);
+
+        });
+        playmusic.setOnAction(e -> {
+            mediaPlayer.setMute(false);
+
+
+        });
+        saveButton.setOnAction(e -> {
+            createSaveView();
+        });
+        loadButton.setOnAction(e -> {
+            createLoadView();
+
+        });
+
 
 
     }
@@ -479,7 +606,7 @@ public class BoggleView {
 
         modelBoggleGrid = new BoggleGrid(rSize);
 
-//        modelBoggleGrid.initalizeBoard(userString);
+        modelBoggleGrid.initalizeBoard(userString);
         // launching a round
         this.model.playRound(size, userString, modelBoggleGrid);
         char[][] board = modelBoggleGrid.getBoard();
@@ -502,30 +629,105 @@ public class BoggleView {
                 });
                 newButton.setOnMouseExited(e->{
 //                    if (!gridButtons.contains(newButton)) newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
-//               
+
                 });
 
 
                 newButton.setOnAction(e -> {
-//                    if (!gridButtons.contains(newButton)) {
-//                        gridButtons.add(newButton);
-//                        newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
-//                        inputWord[0] += newButton.getId();
-//                        wordInput.setText(inputWord[0]);
-//                        System.out.println(inputWord[0]);
-//                    }
-                    // colors
-                    // see if i can limit people from clicing buttons that are not adjancet
-                    // if i click a button that is already inside the grid buttons, remove it and also remove the string.
+                    if (!gridButtons.contains(newButton)) {
+                        gridButtons.add(newButton);
+                        newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
+                        inputWord[0] += newButton.getId();
+                        wordInput.setText(inputWord[0]);
+                        System.out.println(inputWord[0]);
+                    }
+
                 });
-//                mainButtons.add(newButton);
+                mainButtons.add(newButton);
                 grid.add(newButton, row, col);
+
             }
         }
 
-//        makeSpecialButtons();
+        makeFontButtons();
         return grid;
     }
+
+    /*
+    This function creates the buttons that will allow the player to increase or decrease
+    the font of the boggle game.
+     */
+    private void makeFontButtons() {
+
+        // increase font button
+        Button fontUp = new Button("Increase Font");
+        fontUp.setId("Increase Font");
+        fontUp.setPrefSize(100, 50);
+        fontUp.setFont(new Font(this.font));
+        fontUp.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        fontUp.setOnAction(e -> {
+            updateFont("increase");
+        });
+
+        mainButtons.add(fontUp);
+
+        // decrease font button
+        Button fontDown = new Button("Decrease Font");
+        fontDown.setId("Decrease Font");
+        fontDown.setPrefSize(100, 50);
+        fontDown.setFont(new Font(this.font));
+        fontDown.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        fontDown.setOnAction(e -> {
+            updateFont("decrease");
+        });
+
+        mainButtons.add(fontDown);
+
+        FlowPane fontSettings = new FlowPane();
+        fontSettings.getChildren().addAll(fontUp, fontDown);
+        fontSettings.setAlignment(Pos.BOTTOM_CENTER);
+        borderPane.setBottom(fontSettings);
+
+    }
+
+    /*
+     * Updates the font of the letters on the grid.
+     */
+
+    private void updateFont(String action){
+        if (Objects.equals(action, "increase")){
+            if(!(this.font >= 24)) {
+                this.font++;
+            }
+            if(!(this.gridButtonSize >= 85)){
+                this.gridButtonSize += 5;
+            }
+            for (Node node: grid.getChildren()) {
+                if (node instanceof Button nb){
+                    nb.setFont(new Font(this.font));
+                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                }
+            }
+        }
+        else {
+            if(!(this.font <= 8)) {
+                this.font--;
+            }
+            if(!(this.gridButtonSize <= 35)){
+                this.gridButtonSize -= 5;
+            }
+
+            for (Node node: grid.getChildren()) {
+                if (node instanceof Button nb){
+                    nb.setFont(new Font(this.font));
+                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);
+                }
+            }
+        }
+    }
+
     /**
      * Generates last instructions
      *
@@ -585,7 +787,37 @@ public class BoggleView {
             instructionsBox.getChildren().clear();
             giveFirstInstructions();
         });
+        
 
     }
+    /*
+     * Returns the BoggleGame
+     */
 
+    public BoggleGame getModel() {
+        return model;
+    }
+    /*
+     * Changes the BoggleGame and gameStats using another Boggle Game
+     * @param BoggleGame
+     */
+
+    public void changeboradandstats(BoggleGame jl) {
+        model = jl;
+        gameStats = jl.getGameStats();
+
+    }
+    /*
+     * Creates the Save View inside of the BoggleView
+     */
+    private void createSaveView(){
+        BoggleSave saveView = new BoggleSave(this);
+    }
+    /*
+     * Creates the Load View inside of the BoggleView
+     */
+
+    private void createLoadView(){
+        BoogleLoad loadView = new BoogleLoad(this);
+    }
 }
