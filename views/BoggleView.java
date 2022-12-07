@@ -92,7 +92,7 @@ public class BoggleView {
 
     MediaPlayer mediaPlayer;
 
-    private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
+    private static final String MEDIA_URL = "/tenacity/music/lifelike-126735.mp3";
 
     Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
 
