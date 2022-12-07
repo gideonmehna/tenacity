@@ -366,12 +366,15 @@ public class BoggleGame implements Serializable {
      */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* Public function that returns the BoggleStats object being used in the game
      * @return BoggleStats object which contains the players scores, words, e.t.c.
      */
     public BoggleStats getGameStats() {
         return this.gameStats;
 =======
+=======
+>>>>>>> develop
     public void saveGame(File fileName) {
         try {
             FileOutputStream fout = new FileOutputStream(fileName);
@@ -384,6 +387,9 @@ public class BoggleGame implements Serializable {
 
     public BoggleStats getGameStats() {
         return gameStats;
+<<<<<<< HEAD
 >>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
+=======
+>>>>>>> develop
     }
 }

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
@@ -27,6 +28,15 @@
       <change afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+      <change afterPath="$PROJECT_DIR$/boggle/BoggleSave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+>>>>>>> develop
       <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
 =======
@@ -54,7 +64,10 @@
       <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
 >>>>>>> feature/2.3_Verifying_Word
+<<<<<<< HEAD
 >>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
+=======
+>>>>>>> develop
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +89,12 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> develop
 <<<<<<< HEAD
 <<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
@@ -91,7 +107,10 @@
 =======
         <entry key="$PROJECT_DIR$" value="develop" />
 >>>>>>> feature/2.3_Verifying_Word
+<<<<<<< HEAD
 >>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
+=======
+>>>>>>> develop
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -144,8 +163,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> develop
     "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -155,7 +177,10 @@
 =======
 >>>>>>> develop
 =======
+<<<<<<< HEAD
 >>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
+=======
+>>>>>>> develop
     "jdk.selected.JAVA_MODULE": "18",
     "last_opened_file_path": "C:/Users/eevee/csc207/javafx-sdk-19/lib/javafx.web.jar",
     "project.structure.last.edited": "Libraries",
@@ -167,6 +192,7 @@
 }</component>
   <component name="RunManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
       <module name="tenacity" />
@@ -177,6 +203,12 @@
     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
       <module name="tenacity" />
+=======
+<<<<<<< HEAD
+    <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+      <module name="tenacity" />
+>>>>>>> develop
       <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml" />
 =======
     <configuration name="tenacity" type="Application" factoryName="Application">
@@ -192,7 +224,10 @@
       <module name="tenacity" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Shereece\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
 >>>>>>> develop
+<<<<<<< HEAD
 >>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
+=======
+>>>>>>> develop
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,13 +243,19 @@
       <updated>1669577566073</updated>
     </task>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> develop
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> feature/2.3_Verifying_Word
+<<<<<<< HEAD
 >>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
+=======
+>>>>>>> develop
     <task id="LOCAL-00001" summary="[DEV-1.1] BASE GUI DONE">
       <created>1670289102898</created>
       <option name="number" value="00001" />
@@ -226,7 +267,10 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> develop
 =======
 >>>>>>> develop
     <task id="LOCAL-00001" summary="This version has the font and colour accessibility user stories added.">
@@ -278,7 +322,10 @@
 >>>>>>> develop
 =======
 >>>>>>> feature/2.3_Verifying_Word
+<<<<<<< HEAD
 >>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
+=======
+>>>>>>> develop
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,10 +353,13 @@
   </component>
   <component name="VcsManagerConfiguration">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
     <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> develop
 <<<<<<< HEAD
 <<<<<<< HEAD
     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
@@ -331,6 +381,9 @@
     <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
     <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
 >>>>>>> feature/2.3_Verifying_Word
+<<<<<<< HEAD
 >>>>>>> a6fc00245c9426d92126f2e60994d86e6dd73191
+=======
+>>>>>>> develop
   </component>
 </project>

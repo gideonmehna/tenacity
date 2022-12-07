@@ -474,6 +474,7 @@ public class BoggleView implements Serializable {
             VBox box2 = new VBox(5);
             HBox box3 = new HBox(10);
 <<<<<<< HEAD
+<<<<<<< HEAD
 //            Label wordCheck = new Label();
 //            if (this.model.evaluateWord(inputWord[0]) == 2){
 //                wordCheck.getStyleClass().add("bg-4");
@@ -517,6 +518,8 @@ public class BoggleView implements Serializable {
             box1.getChildren().add(wordCount);
             box1.setAlignment(Pos.TOP_CENTER);
 =======
+=======
+>>>>>>> develop
             Label wordCheck = new Label();
             if (this.model.evaluateWord(inputWord[0]) == 2){
                 wordCheck.getStyleClass().add("bg-4");
