@@ -1,0 +1,44 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,7 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-<<<<<<< HEAD
++
+     <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+ =======
+@@ -56,7 +56,7 @@
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-<<<<<<< HEAD
++
+   <component name="ProjectId" id="2IWA6QrmhhzOVNwFa12S9DZ1Px6" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="2" id="Add" />
+@@ -72,7 +72,7 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-<<<<<<< HEAD
++
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+@@ -102,7 +102,7 @@
+   }
+ }</component>
+   <component name="RunManager">
+-<<<<<<< HEAD
++
+     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
+ =======
+     <configuration name="tenacity" type="Application" factoryName="Application">

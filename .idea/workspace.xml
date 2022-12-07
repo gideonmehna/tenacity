@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2d93b3f9-627a-4a8a-b484-f03b17caee33" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/lifelike-126735.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoogleLoad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoogleLoad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/libraries/javafx_swt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/libraries/javafx_swt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
     </list>
@@ -29,12 +19,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/4.5_music_game" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IbD2od6TGjkejruIaPhagcrtMy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -47,13 +54,21 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
       <module name="tenacity" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\ugstu\Desktop\UTM 2nd Year Fall\Class\CSC207 H5\CSC207\Lecture code\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d93b3f9-627a-4a8a-b484-f03b17caee33" name="Changes" comment="[DEV-1.1] BASE GUI DONE" />
+      <created>1670441185118</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670441185118</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -66,5 +81,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
+import javafx.scene.media.MediaException;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
@@ -22,6 +23,7 @@ import javafx.stage.Stage;
 
 import java.io.Serializable;
 
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -100,10 +102,10 @@ public class BoggleView implements Serializable {
 
     MediaPlayer mediaPlayer;
 
-    private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
+    private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/PP2/tenacity/music/lifelike-126735.mp3";
 
 
-//    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
+    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
 
 
     /**
@@ -140,14 +142,17 @@ public class BoggleView implements Serializable {
         this.stage.show();
 
 
-        // Create the player and set to play automatically.
-//        Path path = Paths.get(MEDIA_URL);
-//        if(!(new Media(path.toUri().toString()) == null)){
-//            Media media = new Media(path.toUri().toString());
-//
-//            this.mediaPlayer = new MediaPlayer(media);
-//            this.mediaPlayer.setAutoPlay(true);
-//        }
+
+
+
+        try{
+        this.mediaPlayer = new MediaPlayer(media);
+
+        this.mediaPlayer.setAutoPlay(true);}
+        catch (RuntimeException e)
+        {
+            System.out.println("Something went wrong.");
+           }
 
         giveFirstInstructions();
     }
