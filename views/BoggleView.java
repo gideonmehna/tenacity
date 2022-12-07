@@ -630,9 +630,8 @@ public class BoggleView implements Serializable {
                 newButton.setId(s);
                 newButton.setPrefSize(this.gridButtonSize, this.gridButtonSize);
                 newButton.setFont(new Font(this.font));
-                newButton.setStyle("-fx-background-color: green; -fx-text-fill: white;");
-//                newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
-//               
+                newButton.setStyle("-fx-background-color: " + this.buttonBackgroundColor + "; -fx-text-fill:" + this.buttonTextColor +";");
+
                 newButton.setOnMouseEntered(e->{
                     newButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
                 });
