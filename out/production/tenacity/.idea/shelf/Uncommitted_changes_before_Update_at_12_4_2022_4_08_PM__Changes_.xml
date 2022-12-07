@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM_[Changes]" date="1670188102792" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/4/2022 4:08 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/tenacity/views/BoggleView.class" />
+    <option name="AFTER_PATH" value="out/production/tenacity/views/BoggleView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM_[Changes]/BoggleView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/tenacity/BoggleApp.class" />
+    <option name="AFTER_PATH" value="out/production/tenacity/BoggleApp.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM_[Changes]/BoggleApp.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/tenacity/BoggleTests.class" />
+    <option name="AFTER_PATH" value="out/production/tenacity/BoggleTests.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM_[Changes]/BoggleTests.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/tenacity/boggle/BoggleStats.class" />
+    <option name="AFTER_PATH" value="out/production/tenacity/boggle/BoggleStats.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM_[Changes]/BoggleStats.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/tenacity/boggle/BoggleGame.class" />
+    <option name="AFTER_PATH" value="out/production/tenacity/boggle/BoggleGame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM_[Changes]/BoggleGame.class" />
+  </binary>
+</changelist>
