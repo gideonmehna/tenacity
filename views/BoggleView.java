@@ -97,6 +97,8 @@ public class BoggleView implements Serializable {
     Text wordInput ; // display the word the user is typing
     ArrayList<Node> mainButtons = new ArrayList<>();
 
+    private String buttonBackgroundColor, buttonTextColor;
+
 
     MediaPlayer mediaPlayer;
 
@@ -118,7 +120,8 @@ public class BoggleView implements Serializable {
     public BoggleView(BoggleGame game, Stage stage) throws Exception {
         this.stage = stage;
         this.model = game;
-
+        this.buttonTextColor = "white";
+        this.buttonBackgroundColor = "#10871b";
         initUI();
     }
     /**
@@ -185,10 +188,10 @@ public class BoggleView implements Serializable {
 
         loadBox = new VBox();
         loadBox.setPadding(new Insets(10, 10, 10, 10));
-        loadBox.setAlignment(Pos.TOP_LEFT);
+        loadBox.setAlignment(Pos.TOP_RIGHT);
 
         borderPane.setCenter(instructionsBox);
-        borderPane.setTop(loadBox);
+        borderPane.setLeft(loadBox);
 
     }
     /**
@@ -400,46 +403,49 @@ public class BoggleView implements Serializable {
         clear.setPrefSize(150, 50);
         clear.setFont(new Font(this.font));
         clear.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
-//        mainButtons.add(clear);
+        mainButtons.add(clear);
 
         stopmusic = new Button( "Stop Music");
         stopmusic.setId("Stop");
         stopmusic.setPrefSize(150, 50);
         stopmusic.setFont(new Font(this.font));
         stopmusic.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        mainButtons.add(stopmusic);
 
         playmusic = new Button( "Play Music");
         playmusic.setId("Play");
         playmusic.setPrefSize(150, 50);
         playmusic.setFont(new Font(this.font));
         playmusic.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        mainButtons.add(playmusic);
 
         endButton = new Button("End Round");
         endButton.setId("end");
         endButton.setPrefSize(150, 50);
         endButton.setFont(new Font(this.font));
         endButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
-//        mainButtons.add(endButton);
+        mainButtons.add(endButton);
 
         enterButton = new Button("Enter");
         enterButton.setId("enter");
         enterButton.setPrefSize(150, 50);
         enterButton.setFont(new Font(this.font));
         enterButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        mainButtons.add(enterButton);
 
         saveButton = new Button("Save");
         saveButton.setId("save");
         saveButton.setPrefSize(150, 50);
         saveButton.setFont(new Font(12));
         saveButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
-
+        mainButtons.add(saveButton);
 
         loadButton = new Button("Load");
         loadButton.setId("load");
         loadButton.setPrefSize(150, 50);
         loadButton.setFont(new Font(12));
         loadButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
-//        mainButtons.add(enterButton);
+        mainButtons.add(loadButton);
 
 //        wordInput.setText(inputWord[0]);
 
@@ -692,8 +698,115 @@ public class BoggleView implements Serializable {
         FlowPane fontSettings = new FlowPane();
         fontSettings.getChildren().addAll(fontUp, fontDown);
         fontSettings.setAlignment(Pos.BOTTOM_CENTER);
-        borderPane.setBottom(fontSettings);
 
+        FlowPane colorSettings = makeColorButtons();
+
+        VBox box = new VBox(fontSettings, colorSettings);
+        box.setAlignment(Pos.BOTTOM_CENTER);
+        borderPane.setBottom(box);
+
+    }
+
+    /*
+    *   Creates the buttons that the user can select to change the colour scheme of the Boggle Game.
+     */
+    private FlowPane makeColorButtons(){
+        // black on white setting
+        Button blackOnWhite = new Button("Black & White");
+        blackOnWhite.setId("Black & White");
+        blackOnWhite.setPrefSize(100, 50);
+        blackOnWhite.setFont(new Font(this.font));
+        blackOnWhite.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #112e51;");
+
+
+        blackOnWhite.setOnAction(e -> {
+            updateColours("BOW");
+        });
+
+        //white on black setting
+        Button whiteOnBlack = new Button("White & Black");
+        whiteOnBlack.setId("White & Black");
+        whiteOnBlack.setPrefSize(100, 50);
+        whiteOnBlack.setFont(new Font(this.font));
+        whiteOnBlack.setStyle("-fx-background-color: #212121; -fx-text-fill: #ffffff;");
+
+        whiteOnBlack.setOnAction(e -> {
+            updateColours("WOB");
+        });
+
+        //blue on white
+        Button blueOnWhite = new Button("Blue & White");
+        blueOnWhite.setId("Blue & White");
+        blueOnWhite.setPrefSize(100, 50);
+        blueOnWhite.setFont(new Font(this.font));
+        blueOnWhite.setStyle("-fx-background-colour: #ffffff; -fx-text-fill: #0071bc;");
+
+        blueOnWhite.setOnAction(e -> {
+            updateColours("BLOW");
+        });
+
+        //green on white - default
+        Button whiteOnGreen = new Button("Green & White");
+        whiteOnGreen.setId("Green & White");
+        whiteOnGreen.setId("Green & White");
+        whiteOnGreen.setPrefSize(100, 50);
+        whiteOnGreen.setFont(new Font(this.font));
+        whiteOnGreen.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+
+        whiteOnGreen.setOnAction(e -> {
+            updateColours("WOG");
+        });
+
+        //make gridpane of buttons and position it at the bottom
+        FlowPane colorSettings = new FlowPane();
+        colorSettings.getChildren().addAll(whiteOnGreen, blackOnWhite, whiteOnBlack, blueOnWhite);
+        colorSettings.setAlignment(Pos.BOTTOM_CENTER);
+
+        return colorSettings;
+    }
+
+    /*
+     * Updates the color scheme of the boggle game
+     */
+
+    private void updateColours(String colour){
+        if (Objects.equals(colour, "BOW")){
+            // change the buttons on the grid to white and the text to black
+            this.buttonTextColor = "#112e51";
+            this.buttonBackgroundColor = "#ffffff";
+            for (Node node: mainButtons) {
+                if (node instanceof Button button) {
+                    button.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #112e51;");
+                }
+            }
+        } else if (colour == "WOB") {
+            // change the buttons on the grid to black and the text to white
+            this.buttonTextColor = "#ffffff";
+            this.buttonBackgroundColor = "#212121";
+            for (Node node: mainButtons) {
+                if (node instanceof Button button){
+                    button.setStyle("-fx-background-color: #212121; -fx-text-fill: #ffffff;");
+                }
+            }
+        } else if (colour == "BLOW") {
+            // change the buttons on the grid to white and the text to blue
+            this.buttonTextColor = "#0071bc";
+            this.buttonBackgroundColor = "#ffffff";
+            for (Node node: mainButtons){
+                if (node instanceof Button button) {
+                    button.setStyle("-fx-background-colour: #ffffff; -fx-text-fill: #0071bc;");
+                }
+            }
+        } else {
+            // change the buttons on the grid to green and the text to white
+            this.buttonTextColor = "white";
+            this.buttonBackgroundColor = "#10871b";
+            for (Node node : mainButtons) {
+                if (node instanceof Button button) {
+                    button.setStyle("-fx-background-color: #10871b; -fx-text-fill: white;");
+                }
+            }
+        }
     }
 
     /*
