@@ -374,8 +374,10 @@ public class BoggleGame implements Serializable {
             e.printStackTrace();
         }
     }
-
+    /* Public function that returns the BoggleStats object being used in the game
+     * @return BoggleStats object which contains the players scores, words, e.t.c.
+     */
     public BoggleStats getGameStats() {
-        return gameStats;
+        return this.gameStats;
     }
 }

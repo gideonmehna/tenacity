@@ -563,10 +563,18 @@ public class BoggleView implements Serializable {
 //            Label wordsFound = new Label(wordFound);
 //            box3.getChildren().add(wordsFound);
 //            box3.setAlignment(Pos.BOTTOM_CENTER);
+            String wordFound = "Words Found: ";
+            for (String word: this.model.getGameStats().getPlayerWords()){
+                wordFound +=  "\n" + word ;
+            }
+            Label wordsFound = new Label(wordFound);
+            box3.getChildren().add(wordsFound);
+            box3.setAlignment(Pos.BOTTOM_LEFT);
             VBox finalBox = new VBox(20, box1, box2, box3);
             borderPane.setRight(finalBox);
             finalBox.setAlignment(Pos.CENTER);
             finalBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
+            finalBox.setMaxSize(400,400);
             clear.fire();
         });
         endButton.setOnAction(e -> {
