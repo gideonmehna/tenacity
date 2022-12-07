@@ -19,11 +19,12 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 
-<<<<<<< HEAD
+
 import java.io.Serializable;
-=======
+
+import java.nio.file.Path;
 import java.nio.file.Paths;
->>>>>>> develop
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -70,11 +71,11 @@ public class BoggleView implements Serializable {
     /**
      * Buttons to start, end, enter and create a new game
      */
-<<<<<<< HEAD
-    Button startButton,endButton, enterButton, newGame, saveButton, loadButton;
-=======
-    Button startButton,endButton, enterButton, newGame, stopmusic, playmusic;
->>>>>>> develop
+
+    Button startButton,endButton, enterButton, newGame, saveButton, loadButton, stopmusic, playmusic;
+
+
+
     /**
      * This array holds the buttons that have been selected by the game player
      */
@@ -95,15 +96,14 @@ public class BoggleView implements Serializable {
      */
     Text wordInput ; // display the word the user is typing
     ArrayList<Node> mainButtons = new ArrayList<>();
-<<<<<<< HEAD
-=======
+
 
     MediaPlayer mediaPlayer;
 
     private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
 
-    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
->>>>>>> develop
+
+//    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
 
 
     /**
@@ -141,8 +141,14 @@ public class BoggleView implements Serializable {
 
 
         // Create the player and set to play automatically.
-        this.mediaPlayer = new MediaPlayer(media);
-        this.mediaPlayer.setAutoPlay(true);
+//        Path path = Paths.get(MEDIA_URL);
+//        if(!(new Media(path.toUri().toString()) == null)){
+//            Media media = new Media(path.toUri().toString());
+//
+//            this.mediaPlayer = new MediaPlayer(media);
+//            this.mediaPlayer.setAutoPlay(true);
+//        }
+
         giveFirstInstructions();
     }
     /**
@@ -180,12 +186,7 @@ public class BoggleView implements Serializable {
         loadBox = new VBox();
         loadBox.setPadding(new Insets(10, 10, 10, 10));
         loadBox.setAlignment(Pos.TOP_LEFT);
-<<<<<<< HEAD
-        
-        
-=======
 
->>>>>>> develop
         borderPane.setCenter(instructionsBox);
         borderPane.setTop(loadBox);
 
@@ -448,11 +449,9 @@ public class BoggleView implements Serializable {
         VBox vControls = new VBox(controls, textInput);
         vControls.setAlignment(Pos.CENTER);
         vControls.setSpacing(5);
-<<<<<<< HEAD
-        VBox hcontrols = new VBox(saveButton, loadButton);
-=======
-        VBox hcontrols = new VBox(playmusic, stopmusic);
->>>>>>> develop
+
+        VBox hcontrols = new VBox(saveButton, loadButton, playmusic, stopmusic);
+
         loadBox.getChildren().addAll(hcontrols);
         instructionsBox.getChildren().addAll(vControls, endButton);
 

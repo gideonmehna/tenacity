@@ -1,19 +1,17 @@
 package boggle;
 
 import java.awt.*;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-=======
+
 import java.util.*;
->>>>>>> develop
-=======
+
 import java.util.*;
->>>>>>> develop
+
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
