@@ -461,6 +461,7 @@ public class BoggleView {
             borderPane.setRight(finalBox);
             finalBox.setAlignment(Pos.LEFT);
             finalBox.setStyle("-fx-background-color: rgb(225,225,255,0.52);");
+            finalBox.setMaxSize(400,400);
             clear.fire();
         });
         endButton.setOnAction(e -> {
