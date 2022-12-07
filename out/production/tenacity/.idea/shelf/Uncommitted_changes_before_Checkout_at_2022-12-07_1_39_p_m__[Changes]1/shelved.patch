@@ -1,0 +1,54 @@
+Index: .idea/libraries/tenacity.xml
+===================================================================
+diff --git a/.idea/libraries/tenacity.xml b/.idea/libraries/tenacity.xml
+deleted file mode 100644
+--- a/.idea/libraries/tenacity.xml	
++++ /dev/null	
+@@ -1,19 +0,0 @@
+-<component name="libraryTable">
+-  <library name="tenacity">
+-    <CLASSES>
+-      <root url="file://$PROJECT_DIR$" />
+-      <root url="jar://$USER_HOME$/javafx-sdk-19/lib/javafx-swt.jar!/" />
+-      <root url="jar://$USER_HOME$/javafx-sdk-19/lib/javafx.base.jar!/" />
+-      <root url="jar://$USER_HOME$/javafx-sdk-19/lib/javafx.controls.jar!/" />
+-      <root url="jar://$USER_HOME$/javafx-sdk-19/lib/javafx.fxml.jar!/" />
+-      <root url="jar://$USER_HOME$/javafx-sdk-19/lib/javafx.graphics.jar!/" />
+-      <root url="jar://$USER_HOME$/javafx-sdk-19/lib/javafx.media.jar!/" />
+-      <root url="jar://$USER_HOME$/javafx-sdk-19/lib/javafx.swing.jar!/" />
+-      <root url="jar://$USER_HOME$/javafx-sdk-19/lib/javafx.web.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="file://$PROJECT_DIR$" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/javafx_swt.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/javafx_swt.xml b/.idea/libraries/javafx_swt.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/libraries/javafx_swt.xml	
+@@ -0,0 +1,16 @@
++<component name="libraryTable">
++  <library name="javafx-swt">
++    <CLASSES>
++      <root url="jar://$JavaFX$/javafx-swt.jar!/" />
++      <root url="jar://$JavaFX$/javafx.base.jar!/" />
++      <root url="jar://$JavaFX$/javafx.controls.jar!/" />
++      <root url="jar://$JavaFX$/javafx.fxml.jar!/" />
++      <root url="jar://$JavaFX$/javafx.graphics.jar!/" />
++      <root url="jar://$JavaFX$/javafx.media.jar!/" />
++      <root url="jar://$JavaFX$/javafx.swing.jar!/" />
++      <root url="jar://$JavaFX$/javafx.web.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file

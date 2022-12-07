@@ -1,0 +1,700 @@
+Index: views/BoggleView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package views;\r\n\r\nimport boggle.*;\r\nimport javafx.geometry.Insets;\r\nimport javafx.geometry.Pos;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.layout.*;\r\nimport javafx.scene.media.Media;\r\nimport javafx.scene.media.MediaPlayer;\r\nimport javafx.scene.paint.Color;\r\nimport javafx.scene.shape.SVGPath;\r\nimport javafx.scene.text.Font;\r\nimport javafx.scene.text.Text;\r\nimport javafx.scene.text.TextAlignment;\r\nimport javafx.stage.Stage;\r\n\r\n\r\n<<<<<<< HEAD\r\nimport java.io.Serializable;\r\n=======\r\nimport java.nio.file.Paths;\r\n>>>>>>> develop\r\nimport java.util.ArrayList;\r\nimport java.util.Objects;\r\n\r\n\r\n\r\n/**\r\n * Boggle View\r\n *\r\n * This is The class that displays boggle.\r\n */\r\npublic class BoggleView implements Serializable {\r\n    /**\r\n     * Boggle Model class\r\n     */\r\n    BoggleGame model;\r\n    /**\r\n     * Boggle Grid\r\n     */\r\n    BoggleGrid modelBoggleGrid;\r\n    /**\r\n     * Boggle Statistics\r\n     */\r\n    BoggleStats gameStats;\r\n    /**\r\n     * JavaFX BorderPane where the game is played.\r\n     */\r\n    BorderPane borderPane;\r\n    /**\r\n     * Grid Pane that holds the Boggle GRid\r\n     */\r\n    GridPane grid;\r\n    /**\r\n     * Instructions are displayed in this JavaFX Text\r\n     */\r\n    Text instructionsText;\r\n    /**\r\n     * The Instructions and Boggle Game are displayed in this Box\r\n     */\r\n    VBox instructionsBox, loadBox; // this holds the instructions and the game\r\n    /**\r\n     * The main stage of the game. JavaFX stage or window\r\n     */\r\n    Stage stage;\r\n    /**\r\n     * Buttons to start, end, enter and create a new game\r\n     */\r\n<<<<<<< HEAD\r\n    Button startButton,endButton, enterButton, newGame, saveButton, loadButton;\r\n=======\r\n    Button startButton,endButton, enterButton, newGame, stopmusic, playmusic;\r\n>>>>>>> develop\r\n    /**\r\n     * This array holds the buttons that have been selected by the game player\r\n     */\r\n    ArrayList<Button> gridButtons;\r\n    /**\r\n     * Grid size (4 -9). The grid is always a square therefore the size is only an integer.\r\n     * GridButtonSize is the size of the grid buttons\r\n     * Font is the font for the buttons\r\n     *\r\n     */\r\n    int size, gridButtonSize = 50, font = 12;\r\n    /**\r\n     * The word the user is typing or selecting from the grid\r\n     */\r\n    final String[] inputWord = {new String()}; // The word the user is typing\r\n    /**\r\n     * JavaFX Text to display the word the user is typing\r\n     */\r\n    Text wordInput ; // display the word the user is typing\r\n    ArrayList<Node> mainButtons = new ArrayList<>();\r\n<<<<<<< HEAD\r\n=======\r\n\r\n    MediaPlayer mediaPlayer;\r\n\r\n    private static final String MEDIA_URL = \"/Users/imranmuyingo/Downloads/lifelike-126735.mp3\";\r\n\r\n    Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());\r\n>>>>>>> develop\r\n\r\n\r\n    /**\r\n     * BoggleView Class constructor\r\n     * It also runs the initUI() function that displays the game.\r\n     *\r\n     * @param game, this is the game model\r\n     * @param stage, this is the window\r\n     *\r\n     *\r\n     */\r\n    public BoggleView(BoggleGame game, Stage stage) throws Exception {\r\n        this.stage = stage;\r\n        this.model = game;\r\n\r\n        initUI();\r\n    }\r\n    /**\r\n     * initUI() Initializes the GUI of BoggleGame\r\n     *\r\n     * This displays and handles the events of the whole Boggle Game\r\n     */\r\n    public void initUI() {\r\n        // set the stage\r\n        this.stage.setTitle(\"TenaCity Boggle\");\r\n\r\n        borderPane = new BorderPane();\r\n        borderPane.setStyle(\"-fx-background-image: url(\\\"https://wallpaperset.com/w/full/4/9/8/141069.jpg\\\");\");\r\n\r\n\r\n\r\n        var scene = new Scene(borderPane, 1200, 600);\r\n        this.stage.setScene(scene);\r\n        this.stage.show();\r\n\r\n\r\n        // Create the player and set to play automatically.\r\n        this.mediaPlayer = new MediaPlayer(media);\r\n        this.mediaPlayer.setAutoPlay(true);\r\n        giveFirstInstructions();\r\n    }\r\n    /**\r\n     *  Gives the first User Instructions. Talks about the main game functions.\r\n     *\r\n     *\r\n     */\r\n    private void giveFirstInstructions() {\r\n\r\n        String instructions = this.model.loadInstructions();\r\n\r\n        instructionsText = new Text();\r\n        instructionsText.setText(instructions);\r\n        instructionsText.setX(100); //changing the size of the instructions box\r\n        instructionsText.setY(100); //changing the size of the instructions box\r\n        instructionsText.setFont(new Font(this.font));\r\n\r\n        Button next = new Button(\"Next\");\r\n        next.setId(\"Next\");\r\n        next.setPrefSize(50, 50);\r\n        next.setFont(new Font(12));\r\n        next.setStyle(\"-fx-background-color: #10871b; -fx-text-fill: white; \");\r\n\r\n        next.setOnAction(e -> {\r\n            giveSecondInstructions();\r\n        });\r\n\r\n        instructionsBox = new VBox( instructionsText, next);\r\n        instructionsBox.setPadding(new Insets(20, 20, 20, 20));\r\n        instructionsBox.setSpacing(10);\r\n        instructionsBox.setAlignment(Pos.CENTER);\r\n        instructionsBox.setStyle(\"-fx-background-color: rgb(225,225,255,0.52);\");\r\n        instructionsBox.setMaxSize(500, 500);\r\n\r\n        loadBox = new VBox();\r\n        loadBox.setPadding(new Insets(10, 10, 10, 10));\r\n        loadBox.setAlignment(Pos.TOP_LEFT);\r\n<<<<<<< HEAD\r\n        \r\n        \r\n=======\r\n\r\n>>>>>>> develop\r\n        borderPane.setCenter(instructionsBox);\r\n        borderPane.setTop(loadBox);\r\n\r\n    }\r\n    /**\r\n     *  Gives the Second User Instructions. Asks for the grid size.\r\n     *\r\n     *\r\n     */\r\n    private void giveSecondInstructions() {\r\n        instructionsBox.getChildren().clear();\r\n\r\n        String instruction = \"Enter a number between 4 - 12 inclusive. \\ne.g enter 5 to play on a (5x5) grid;\";\r\n\r\n        instructionsText.setText(instruction);\r\n\r\n\r\n        TextField gridSize = new TextField();\r\n        gridSize.setAlignment(Pos.CENTER);\r\n        gridSize.setMaxSize(100, 100);\r\n\r\n        Label message = new Label();\r\n        message.setFont(new Font(this.font));\r\n        message.setStyle(\"-fx-background-color: #981b1e; -fx-text-fill: #ffffff;\");\r\n\r\n        Button next = new Button(\"Next\");\r\n        next.setId(\"Next\");\r\n        next.setPrefSize(50, 50);\r\n        next.setFont(new Font(this.font));\r\n        next.setStyle(\"-fx-background-color: #10871b; -fx-text-fill: white;\");\r\n        next.setPadding(new Insets(5));\r\n\r\n        gridSize.setOnAction(e -> {\r\n            next.fire();\r\n        });\r\n\r\n\r\n        next.setOnAction(e -> {\r\n            String text = gridSize.getText();\r\n            if(text.matches(\"[4-9]|[1][0-2]\")){\r\n                System.out.println(text + \" passes the regex\");\r\n                size = Integer.parseInt( text);\r\n                message.setText(\"Great choice!\");\r\n                giveThirdInstructions();\r\n            }\r\n            else\r\n            {\r\n                message.setText(\"Please type a number between 4 and 12 inclusive\");\r\n            }\r\n        });\r\n        instructionsBox.getChildren().addAll(instructionsText, message, gridSize, next);\r\n\r\n    }\r\n    /**\r\n     *  Gives the Third User Instructions.\r\n     *  Asks the user to provide a string of characters to be used for the game or to let the computer generate\r\n     *\r\n     *\r\n     */\r\n    private void giveThirdInstructions() {\r\n        instructionsBox.getChildren().clear();\r\n        final String[] s = {new String()};\r\n        String instruction = new String();\r\n        Label message = new Label();\r\n\r\n\r\n        TextField randomLetters = new TextField();\r\n        randomLetters.setAlignment(Pos.CENTER);\r\n        randomLetters.setMaxSize(100, 100);\r\n\r\n        Button random = new Button(\"Randomly Assign Letters\");\r\n        random.setId(\"random\");\r\n        random.setPrefSize(200, 50);\r\n        random.setFont(new Font(this.font));\r\n        random.setStyle(\"-fx-background-color: #10871b; -fx-text-fill: white;\");\r\n        random.setPadding(new Insets(5, 10, 5, 5));\r\n\r\n        Button usersLetters = new Button(\"Provide Your Own\");\r\n        usersLetters.setId(\"usersLetters\");\r\n        usersLetters.setPrefSize(200, 50);\r\n        usersLetters.setFont(new Font(this.font));\r\n        usersLetters.setStyle(\"-fx-background-color: #10871b; -fx-text-fill: white;\");\r\n        random.setPadding(new Insets(5, 5, 5, 10));\r\n\r\n        startButton = new Button(\"Start\");\r\n        startButton.setId(\"Start\");\r\n        startButton.setPrefSize(150, 50);\r\n        startButton.setFont(new Font(this.font));\r\n        startButton.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n\r\n        HBox buttonBox = new HBox();\r\n        buttonBox.setAlignment(Pos.CENTER);\r\n        buttonBox.setSpacing(5);\r\n        if ((4 <= size) && (size <= 12)){\r\n            instruction = \"Click one of the buttons below to either randomly assign letters or to provide your own\";\r\n            buttonBox.getChildren().addAll(random, usersLetters);\r\n\r\n\r\n        }\r\n\r\n        instructionsText.setText(instruction);\r\n\r\n        instructionsBox.getChildren().addAll(instructionsText, buttonBox);\r\n\r\n        usersLetters.setOnAction(e -> {\r\n            buttonBox.getChildren().clear();\r\n            instructionsText.setText(\"Randomly assign Letters for your board.\");\r\n            VBox messageRandomLetters = new VBox(message, randomLetters);\r\n            messageRandomLetters.setAlignment(Pos.CENTER);\r\n            buttonBox.getChildren().addAll(messageRandomLetters);\r\n        });\r\n\r\n\r\n        random.setOnAction(e ->{\r\n            instructionsBox.getChildren().remove(instructionsText);\r\n            message.setText(\"Ready to Start\");\r\n            instructionsBox.getChildren().clear();\r\n            instructionsBox.getChildren().addAll(message, startButton);\r\n        });\r\n        randomLetters.setOnAction(e-> {\r\n            s[0] = randomLetters.getText();\r\n            s[0] = s[0].toUpperCase().strip();// mke sure there are no numbers\r\n            message.setStyle(\"-fx-background-color: #981b1e; -fx-text-fill: #ffffff;\");\r\n\r\n            if (!s[0].matches(\"^[A-Z]*$\")) {\r\n                message.setText(\"Please only enter alphabet charaters from A - Z\");\r\n                randomLetters.setText(\"\");\r\n            }\r\n            else if (s[0].length() < size * size) {\r\n                message.setText(\"You have entered few letters, please enter \"+ size * size +\" letters\");\r\n            }\r\n\r\n            else if (s[0].length() > size * size) {\r\n                s[0] = s[0].substring(0, size * size);\r\n            }\r\n            if (s[0].length() == size * size) {\r\n                message.setText(\"Ready to Start\");\r\n                message.setStyle(\"-fx-background-color: rgb(255,255,255,0); -fx-text-fill: black;\");\r\n                instructionsBox.getChildren().clear();\r\n                instructionsBox.getChildren().addAll(message, startButton);\r\n            }\r\n        });\r\n        startButton.setOnAction(e -> {\r\n            instructionsBox.getChildren().clear();\r\n            message.setText(\"Loading Game ...\");\r\n            instructionsBox.getChildren().addAll(message);\r\n\r\n            if(s[0].isEmpty()){\r\n                String randomlyGeneratedString = this.model.randomizeLetters(size);\r\n                s[0] = randomlyGeneratedString;\r\n            }\r\n\r\n\r\n            launchBoard(s[0]);\r\n            borderPane.requestFocus();\r\n        });\r\n\r\n\r\n    }\r\n    /**\r\n     * launches the Gridpane with the Boggle Grid once the user has gone through the instructions\r\n     *\r\n     * This displays and handles the events of the whole Boggle Game\r\n     */\r\n    private void launchBoard(String s){\r\n        // Clear all the instructions in the box\r\n        instructionsBox.getChildren().clear();\r\n        // Prepare the gridButtons array\r\n        gridButtons = new ArrayList<>();\r\n        // prepare the variables to be used\r\n        wordInput = new Text();\r\n        wordInput.setText(inputWord[0]);\r\n        wordInput.setX(200);\r\n        wordInput.setY(100);\r\n\r\n        // Get the grid , add the string\r\n        grid = populateGridPane(size, s);\r\n        grid.setAlignment(Pos.CENTER);\r\n        Node boggleGrid = grid;\r\n\r\n        // Add the grid\r\n        instructionsBox.getChildren().addAll(boggleGrid);\r\n        launchControls();\r\n        instructionsBox.setAlignment(Pos.CENTER);\r\n        instructionsBox.setSpacing(10);\r\n\r\n    }\r\n    /**\r\n     * launches the Buttons that go with the Boggle Grid.\r\n     *\r\n     * this enables the user t\r\n     */\r\n    private void launchControls(){\r\n        // text input field\r\n        TextField textInputField = new TextField();\r\n        textInputField.setAlignment(Pos.CENTER);\r\n        textInputField.setId(\"boggleWordInput\");\r\n        textInputField.setMaxSize(150, 150);\r\n        textInputField.setLayoutY(30);\r\n        textInputField.setLayoutX(100);\r\n        textInputField.setText(inputWord[0]);\r\n\r\n        Label enterText = new Label(\"Enter a word from the grid:\");\r\n\r\n        VBox textInput = new VBox(enterText, textInputField);\r\n        textInput.setAlignment(Pos.CENTER);\r\n        textInput.setSpacing(5);\r\n\r\n        Button clear = new Button(\"Clear Text\");\r\n        clear.setId(\"Start\");\r\n        clear.setPrefSize(150, 50);\r\n        clear.setFont(new Font(this.font));\r\n        clear.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n//        mainButtons.add(clear);\r\n\r\n        stopmusic = new Button( \"Stop Music\");\r\n        stopmusic.setId(\"Stop\");\r\n        stopmusic.setPrefSize(150, 50);\r\n        stopmusic.setFont(new Font(this.font));\r\n        stopmusic.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n\r\n        playmusic = new Button( \"Play Music\");\r\n        playmusic.setId(\"Play\");\r\n        playmusic.setPrefSize(150, 50);\r\n        playmusic.setFont(new Font(this.font));\r\n        playmusic.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n\r\n        endButton = new Button(\"End Round\");\r\n        endButton.setId(\"end\");\r\n        endButton.setPrefSize(150, 50);\r\n        endButton.setFont(new Font(this.font));\r\n        endButton.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n//        mainButtons.add(endButton);\r\n\r\n        enterButton = new Button(\"Enter\");\r\n        enterButton.setId(\"enter\");\r\n        enterButton.setPrefSize(150, 50);\r\n        enterButton.setFont(new Font(this.font));\r\n        enterButton.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n\r\n        saveButton = new Button(\"Save\");\r\n        saveButton.setId(\"save\");\r\n        saveButton.setPrefSize(150, 50);\r\n        saveButton.setFont(new Font(12));\r\n        saveButton.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n\r\n\r\n        loadButton = new Button(\"Load\");\r\n        loadButton.setId(\"load\");\r\n        loadButton.setPrefSize(150, 50);\r\n        loadButton.setFont(new Font(12));\r\n        loadButton.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n//        mainButtons.add(enterButton);\r\n\r\n//        wordInput.setText(inputWord[0]);\r\n\r\n        HBox controls = new HBox(clear, wordInput, enterButton);\r\n        controls.setAlignment(Pos.CENTER);\r\n        controls.setSpacing(5);\r\n        VBox vControls = new VBox(controls, textInput);\r\n        vControls.setAlignment(Pos.CENTER);\r\n        vControls.setSpacing(5);\r\n<<<<<<< HEAD\r\n        VBox hcontrols = new VBox(saveButton, loadButton);\r\n=======\r\n        VBox hcontrols = new VBox(playmusic, stopmusic);\r\n>>>>>>> develop\r\n        loadBox.getChildren().addAll(hcontrols);\r\n        instructionsBox.getChildren().addAll(vControls, endButton);\r\n\r\n\r\n        clear.setOnAction(e -> {\r\n            // CLear button colors.\r\n//            clearButtons(gridButtons);\r\n            inputWord[0] = \"\";\r\n            wordInput.setText(inputWord[0]);\r\n            textInputField.setText(inputWord[0]);\r\n        });\r\n        textInputField.setOnAction(e -> {\r\n            enterButton.fire();\r\n        });\r\n        enterButton.setOnAction(e -> {\r\n            if (inputWord[0].isEmpty()) inputWord[0] = textInputField.getText();\r\n            wordInput.setText(inputWord[0]);\r\n//            HBox box1 = new HBox(5);\r\n//            VBox box2 = new VBox(5);\r\n//            HBox box3 = new HBox(10);\r\n//            Label wordCheck = new Label();\r\n//            if (this.model.evaluateWord(inputWord[0]) == 2){\r\n//                wordCheck.getStyleClass().add(\"bg-4\");\r\n//                wordCheck.setText(\"Correct! \" + inputWord[0]);\r\n//                SVGPath githubIcon = new SVGPath();\r\n//                githubIcon.setContent(\"m36.097 739.31 20-30c16.511 12.907 17.767 19.639 24.949 30.909 36.804-72.31 \" +\r\n//                        \"74.954-104.96 128.57-144.29-51.91 53.35-83.23 89.32-130 198.58-16.193-26.29-27.333-53.\" +\r\n//                        \"62-43.523-55.2z\");\r\n//                githubIcon.setFill(Color.web(\"#81c483\"));\r\n//                box2.getChildren().addAll(wordCheck, githubIcon);\r\n//                box2.setAlignment(Pos.CENTER);\r\n//            }else if (this.model.evaluateWord(inputWord[0]) == 1){\r\n//                wordCheck.getStyleClass().add(\"bg-3\");\r\n//                wordCheck.setText(\"This word has already been inputted\");\r\n//                SVGPath githubIcon = new SVGPath();\r\n//                githubIcon.setContent(\"M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-\" +\r\n//                        \"0.774-2.802,0\tL24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774,\" +\r\n//                        \"0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599\tc-0.774,0.774-0.774,2.028,0,2.802l4.019,\" +\r\n//                        \"4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774,\" +\r\n//                        \"2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z\");\r\n//                githubIcon.setFill(Color.web(\"#a8142e\"));\r\n//                githubIcon.autosize();\r\n//                box2.getChildren().addAll(wordCheck, githubIcon);\r\n//                box2.setAlignment(Pos.CENTER);\r\n//            }else if (this.model.evaluateWord(inputWord[0]) == 0){\r\n//                wordCheck.getStyleClass().add(\"bg-2\");\r\n//                wordCheck.setText(\"Incorrect word :(\");\r\n//                SVGPath githubIcon = new SVGPath();\r\n//                githubIcon.setContent(\"M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-\" +\r\n//                        \"0.774-2.802,0\tL24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774,\" +\r\n//                        \"0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599\tc-0.774,0.774-0.774,2.028,0,2.802l4.019,\" +\r\n//                        \"4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z M24,30.821L35.599,42.42c0.774,0.774,\" +\r\n//                        \"2.028,0.774,2.802,0l4.019-4.019    c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z\");\r\n//                githubIcon.setFill(Color.web(\"#a8142e\"));\r\n//                githubIcon.autosize();\r\n//                box2.getChildren().addAll(wordCheck, githubIcon);\r\n//                box2.setAlignment(Pos.CENTER);\r\n//            }\r\n//            Label wordCount = new Label(\"Words left: \" +\r\n//                    (this.model.getAllWords().length - this.model.getGameStats().getScore()));\r\n//            box1.getChildren().add(wordCount);\r\n//            box1.setAlignment(Pos.TOP_CENTER);\r\n//            String wordFound = \"Words Found: \";\r\n//            for (String word: this.model.getGameStats().getPlayerWords()){\r\n//                wordFound +=  \"\\n\" + word ;\r\n//            }\r\n//            Label wordsFound = new Label(wordFound);\r\n//            box3.getChildren().add(wordsFound);\r\n//            box3.setAlignment(Pos.BOTTOM_CENTER);\r\n//            VBox finalBox = new VBox(20, box1, box2, box3);\r\n//            borderPane.setRight(finalBox);\r\n//            finalBox.setAlignment(Pos.CENTER);\r\n//            finalBox.setStyle(\"-fx-background-color: rgb(225,225,255,0.52);\");\r\n            clear.fire();\r\n        });\r\n        endButton.setOnAction(e -> {\r\n            giveEndRoundInstructions();\r\n            //borderPane.setRight(null);\r\n        });\r\n        stopmusic.setOnAction(e -> {\r\n            mediaPlayer.setMute(true);\r\n\r\n        });\r\n        playmusic.setOnAction(e -> {\r\n            mediaPlayer.setMute(false);\r\n\r\n\r\n        });\r\n        saveButton.setOnAction(e -> {\r\n            createSaveView();\r\n        });\r\n        loadButton.setOnAction(e -> {\r\n            createLoadView();\r\n\r\n        });\r\n\r\n\r\n\r\n    }\r\n    /**\r\n     * Generates the gridpane depending on the user input.\r\n     *\r\n     * This displays and handles the events of the whole Boggle Game\r\n     */\r\n    private GridPane populateGridPane(int rSize, String userString ){\r\n\r\n        modelBoggleGrid = new BoggleGrid(rSize);\r\n\r\n        modelBoggleGrid.initalizeBoard(userString);\r\n        // launching a round\r\n        this.model.playRound(size, userString, modelBoggleGrid);\r\n        char[][] board = modelBoggleGrid.getBoard();\r\n        int size = modelBoggleGrid.numRows();\r\n//        System.out.println(board);\r\n\r\n        GridPane grid = new GridPane();\r\n        for (int row = 0; row < size; row++) {\r\n            for (int col = 0; col < size; col++) {\r\n                String s = String.valueOf(board[row][col]);\r\n                Button newButton = new Button(s);\r\n                newButton.setId(s);\r\n                newButton.setPrefSize(this.gridButtonSize, this.gridButtonSize);\r\n                newButton.setFont(new Font(this.font));\r\n                newButton.setStyle(\"-fx-background-color: green; -fx-text-fill: white;\");\r\n//                newButton.setStyle(\"-fx-background-color: \" + this.buttonBackgroundColor + \"; -fx-text-fill:\" + this.buttonTextColor +\";\");\r\n//               \r\n                newButton.setOnMouseEntered(e->{\r\n                    newButton.setStyle(\"-fx-background-color: blue; -fx-text-fill: white;\");\r\n                });\r\n                newButton.setOnMouseExited(e->{\r\n//                    if (!gridButtons.contains(newButton)) newButton.setStyle(\"-fx-background-color: \" + this.buttonBackgroundColor + \"; -fx-text-fill:\" + this.buttonTextColor +\";\");\r\n\r\n                });\r\n\r\n\r\n                newButton.setOnAction(e -> {\r\n                    if (!gridButtons.contains(newButton)) {\r\n                        gridButtons.add(newButton);\r\n                        newButton.setStyle(\"-fx-background-color: blue; -fx-text-fill: white;\");\r\n                        inputWord[0] += newButton.getId();\r\n                        wordInput.setText(inputWord[0]);\r\n                        System.out.println(inputWord[0]);\r\n                    }\r\n\r\n                });\r\n                mainButtons.add(newButton);\r\n                grid.add(newButton, row, col);\r\n\r\n            }\r\n        }\r\n\r\n        makeFontButtons();\r\n        return grid;\r\n    }\r\n\r\n    /*\r\n    This function creates the buttons that will allow the player to increase or decrease\r\n    the font of the boggle game.\r\n     */\r\n    private void makeFontButtons() {\r\n\r\n        // increase font button\r\n        Button fontUp = new Button(\"Increase Font\");\r\n        fontUp.setId(\"Increase Font\");\r\n        fontUp.setPrefSize(100, 50);\r\n        fontUp.setFont(new Font(this.font));\r\n        fontUp.setStyle(\"-fx-background-color: #10871b; -fx-text-fill: white;\");\r\n\r\n        fontUp.setOnAction(e -> {\r\n            updateFont(\"increase\");\r\n        });\r\n\r\n        mainButtons.add(fontUp);\r\n\r\n        // decrease font button\r\n        Button fontDown = new Button(\"Decrease Font\");\r\n        fontDown.setId(\"Decrease Font\");\r\n        fontDown.setPrefSize(100, 50);\r\n        fontDown.setFont(new Font(this.font));\r\n        fontDown.setStyle(\"-fx-background-color: #10871b; -fx-text-fill: white;\");\r\n\r\n        fontDown.setOnAction(e -> {\r\n            updateFont(\"decrease\");\r\n        });\r\n\r\n        mainButtons.add(fontDown);\r\n\r\n        FlowPane fontSettings = new FlowPane();\r\n        fontSettings.getChildren().addAll(fontUp, fontDown);\r\n        fontSettings.setAlignment(Pos.BOTTOM_CENTER);\r\n        borderPane.setBottom(fontSettings);\r\n\r\n    }\r\n\r\n    /*\r\n     * Updates the font of the letters on the grid.\r\n     */\r\n\r\n    private void updateFont(String action){\r\n        if (Objects.equals(action, \"increase\")){\r\n            if(!(this.font >= 24)) {\r\n                this.font++;\r\n            }\r\n            if(!(this.gridButtonSize >= 85)){\r\n                this.gridButtonSize += 5;\r\n            }\r\n            for (Node node: grid.getChildren()) {\r\n                if (node instanceof Button nb){\r\n                    nb.setFont(new Font(this.font));\r\n                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);\r\n                }\r\n            }\r\n        }\r\n        else {\r\n            if(!(this.font <= 8)) {\r\n                this.font--;\r\n            }\r\n            if(!(this.gridButtonSize <= 35)){\r\n                this.gridButtonSize -= 5;\r\n            }\r\n\r\n            for (Node node: grid.getChildren()) {\r\n                if (node instanceof Button nb){\r\n                    nb.setFont(new Font(this.font));\r\n                    nb.setPrefSize(this.gridButtonSize, this.gridButtonSize);\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Generates last instructions\r\n     *\r\n     * This asks the user to play again or not.\r\n     */\r\n    private void giveEndRoundInstructions(){\r\n        instructionsBox.getChildren().clear();\r\n        // give the game summary\r\n        String gameSummary = this.model.endRound();\r\n        Text summary = new Text(gameSummary);\r\n        summary.setX(50);\r\n        summary.setY(50);\r\n        summary.setFont(new Font(12));\r\n        summary.setTextAlignment(TextAlignment.CENTER);\r\n        summary.setWrappingWidth(500);\r\n\r\n\r\n        // ask if they want to play agian\r\n        Label anotherRound = new Label(\"Do you want to play another round?\");\r\n\r\n        Button playAgain = new Button(\"Play Again\");\r\n        playAgain.setId(\"playagain\");\r\n        playAgain.setPrefSize(150, 50);\r\n        playAgain.setFont(new Font(12));\r\n        playAgain.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n\r\n        Button end = new Button(\"End\");\r\n        end.setId(\"end\");\r\n        end.setPrefSize(150, 50);\r\n        end.setFont(new Font(12));\r\n        end.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n\r\n        HBox chooseRoundButtons = new HBox(playAgain, end);\r\n        chooseRoundButtons.setAlignment(Pos.CENTER);\r\n        chooseRoundButtons.setSpacing(5);\r\n\r\n        instructionsBox.getChildren().addAll(summary, anotherRound,chooseRoundButtons);\r\n        // if they want to play again, well and good.\r\n        playAgain.setOnAction(e -> {\r\n            giveSecondInstructions();\r\n        });\r\n\r\n        newGame = new Button(\"New Game\");\r\n        newGame.setId(\"new\");\r\n        newGame.setPrefSize(150, 50);\r\n        newGame.setFont(new Font(12));\r\n        newGame.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n\r\n        end.setOnAction(e -> {\r\n            instructionsBox.getChildren().clear();\r\n            summary.setText(\"The game has ended, Good bye! \\n You can also start a new game.\");\r\n            instructionsBox.getChildren().addAll(summary, newGame);\r\n\r\n        });\r\n\r\n        newGame.setOnAction(e -> {\r\n            instructionsBox.getChildren().clear();\r\n            giveFirstInstructions();\r\n        });\r\n        \r\n\r\n    }\r\n    /*\r\n     * Returns the BoggleGame\r\n     */\r\n\r\n    public BoggleGame getModel() {\r\n        return model;\r\n    }\r\n    /*\r\n     * Changes the BoggleGame and gameStats using another Boggle Game\r\n     * @param BoggleGame\r\n     */\r\n\r\n    public void changeboradandstats(BoggleGame jl) {\r\n        model = jl;\r\n        gameStats = jl.getGameStats();\r\n\r\n    }\r\n    /*\r\n     * Creates the Save View inside of the BoggleView\r\n     */\r\n    private void createSaveView(){\r\n        BoggleSave saveView = new BoggleSave(this);\r\n    }\r\n    /*\r\n     * Creates the Load View inside of the BoggleView\r\n     */\r\n\r\n    private void createLoadView(){\r\n        BoogleLoad loadView = new BoogleLoad(this);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/views/BoggleView.java b/views/BoggleView.java
+--- a/views/BoggleView.java	(revision 9bd64447a39b978aaf09351f77901527d0f6893e)
++++ b/views/BoggleView.java	(date 1670439568191)
+@@ -19,11 +19,11 @@
+ import javafx.stage.Stage;
+ 
+ 
+-<<<<<<< HEAD
++
+ import java.io.Serializable;
+-=======
++
+ import java.nio.file.Paths;
+->>>>>>> develop
++
+ import java.util.ArrayList;
+ import java.util.Objects;
+ 
+@@ -70,11 +70,11 @@
+     /**
+      * Buttons to start, end, enter and create a new game
+      */
+-<<<<<<< HEAD
+-    Button startButton,endButton, enterButton, newGame, saveButton, loadButton;
+-=======
+-    Button startButton,endButton, enterButton, newGame, stopmusic, playmusic;
+->>>>>>> develop
++
++    Button startButton,endButton, enterButton, newGame, saveButton, loadButton, stopmusic, playmusic;
++
++
++
+     /**
+      * This array holds the buttons that have been selected by the game player
+      */
+@@ -95,15 +95,14 @@
+      */
+     Text wordInput ; // display the word the user is typing
+     ArrayList<Node> mainButtons = new ArrayList<>();
+-<<<<<<< HEAD
+-=======
++
+ 
+     MediaPlayer mediaPlayer;
+ 
+     private static final String MEDIA_URL = "/Users/imranmuyingo/Downloads/lifelike-126735.mp3";
+ 
++    try
+     Media media = new Media(Paths.get(MEDIA_URL).toUri().toString());
+->>>>>>> develop
+ 
+ 
+     /**
+@@ -180,12 +179,7 @@
+         loadBox = new VBox();
+         loadBox.setPadding(new Insets(10, 10, 10, 10));
+         loadBox.setAlignment(Pos.TOP_LEFT);
+-<<<<<<< HEAD
+-        
+-        
+-=======
+ 
+->>>>>>> develop
+         borderPane.setCenter(instructionsBox);
+         borderPane.setTop(loadBox);
+ 
+@@ -448,11 +442,9 @@
+         VBox vControls = new VBox(controls, textInput);
+         vControls.setAlignment(Pos.CENTER);
+         vControls.setSpacing(5);
+-<<<<<<< HEAD
+-        VBox hcontrols = new VBox(saveButton, loadButton);
+-=======
+-        VBox hcontrols = new VBox(playmusic, stopmusic);
+->>>>>>> develop
++
++        VBox hcontrols = new VBox(saveButton, loadButton, playmusic, stopmusic);
++
+         loadBox.getChildren().addAll(hcontrols);
+         instructionsBox.getChildren().addAll(vControls, endButton);
+ 
+Index: out/production/tenacity/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/tenacity/.idea/workspace.xml b/out/production/tenacity/.idea/workspace.xml
+deleted file mode 100644
+--- a/out/production/tenacity/.idea/workspace.xml	(revision 9bd64447a39b978aaf09351f77901527d0f6893e)
++++ /dev/null	(revision 9bd64447a39b978aaf09351f77901527d0f6893e)
+@@ -1,253 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+-  <component name="ChangeListManager">
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+-      <change afterPath="$PROJECT_DIR$/boggle/BoggleSave.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
+-=======
+-=======
+->>>>>>> develop
+-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+-<<<<<<< HEAD
+->>>>>>> develop
+-=======
+->>>>>>> develop
+-    </list>
+-    <option name="SHOW_DIALOG" value="false" />
+-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-    <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="CodeStyleSettingsInfer">
+-    <option name="done" value="true" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Interface" />
+-        <option value="Class" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+-        <entry key="$PROJECT_DIR$" value="feature/1.1_Building_the_GUI" />
+-=======
+-        <entry key="$PROJECT_DIR$" value="feature/2.2-using-the-mouse-to-play" />
+->>>>>>> develop
+-=======
+-        <entry key="$PROJECT_DIR$" value="feature/2.2-using-the-mouse-to-play" />
+->>>>>>> develop
+-      </map>
+-    </option>
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="UPDATE_TYPE" value="REBASE" />
+-  </component>
+-  <component name="GithubPullRequestsUISettings">
+-    <option name="recentNewPullRequestHead">
+-      <RepoCoordinatesHolder>
+-        <option name="owner" value="gideonmehna" />
+-        <option name="repository" value="tenacity" />
+-      </RepoCoordinatesHolder>
+-    </option>
+-  </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+-  </component>
+-  <component name="ProjectCodeStyleSettingsMigration">
+-    <option name="version" value="2" />
+-  </component>
+-  <component name="ProjectId" id="2I8ya6cYDYCiw7biBoMEOdTCYeT" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+-<<<<<<< HEAD
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+-=======
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
+-    "project.structure.last.edited": "Libraries",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2"
+-<<<<<<< HEAD
+->>>>>>> develop
+-=======
+->>>>>>> develop
+-  }
+-}</component>
+-  <component name="RunManager">
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+-    <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+-      <module name="tenacity" />
+-      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml" />
+-=======
+-    <configuration name="tenacity" type="Application" factoryName="Application">
+-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+-      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+-      <module name="tenacity" />
+-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Shereece\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+->>>>>>> develop
+-=======
+-    <configuration name="tenacity" type="Application" factoryName="Application">
+-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+-      <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+-      <module name="tenacity" />
+-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Shereece\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+->>>>>>> develop
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-  </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-  <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="7927fba8-8580-47f8-8615-13f9be6038cf" name="Changes" comment="" />
+-      <created>1669577566073</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1669577566073</updated>
+-    </task>
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+-    <task id="LOCAL-00001" summary="[DEV-1.1] BASE GUI DONE">
+-      <created>1670289102898</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670289102898</updated>
+-    </task>
+-    <option name="localTasksCounter" value="2" />
+-=======
+-=======
+->>>>>>> develop
+-    <task id="LOCAL-00001" summary="This version has the font and colour accessibility user stories added.">
+-      <created>1670186715478</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670186715478</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.">
+-      <created>1670188967673</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670188967673</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications.">
+-      <created>1670191792499</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670191792499</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="This version has the color changes fixed.">
+-      <created>1670191914073</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670191914073</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="This version has the color changes fixed.">
+-      <created>1670290485963</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670290485963</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
+-      <created>1670296090972</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670296090972</updated>
+-    </task>
+-    <option name="localTasksCounter" value="7" />
+-<<<<<<< HEAD
+->>>>>>> develop
+-=======
+->>>>>>> develop
+-    <servers />
+-  </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="develop" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+-  <component name="VcsManagerConfiguration">
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+-    <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
+-    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
+-=======
+-=======
+->>>>>>> develop
+-    <MESSAGE value="This version has the font and colour accessibility user stories added." />
+-    <MESSAGE value="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position." />
+-    <MESSAGE value="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications." />
+-    <MESSAGE value="This version has the color changes fixed." />
+-    <MESSAGE value="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference." />
+-    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference." />
+-<<<<<<< HEAD
+->>>>>>> develop
+-=======
+->>>>>>> develop
+-  </component>
+-</project>
+\ No newline at end of file
+Index: boggle/BoggleGame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package boggle;\r\n\r\nimport java.awt.*;\r\n<<<<<<< HEAD\r\n<<<<<<< HEAD\r\nimport java.io.*;\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\nimport java.util.Scanner;\r\n=======\r\nimport java.util.*;\r\n>>>>>>> develop\r\n=======\r\nimport java.util.*;\r\n>>>>>>> develop\r\nimport java.util.concurrent.ThreadLocalRandom;\r\n\r\n/**\r\n * The BoggleGame class for the first Assignment in CSC207, Fall 2022\r\n */\r\npublic class BoggleGame implements Serializable {\r\n\r\n    /**\r\n     * stores game statistics\r\n     */ \r\n    private final BoggleStats gameStats;\r\n\r\n    /**\r\n     * dice used to randomize letter assignments for a small grid\r\n     */ \r\n    private final String[] dice_small_grid= //dice specifications, for small and large grids\r\n            {\"AAEEGN\", \"ABBJOO\", \"ACHOPS\", \"AFFKPS\", \"AOOTTW\", \"CIMOTU\", \"DEILRX\", \"DELRVY\",\r\n                    \"DISTTY\", \"EEGHNW\", \"EEINSU\", \"EHRTVW\", \"EIOSST\", \"ELRTTY\", \"HIMNQU\", \"HLNNRZ\"};\r\n    /**\r\n     * dice used to randomize letter assignments for a big grid\r\n     */ \r\n    private final String[] dice_big_grid =\r\n            {\"AAAFRS\", \"AAEEEE\", \"AAFIRS\", \"ADENNN\", \"AEEEEM\", \"AEEGMU\", \"AEGMNN\", \"AFIRSY\",\r\n                    \"BJKQXZ\", \"CCNSTW\", \"CEIILT\", \"CEILPT\", \"CEIPST\", \"DDLNOR\", \"DDHNOT\", \"DHHLOR\",\r\n                    \"DHLNOR\", \"EIIITT\", \"EMOTTT\", \"ENSSSU\", \"FIPRSY\", \"GORRVW\", \"HIPRRY\", \"NOOTUW\", \"OOOTTU\"};\r\n    private Map<String, ArrayList<Position>> allWords;\r\n\r\n    /* \r\n     * BoggleGame constructor\r\n     */\r\n    public BoggleGame() {\r\n        this.gameStats = new BoggleStats();\r\n    }\r\n\r\n    /*\r\n     * Provide instructions to the user, so they know how to play the game.\r\n     */\r\n    public String loadInstructions() {\r\n        String instructions = \"The Boggle board contains a grid of letters that are randomly placed. \\n\";\r\n        instructions += \"We're both going to try to find words in this grid by joining the letters. \\n\";\r\n        instructions += \"You can form a word by connecting adjoining letters on the grid. \\n\";\r\n        instructions += \"Two letters adjoin if they are next to each other horizontally, \\n\";\r\n        instructions += \"vertically, or diagonally. The words you find must be at least 4 letters long, \\n\";\r\n        instructions += \"and you can't use a letter twice in any single word. Your points \\n\";\r\n        instructions += \"will be based on word length: a 4-letter word is worth 1 point, 5-letter \\n\";\r\n        instructions += \"words earn 2 points, and so on. After you find as many words as you can, \\n\";\r\n        instructions += \"I will find all the remaining words. \\n\";\r\n        instructions += \"Hit the Next button below or hit return when you're ready... \\n\";\r\n        return instructions;\r\n    }\r\n\r\n\r\n    /*\r\n     * Play a round of Boggle.\r\n     * This initializes the main objects: the board, the dictionary, the map of all\r\n     * words on the board, and the set of words found by the user. These objects are\r\n     * passed by reference from here to many other functions.\r\n     */\r\n    public void playRound(int size, String letters, BoggleGrid realGrid){\r\n        //step 1. initialize the grid\r\n//        BoggleGrid grid = new BoggleGrid(size);\r\n        BoggleGrid grid = realGrid;\r\n        grid.initalizeBoard(letters);\r\n        //step 2. initialize the dictionary of legal words\r\n        Dictionary boggleDict = new Dictionary(\"wordlist.txt\"); //you may have to change the path to the wordlist\r\n        // , depending on where you place it.\r\n        //step 3. find all legal words on the board, given the dictionary and grid arrangement.\r\n        allWords = new HashMap<String, ArrayList<Position>>();\r\n        findAllWords(allWords, boggleDict, grid);\r\n    }\r\n    /*\r\n     * End a round of Boggle and make the computer figure out all the remaining words.\r\n     * @return the game statistics\r\n     */\r\n    public String endRound(){\r\n        computerMove(allWords);\r\n        String results = this.gameStats.summarizeRound();\r\n        this.gameStats.endRound(); // This ends the round and clears the stats\r\n        return results;\r\n\r\n    }\r\n\r\n    /*\r\n     * This method should return a String of letters (length size * size depending on the size of the grid).\r\n     * There will be one letter per grid position, and they will be organized left to right,\r\n     * top to bottom. A strategy to make this string of letters is as follows:\r\n     * -- Assign a one of the dice to each grid position (i.e. dice_big_grid or dice_small_grid)\r\n     * -- \"Shuffle\" the positions of the dice to randomize the grid positions they are assigned to\r\n     * -- Randomly select one of the letters on the given die at each grid position to determine\r\n     *    the letter at the given position\r\n     *\r\n     * @return String a String of random letters (length size * size depending on the size of the grid)\r\n     */\r\n    public String randomizeLetters(int size){\r\n        String randomLetters = new String();\r\n        String[][] board = new String[size][size];\r\n        int arrayLength = 0;\r\n        int min = 0;\r\n        if (size == 4) {\r\n            arrayLength = dice_small_grid.length;\r\n            for (int row = 0; row < size; row++) {\r\n                for (int col = 0; col < size; col++) {\r\n                    board[row][col] = dice_small_grid[ThreadLocalRandom.current().nextInt(min, arrayLength)];\r\n\r\n                }\r\n            }\r\n        } else if (size == 5) {\r\n            arrayLength = dice_big_grid.length;\r\n            for (int row = 0; row < size; row++) {\r\n                for (int col = 0; col < size; col++) {\r\n//                        System.out.println(board[row][col]);\r\n                    board[row][col] = dice_big_grid[ThreadLocalRandom.current().nextInt(min, arrayLength)];\r\n\r\n                }\r\n            }\r\n        } else {\r\n            for (int row = 0; row < size; row++) {\r\n                for (int col = 0; col < size; col++) {\r\n                    Random r = new Random();\r\n                    board[row][col] = String.valueOf((char)(r.nextInt(26) + 'A'));\r\n                    randomLetters += board[row][col];\r\n\r\n                }\r\n            }\r\n        }\r\n\r\n\r\n        if ((size == 4) || (size == 5)) {\r\n            for (int row = 0; row < size; row++) {\r\n                for (int col = 0; col < size; col++) {\r\n                    randomLetters += board[row][col].charAt(ThreadLocalRandom.current().nextInt(0, 5  + 1));\r\n                    // There might be an error here using 6 as the bound,\r\n                }\r\n            }\r\n        }\r\n//        else {\r\n//            for (int row = 0; row < size; row++) {\r\n//                for (int col = 0; col < size; col++) {\r\n//                    randomLetters += board[row][col];\r\n//                    // There might be an error here using 6 as the bound,\r\n//                }\r\n//            }\r\n//        }\r\n        return randomLetters;\r\n    }\r\n\r\n\r\n    /* \r\n     * This should be a recursive function that finds all valid words on the boggle board.\r\n     * Every word should be valid (i.e. in the boggleDict) and of length 4 or more.\r\n     * Words that are found should be entered into the allWords HashMap.  This HashMap\r\n     * will be consulted as we play the game.\r\n     *\r\n     * Note that this function will be a recursive function.  You may want to write\r\n     * a wrapper for your recursion. Note that every legal word on the Boggle grid will correspond to\r\n     * a list of grid positions on the board, and that the Position class can be used to represent these\r\n     * positions. The strategy you will likely want to use when you write your recursion is as follows:\r\n     * -- At every Position on the grid:\r\n     * ---- add the Position of that point to a list of stored positions\r\n     * ---- if your list of stored positions is >= 4, add the corresponding word to the allWords Map\r\n     * ---- recursively search for valid, adjacent grid Positions to add to your list of stored positions.\r\n     * ---- Note that a valid Position to add to your list will be one that is either horizontal, diagonal, or\r\n     *      vertically touching the current Position\r\n     * ---- Note also that a valid Position to add to your list will be one that, in conjunction with those\r\n     *      Positions that precede it, form a legal PREFIX to a word in the Dictionary (this is important!)\r\n     * ---- Use the \"isPrefix\" method in the Dictionary class to help you out here!!\r\n     * ---- Positions that already exist in your list of stored positions will also be invalid.\r\n     * ---- You'll be finished when you have checked EVERY possible list of Positions on the board, to see\r\n     *      if they can be used to form a valid word in the dictionary.\r\n     * ---- Food for thought: If there are N Positions on the grid, how many possible lists of positions\r\n     *      might we need to evaluate?\r\n     *\r\n     * @param allWords A mutable list of all legal words that can be found, given the boggleGrid grid letters\r\n     * @param boggleDict A dictionary of legal words\r\n     * @param boggleGrid A boggle grid, with a letter at each position on the grid\r\n     */\r\n    private void findAllWords(Map<String,ArrayList<Position>> allWords, Dictionary boggleDict, BoggleGrid boggleGrid) {\r\n        int rSize = boggleGrid.numRows();\r\n        int cSize = boggleGrid.numCols();\r\n        int row = 0;\r\n        int col = 0;\r\n//        System.out.println(boggleGrid);\r\n        while (row < rSize) {\r\n\r\n            col = 0;\r\n            while (col < cSize) {\r\n                String currWord = \"\";\r\n                Position currPosition = new Position(row, col);\r\n                ArrayList<Position> positionList = new ArrayList<Position>();\r\n\r\n                findWord(row, col, currWord, positionList, allWords, boggleDict, boggleGrid);\r\n\r\n//\r\n                col++;\r\n            }\r\n            row++;\r\n        }\r\n//\r\n    }\r\n    /*\r\n     * Finds a Word starting from a given position\r\n     * Finds if the current position and the current word form a word in a dictionary\r\n     * @param allWords A mutable list of all legal words that can be found, given the boggleGrid grid letters\r\n     * @param positionList A list of Positions on a bogglegrid forming a Word\r\n     */\r\n    private void findWord(int row, int col, String currWord, ArrayList<Position> positionList,\r\n                          Map<String,ArrayList<Position>> allWords, Dictionary boggleDict, BoggleGrid boggleGrid) {\r\n\r\n        currWord += boggleGrid.getCharAt(row, col);\r\n\r\n        currWord = currWord.toUpperCase();\r\n        Position currPosition = new Position(row, col);\r\n        if (boggleDict.isPrefix(currWord)) {\r\n\r\n            // add that position to a list, if it is not a repetition of what is in the list.\r\n            boolean added = positionList.add(currPosition);\r\n\r\n            if (currWord.length() >= 4 && boggleDict.containsWord(currWord)) {\r\n                allWords.put(currWord, positionList);\r\n\r\n            }\r\n\r\n            int rSize = boggleGrid.numRows();\r\n            int cSize = boggleGrid.numCols();\r\n            int[] colArray = new int[]{col - 1, col, col + 1};\r\n            int[] rowArray = new int[]{row - 1, row, row + 1};\r\n            for (int nRow : rowArray) {\r\n                if (nRow >= 0 && nRow < rSize) {\r\n                    for (int nCol : colArray) {\r\n                        if (nCol >= 0 && nCol < cSize) {\r\n                            if (!(nRow == row && nCol == col)) {\r\n                                Position newPosition = new Position(nRow, nCol);\r\n                                if (!containsPosition(positionList, newPosition)) {\r\n\r\n                                    findWord(nRow, nCol, currWord, positionList, allWords, boggleDict, boggleGrid);\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n\r\n    }\r\n    /*\r\n     * CHecks if ArrayList<Position> contains a Position\r\n     *\r\n     * @param allWords A mutable list of all legal words that can be found, given the boggleGrid grid letters\r\n     * @param positionList A list of Positions on a bogglegrid forming a Word\r\n     */\r\n\r\n    private boolean containsPosition(ArrayList<Position> positionList, Position position){\r\n\r\n        for (Position p: positionList){\r\n            if (p.getRow() == position.getRow() && p.getCol() == position.getCol()){\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n    /*\r\n     * CHecks if allWords Hashmap contains positionList.\r\n     *\r\n     * @param allWords A mutable list of all legal words that can be found, given the boggleGrid grid letters\r\n     * @param positionList A list of Positions on a bogglegrid forming a Word\r\n     */\r\n\r\n    private boolean containsPositionL(ArrayList<Position> positionList, Map<String,ArrayList<Position>> allWords){\r\n        for(Map.Entry<String,ArrayList<Position>> entry : allWords.entrySet()) {\r\n            String key = entry.getKey();\r\n            ArrayList<Position> value = entry.getValue();\r\n\r\n            if (positionList == value){\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    /*\r\n     * This is a function that evaluates the word input of the boggle game while the human is playing.\r\n     *\r\n     * @param String s, this is a string that the user has typed in the game.\r\n     * @return Integer values which states: 0 for invalid word,\r\n     *  1 for word which had already been inputted, 2 for valid word\r\n     */\r\n    public int evaluateWord(String s){\r\n        String inputWord = s;\r\n        inputWord = inputWord.strip().toUpperCase();\r\n        if(!inputWord.isEmpty()) {\r\n            //step 3. Check to see if it is valid (note validity checks should be case-insensitive)\r\n            for ( Map.Entry<String,ArrayList<Position>> entry: allWords.entrySet() ) {\r\n\r\n                System.out.println(entry.getKey() +\"==\"+ inputWord );\r\n                System.out.println(entry.getKey().equals(inputWord));\r\n                if (entry.getKey().equals(inputWord)){\r\n                    this.gameStats.addWord(inputWord, BoggleStats.Player.Human);\r\n                    System.out.println(\"I added the word to stats\");\r\n                    return 2;\r\n\r\n                } else if (this.gameStats.getPlayerWords().contains(inputWord)){\r\n                    System.out.println(\"This word has already been inputted\");\r\n                    return 1;\r\n                }\r\n            }\r\n        }\r\n        return 0;\r\n    }\r\n\r\n\r\n    /* \r\n     * Gets words from the computer.  The computer should find words that are\r\n     * both valid and not in the player's word list.  For each word that the computer\r\n     * finds, update the computer's word list and increment the\r\n     * computer's score (stored in boggleStats).\r\n     *\r\n     * @param allWords A mutable list of all legal words that can be found, given the boggleGrid grid letters\r\n     */\r\n    private void computerMove(Map<String,ArrayList<Position>> all_words){\r\n        // go through all words, keys\r\n        for (Map.Entry<String,ArrayList<Position>> entry : all_words.entrySet()) {\r\n            if (!this.gameStats.getPlayerWords().contains(entry.getKey())){\r\n                this.gameStats.addWord(entry.getKey(), BoggleStats.Player.Computer);\r\n            }\r\n\r\n        // check if the word is in the players list\r\n        // add the word and incremement the scoure., check why or how the total score ischanges. \r\n    }\r\n    }\r\n    /*\r\n<<<<<<< Updated upstream\r\n     * Saves the Boggle games as a file\r\n     * @param filename A file contains a BoggleGame\r\n=======\r\n     * Gets words from the computer.  The computer should find words that are\r\n     * both valid and not in the player's word list.  For each word that the computer\r\n     * finds, update the computer's word list and increment the\r\n     * computer's score (stored in boggleStats).\r\n     *\r\n     * @param file A mutable list of all legal words that can be found, given the boggleGrid grid letters\r\n>>>>>>> Stashed changes\r\n     */\r\n\r\n    public void saveGame(File fileName) {\r\n        try {\r\n            FileOutputStream fout = new FileOutputStream(fileName);\r\n            ObjectOutputStream oos = new ObjectOutputStream(fout);\r\n            oos.writeObject(this);\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public BoggleStats getGameStats() {\r\n        return gameStats;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/boggle/BoggleGame.java b/boggle/BoggleGame.java
+--- a/boggle/BoggleGame.java	(revision 9bd64447a39b978aaf09351f77901527d0f6893e)
++++ b/boggle/BoggleGame.java	(date 1670438737515)
+@@ -1,19 +1,17 @@
+ package boggle;
+ 
+ import java.awt.*;
+-<<<<<<< HEAD
+-<<<<<<< HEAD
++
+ import java.io.*;
+ import java.util.ArrayList;
+ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.Scanner;
+-=======
++
+ import java.util.*;
+->>>>>>> develop
+-=======
++
+ import java.util.*;
+->>>>>>> develop
++
+ import java.util.concurrent.ThreadLocalRandom;
+ 
+ /**
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n<<<<<<< HEAD\r\n    <list default=\"true\" id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"[DEV-1.1] BASE GUI DONE\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n<<<<<<< HEAD\r\n      <change beforePath=\"$PROJECT_DIR$/boggle/BoggleGame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/boggle/BoggleGame.java\" afterDir=\"false\" />\r\n<<<<<<< Updated upstream\r\n      <change beforePath=\"$PROJECT_DIR$/boggle/BoggleGrid.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/boggle/BoggleGrid.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/boggle/BoggleStats.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/boggle/BoggleStats.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/boggle/Position.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/boggle/Position.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class\" afterDir=\"false\" />\r\n=======\r\n    <list default=\"true\" id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/boggle/BoggleGame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/boggle/BoggleGame.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/tenacity.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/tenacity.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/tenacity.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/tenacity.iml\" afterDir=\"false\" />\r\n>>>>>>> develop\r\n      <change beforePath=\"$PROJECT_DIR$/views/BoggleView.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/BoggleView.java\" afterDir=\"false\" />\r\n=======\r\n      <change beforePath=\"$PROJECT_DIR$/boggle/BoogleLoad.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/boggle/BoogleLoad.java\" afterDir=\"false\" />\r\n>>>>>>> Stashed changes\r\n=======\r\n=======\r\n    <list default=\"true\" id=\"f8ad7b03-31b9-43a3-b0dd-e4d22111db9f\" name=\"Changes\" comment=\"[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/boggle/BoggleGame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/boggle/BoggleGame.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/tenacity.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/tenacity.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/tenacity.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/tenacity.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/views/BoggleView.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/BoggleView.java\" afterDir=\"false\" />\r\n>>>>>>> develop\r\n>>>>>>> develop\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"develop\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"recentNewPullRequestHead\">\r\n      <RepoCoordinatesHolder>\r\n        <option name=\"owner\" value=\"gideonmehna\" />\r\n        <option name=\"repository\" value=\"tenacity\" />\r\n      </RepoCoordinatesHolder>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n<<<<<<< HEAD\r\n  <component name=\"ProjectId\" id=\"2IWA6QrmhhzOVNwFa12S9DZ1Px6\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n=======\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2I8ya6cYDYCiw7biBoMEOdTCYeT\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n>>>>>>> develop\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n<<<<<<< HEAD\r\n<<<<<<< Updated upstream\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n<<<<<<< HEAD\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"Downloaded.Files.Path.Enabled\": \"false\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n=======\r\n>>>>>>> develop\r\n=======\r\n<<<<<<< HEAD\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;\r\n=======\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n>>>>>>> develop\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar\",\r\n    \"project.structure.last.edited\": \"Libraries\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\"\r\n<<<<<<< HEAD\r\n=======\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;\r\n>>>>>>> Stashed changes\r\n=======\r\n>>>>>>> develop\r\n>>>>>>> develop\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n<<<<<<< HEAD\r\n    <configuration name=\"BoggleApp\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n=======\r\n    <configuration name=\"tenacity\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"openjdk-19\" />\r\n>>>>>>> develop\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"BoggleApp\" />\r\n      <module name=\"tenacity\" />\r\n<<<<<<< HEAD\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml\" />\r\n=======\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media\" />\r\n>>>>>>> develop\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7927fba8-8580-47f8-8615-13f9be6038cf\" name=\"Changes\" comment=\"\" />\r\n      <created>1669577566073</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1669577566073</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"This version has the font and colour accessibility user stories added.\">\r\n      <created>1670186715478</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670186715478</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.\">\r\n      <created>1670188967673</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670188967673</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications.\">\r\n      <created>1670191792499</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670191792499</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"This version has the color changes fixed.\">\r\n      <created>1670191914073</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670191914073</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"This version has the color changes fixed.\">\r\n      <created>1670290485963</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670290485963</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.\">\r\n      <created>1670296090972</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670296090972</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"develop\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n<<<<<<< HEAD\r\n<<<<<<< HEAD\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"[DEV-1.1] BASE GUI DONE\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"[DEV-1.1] BASE GUI DONE\" />\r\n=======\r\n=======\r\n>>>>>>> develop\r\n    <MESSAGE value=\"This version has the font and colour accessibility user stories added.\" />\r\n    <MESSAGE value=\"This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.\" />\r\n    <MESSAGE value=\"This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications.\" />\r\n    <MESSAGE value=\"This version has the color changes fixed.\" />\r\n    <MESSAGE value=\"[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.\" />\r\n<<<<<<< HEAD\r\n>>>>>>> develop\r\n=======\r\n>>>>>>> develop\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9bd64447a39b978aaf09351f77901527d0f6893e)
++++ b/.idea/workspace.xml	(date 1670439231160)
+@@ -1,238 +1,57 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+   <component name="ChangeListManager">
+-<<<<<<< HEAD
+-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-<<<<<<< HEAD
+-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+-<<<<<<< Updated upstream
+-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGrid.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/boggle/BoggleStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleStats.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/boggle/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/Position.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+-=======
+-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
++    <list default="true" id="2d93b3f9-627a-4a8a-b484-f03b17caee33" name="Changes" comment="[DEV-1.1] BASE GUI DONE">
++      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/_template__of_Application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/_template__of_Application.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/runConfigurations/_template__of_Application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/runConfigurations/_template__of_Application.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+->>>>>>> develop
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoogleLoad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoogleLoad.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
+-=======
+-      <change beforePath="$PROJECT_DIR$/boggle/BoogleLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoogleLoad.java" afterDir="false" />
+->>>>>>> Stashed changes
+-=======
+-=======
+-    <list default="true" id="f8ad7b03-31b9-43a3-b0dd-e4d22111db9f" name="Changes" comment="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/tenacity.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/views/BoggleView.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/tenacity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tenacity.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/views/BoggleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/BoggleView.java" afterDir="false" />
+->>>>>>> develop
+->>>>>>> develop
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="CodeStyleSettingsInfer">
+-    <option name="done" value="true" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Interface" />
+-        <option value="Class" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="develop" />
+-      </map>
+-    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+-  <component name="GithubPullRequestsUISettings">
+-    <option name="recentNewPullRequestHead">
+-      <RepoCoordinatesHolder>
+-        <option name="owner" value="gideonmehna" />
+-        <option name="repository" value="tenacity" />
+-      </RepoCoordinatesHolder>
+-    </option>
+-  </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+-  </component>
+-<<<<<<< HEAD
+-  <component name="ProjectId" id="2IWA6QrmhhzOVNwFa12S9DZ1Px6" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+-    <ConfirmationsSetting value="2" id="Add" />
+-  </component>
+-=======
+-  <component name="ProjectCodeStyleSettingsMigration">
+-    <option name="version" value="2" />
+-  </component>
+-  <component name="ProjectId" id="2I8ya6cYDYCiw7biBoMEOdTCYeT" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+->>>>>>> develop
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+-<<<<<<< HEAD
+-<<<<<<< Updated upstream
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-<<<<<<< HEAD
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "Downloaded.Files.Path.Enabled": "false",
+-    "Repository.Attach.Annotations": "false",
+-    "Repository.Attach.JavaDocs": "false",
+-    "Repository.Attach.Sources": "false",
+-=======
+->>>>>>> develop
+-=======
+-<<<<<<< HEAD
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+-=======
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+->>>>>>> develop
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
+     "project.structure.last.edited": "Libraries",
+     "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.2"
+-<<<<<<< HEAD
+-=======
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+->>>>>>> Stashed changes
+-=======
+->>>>>>> develop
+->>>>>>> develop
+   }
+-}</component>
++}]]></component>
+   <component name="RunManager">
+-<<<<<<< HEAD
+     <configuration name="BoggleApp" type="Application" factoryName="Application" nameIsGenerated="true">
+-=======
+-    <configuration name="tenacity" type="Application" factoryName="Application">
+-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+->>>>>>> develop
++      <option name="ALTERNATIVE_JRE_PATH" value="18" />
++      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+       <option name="MAIN_CLASS_NAME" value="BoggleApp" />
+       <module name="tenacity" />
+-<<<<<<< HEAD
+-      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml" />
+-=======
+-      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/CSC207/muyingoi/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+->>>>>>> develop
++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\ugstu\Desktop\UTM 2nd Year Fall\Class\CSC207 H5\CSC207\Lecture code\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+   </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="7927fba8-8580-47f8-8615-13f9be6038cf" name="Changes" comment="" />
+-      <created>1669577566073</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1669577566073</updated>
+-    </task>
+-    <task id="LOCAL-00001" summary="This version has the font and colour accessibility user stories added.">
+-      <created>1670186715478</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670186715478</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.">
+-      <created>1670188967673</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670188967673</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications.">
+-      <created>1670191792499</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670191792499</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="This version has the color changes fixed.">
+-      <created>1670191914073</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670191914073</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="This version has the color changes fixed.">
+-      <created>1670290485963</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670290485963</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference.">
+-      <created>1670296090972</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1670296090972</updated>
+-    </task>
+-    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -240,42 +59,10 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="develop" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+     </option>
+   </component>
+-  <component name="VcsManagerConfiguration">
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+-    <MESSAGE value="[DEV-1.1] BASE GUI DONE" />
+-    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.1] BASE GUI DONE" />
+-=======
+-=======
+->>>>>>> develop
+-    <MESSAGE value="This version has the font and colour accessibility user stories added." />
+-    <MESSAGE value="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position." />
+-    <MESSAGE value="This version has the font and colour accessibility user stories added. The buttons are in a non-conflicting position.&#10;Colours work well with modifications." />
+-    <MESSAGE value="This version has the color changes fixed." />
+-    <MESSAGE value="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference." />
+-    <option name="LAST_COMMIT_MESSAGE" value="[DEV-1.3] The accessibility font feature has been added. Players can adjust the font of the boggle game to their preference." />
+-<<<<<<< HEAD
+->>>>>>> develop
+-=======
+->>>>>>> develop
+-  </component>
+ </project>
+\ No newline at end of file
