@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d93b3f9-627a-4a8a-b484-f03b17caee33" name="Changes" comment="[DEV 4.5] Local">
+    <list default="true" id="1e37078e-a250-4d90-aea0-c39305224c9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/_template__of_Application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/_template__of_Application.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_4_2022_4_04_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_4_2022_4_04_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2022_9_41_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2022_9_41_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_04_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_04_PM__Changes_.xml" afterDir="false" />
@@ -11,22 +12,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_08_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_2022_1_44_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-05_11_30_p_m___Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_13_a_m___Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-12-06_10_23_a_m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_4_2022_4_10_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_4_2022_4_10_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_12_7_2022_1_16_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2022-12-04_4_31_p_m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2022_1_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2022_1_08_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boggle/BoggleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/boggle/BoggleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/libraries/javafx_swt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/libraries/javafx_swt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_4_2022_4_04_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_4_2022_4_04_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2022_9_41_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2022_9_41_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_04_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_04_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_46_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_46_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_46_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_46_PM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_56_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_6_2022_2_56_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_4_2022_4_10_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Merge_at_12_4_2022_4_10_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2022_4_08_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tenacity/boggle/BoggleGame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +32,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ImVoRsMCjmqWP42Uj73JU4z1EK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,6 +43,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/ugstu/Desktop/UTM 2nd Year Fall/Class/CSC207 H5/CSC207/Lecture code/javafx-sdk-19/lib/javafx.web.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -64,13 +66,24 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4aff3647-1cbd-4def-88ba-5007f1f0e6ed" name="Changes" comment="" />
+      <changelist id="1e37078e-a250-4d90-aea0-c39305224c9a" name="Changes" comment="" />
       <created>1670441649648</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670441649648</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[DEV 4.5] Local" />
